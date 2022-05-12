@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        // specifically disable declarations for the plugin
+        "declaration": false,
+        "declarationMap": false,
+        "outDir": "./dist",
+        "rootDir": "./src",
+    },
+    "include": [
+        "src",
+        "typings"
+    ],
+}
