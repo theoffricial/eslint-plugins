@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.build1.json",
+    "compilerOptions": {
+        "composite": false,
+        "rootDir": ".",
+        "target": "ES2017",
+        "moduleResolution": "node"
+    },
+    "include": [
+        "."
+    ]
+}

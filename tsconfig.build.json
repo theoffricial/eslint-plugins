@@ -4,7 +4,7 @@
         // specifically disable declarations for the plugin
         "declaration": false,
         "declarationMap": false,
-        "outDir": "./dist",
+        "outDir": "./build",
         "rootDir": "./src",
         "resolveJsonModule": true
     },

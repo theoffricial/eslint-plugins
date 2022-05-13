@@ -1,9 +1,5 @@
-// import noCommonjsExports from './rules/no-commonjs-exports'
+import { rules } from './rules'
 
-export const rules = {
-    // 'no-commonjs-exports': noCommonjsExports
-}
-
-export const configs = {
-
+export {
+    rules
 }
