@@ -28,12 +28,12 @@ function isStaticValue(arg: TSESTree.CallExpressionArgument | TSESTree.Expressio
 export default createRule<Options, MessageIds>({
     defaultOptions: [{}],
     name: 'bla-test-rule',
+
     meta: {
         type: 'suggestion',
         docs: {
-            description: '',
-            recommended: false,
-            // url: docsUrl('no-dynamic-require'),
+            description: 'test bla rule',
+            recommended: false
         },
         messages: {
             bla1: 'Blabla 1',
@@ -55,7 +55,7 @@ export default createRule<Options, MessageIds>({
 
     create(context) {
 
-        const [{ esmodule }] = context.options;
+        const [{ esmodule } = { esmodule: false }] = context.options;
 
         return {
             CallExpression(node) {
