@@ -27,7 +27,7 @@ function isStaticValue(arg: TSESTree.CallExpressionArgument | TSESTree.Expressio
 
 export default createRule<Options, MessageIds>({
     defaultOptions: [{}],
-    name: 'bla-rule',
+    name: 'bla-test-rule',
     meta: {
         type: 'suggestion',
         docs: {

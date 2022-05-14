@@ -2,7 +2,7 @@
 
 const repoUrl = 'https://github.com/import-js/eslint-plugin-import';
 
-export default function docsUrl(ruleName) { // , commitish = `v${pkg.version}`) {
+export default function docsUrl(ruleName: string) { // , commitish = `v${pkg.version}`) {
   // return `${repoUrl}/blob/${commitish}/docs/rules/${ruleName}.md`;
   return `${repoUrl}/blob/main/docs/rules/${ruleName}.md`;
 }

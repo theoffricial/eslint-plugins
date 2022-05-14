@@ -2,11 +2,14 @@
     "extends": "./tsconfig.build1.json",
     "compilerOptions": {
         "composite": false,
-        "rootDir": ".",
+        // "rootDir": ".",
         "target": "ES2017",
-        "moduleResolution": "node"
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        // "listEmittedFiles": true,
+        // "listFilesOnly": true
     },
     "include": [
-        "."
+        "src"
     ]
 }

@@ -5,12 +5,12 @@
         "declaration": false,
         "declarationMap": false,
         "outDir": "./build",
-        "rootDir": "./src",
+        // "rootDir": "./src",
         "resolveJsonModule": true
     },
     "include": [
         "src",
-        "typings"
+        // "typings"
     ],
     // "references": [
     //     {

@@ -1,5 +1,8 @@
 import { rules } from './rules'
-
-export {
-    rules
+import testConfig from './configs/test'
+export = {
+    rules,
+    configs: {
+        test: testConfig,
+    }
 }
