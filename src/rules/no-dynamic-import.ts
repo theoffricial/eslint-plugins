@@ -1,21 +1,24 @@
 import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/types';
+import { BABEL_PARSER_AST_NODE_TYPES, TBABEL_PARSER_AST_NODE_TYPES } from '../types/babel-ast-nodes';
 import { createRule } from '../util';
 
-type Options = [{ esmodule?: boolean }]
-type MessageIds = 'bla1' | 'bla2' | 'bla3';
+export type Options = [{ esmodule?: boolean }];
+export type MessageIds = 'requireShouldBeLiteral' | 'legacyImportShouldBeLiteral' | 'importShouldBeLiteral';
 
 function isRequire(node: TSESTree.CallExpression) {
     return node &&
         node.callee &&
-        node.callee.type === 'Identifier' &&
+        node.callee.type === AST_NODE_TYPES.Identifier &&
         node.callee.name === 'require' &&
         node.arguments.length >= 1;
 }
 
+/** This function supports @babel/parser */
 function isDynamicImport(node: TSESTree.CallExpression) {
     return node &&
         node.callee &&
-        node.callee.type.includes('Import')
+        // from @babel/parser
+        node.callee.type === BABEL_PARSER_AST_NODE_TYPES.Import as string
 }
 
 function isStaticValue(arg: TSESTree.CallExpressionArgument | TSESTree.Expression) {
@@ -23,11 +26,10 @@ function isStaticValue(arg: TSESTree.CallExpressionArgument | TSESTree.Expressio
         (arg.type === AST_NODE_TYPES.TemplateLiteral && arg.expressions.length === 0);
 }
 
-// const dynamicImportErrorMessage = 'Calls to import() should use string literals';
 
 export default createRule<Options, MessageIds>({
     defaultOptions: [{}],
-    name: 'bla-test-rule',
+    name: 'no-dynamic-import',
 
     meta: {
         type: 'suggestion',
@@ -36,9 +38,9 @@ export default createRule<Options, MessageIds>({
             recommended: false
         },
         messages: {
-            bla1: 'Blabla 1',
-            bla2: 'Blabla 2',
-            bla3: 'Blabla 3',
+            requireShouldBeLiteral: 'Calls to require() should use string literals',
+            legacyImportShouldBeLiteral: 'Calls to import() should use string literals',
+            importShouldBeLiteral: 'Calls to import() should use string literals',
         },
         schema: [
             {
@@ -62,18 +64,18 @@ export default createRule<Options, MessageIds>({
                 if (!node.arguments[0] || isStaticValue(node.arguments[0])) {
                     return;
                 }
+
                 if (isRequire(node)) {
                     return context.report({
                         node,
-                        messageId: 'bla1',
+                        messageId: 'requireShouldBeLiteral',
                         // message: 'Calls to require() should use string literals',
                     });
                 }
                 if (esmodule && isDynamicImport(node)) {
                     return context.report({
                         node,
-                        messageId: 'bla2',
-                        // message: dynamicImportErrorMessage,
+                        messageId: 'legacyImportShouldBeLiteral',
                     });
                 }
             },
@@ -83,8 +85,7 @@ export default createRule<Options, MessageIds>({
                 }
                 return context.report({
                     node,
-                    messageId: 'bla3',
-                    // message: dynamicImportErrorMessage,
+                    messageId: 'importShouldBeLiteral',
                 });
             },
         };
