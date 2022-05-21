@@ -1,8 +1,3 @@
-/**
- * @fileoverview Rule to prefer ES6 to CJS
- * @author Jamund Ferguson
- */
-
 import { TSESTree, AST_NODE_TYPES } from "@typescript-eslint/types";
 import { TSESLint, ESLintUtils } from "@typescript-eslint/utils";
 
@@ -23,8 +18,9 @@ function allowPrimitive(
     options: IOptionsObject
 ) {
     if (!options.allowPrimitiveModules) return false; // seems incorrect. should be options[index].allowPrimitiveModules
-    if (node?.parent?.type !== "AssignmentExpression") return false;
-    return node?.parent?.right?.type !== "ObjectExpression";
+    if (node?.parent?.type !== AST_NODE_TYPES.AssignmentExpression)
+        return false;
+    return node?.parent?.right?.type !== AST_NODE_TYPES.ObjectExpression;
 }
 
 function allowRequire(node: TSESTree.CallExpression, options: IOptionsObject) {
@@ -44,10 +40,10 @@ function validateScope(scope: TSESLint.Scope.Scope) {
 
 function isConditional(node: TSESTree.Node): boolean {
     if (
-        node.type === "IfStatement" ||
-        node.type === "TryStatement" ||
-        node.type === "LogicalExpression" ||
-        node.type === "ConditionalExpression"
+        node.type === AST_NODE_TYPES.IfStatement ||
+        node.type === AST_NODE_TYPES.TryStatement ||
+        node.type === AST_NODE_TYPES.LogicalExpression ||
+        node.type === AST_NODE_TYPES.ConditionalExpression
     )
         return true;
     if (node.parent) return isConditional(node.parent);
@@ -57,8 +53,10 @@ function isConditional(node: TSESTree.Node): boolean {
 function isLiteralString(node: TSESTree.Node | null) {
     if (!node) return false;
     return (
-        (node.type === "Literal" && typeof node.value === "string") ||
-        (node.type === "TemplateLiteral" && node.expressions.length === 0)
+        (node.type === AST_NODE_TYPES.Literal &&
+            typeof node.value === "string") ||
+        (node.type === AST_NODE_TYPES.TemplateLiteral &&
+            node.expressions.length === 0)
     );
 }
 
