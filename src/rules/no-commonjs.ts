@@ -1,26 +1,11 @@
 import { TSESTree, AST_NODE_TYPES } from "@typescript-eslint/types";
-import { TSESLint, ESLintUtils } from "@typescript-eslint/utils";
 
 import { createRule } from "../util";
 import docsUrl from "../docsUrl";
-type MessageIds = "importMessage" | "exportMessage";
 
 interface IOptionsObject {
-    allowPrimitiveModules?: boolean;
     allowRequire?: boolean;
     allowConditionalRequire?: boolean;
-}
-
-type TContext = Readonly<TSESLint.RuleContext<MessageIds, IOptionsObject[]>>;
-
-function allowPrimitive(
-    node: TSESTree.MemberExpression,
-    options: IOptionsObject
-) {
-    if (!options.allowPrimitiveModules) return false; // seems incorrect. should be options[index].allowPrimitiveModules
-    if (node?.parent?.type !== AST_NODE_TYPES.AssignmentExpression)
-        return false;
-    return node?.parent?.right?.type !== AST_NODE_TYPES.ObjectExpression;
 }
 
 function allowRequire(node: TSESTree.CallExpression, options: IOptionsObject) {
@@ -31,11 +16,7 @@ function allowConditionalRequire(
     node: TSESTree.CallExpression,
     options: IOptionsObject
 ) {
-    return options.allowConditionalRequire !== false;
-}
-
-function validateScope(scope: TSESLint.Scope.Scope) {
-    return scope.variableScope.type === "module";
+    return options.allowConditionalRequire;
 }
 
 function isConditional(node: TSESTree.Node): boolean {
@@ -79,7 +60,6 @@ export default createRule({
             {
                 type: "object",
                 properties: {
-                    allowPrimitiveModules: { type: "boolean" },
                     allowRequire: { type: "boolean" },
                     allowConditionalRequire: { type: "boolean" },
                 },
@@ -98,11 +78,10 @@ export default createRule({
                     node.object.name === "module" &&
                     node.property.name === "exports"
                 ) {
-                    if (allowPrimitive(node, options)) return;
                     context.report({ node, messageId: "exportMessage" });
                 }
 
-                // exports.
+                // exports
                 if (node.object.name === "exports") {
                     const isInScope = context // ?
                         .getScope()
@@ -115,13 +94,11 @@ export default createRule({
                 }
             },
             CallExpression: function (call) {
-                if (!validateScope(context.getScope())) return;
-
                 if (call.callee.type !== "Identifier") return;
                 if (call.callee.name !== "require") return;
 
                 if (call.arguments.length !== 1) return;
-                if (!isLiteralString(call.arguments[0])) return;
+                if (!isLiteralString(call.arguments[0])) return; // Do we want 1 arg only or any arg?
 
                 if (allowRequire(call, options)) return;
 
