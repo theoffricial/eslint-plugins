@@ -32,7 +32,6 @@ ruleTester.run('no-require', rule, {
             parserOptions: { ecmaVersion: 2015 },
         },
         { code: 'var zero = require(0);' },
-        { code: 'require("x")', options: [{ allowRequire: true }] },
 
         // allowConditionalRequire option true
         {

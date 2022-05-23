@@ -2,9 +2,7 @@ import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/types';
 
 import { createRule } from '../util';
 
-export type Options = [
-    { allowRequire?: boolean; allowConditionalRequire?: boolean }
-];
+export type Options = [{ allowConditionalRequire?: boolean }];
 export type MessageIds = 'importInsteadOfRequire';
 
 function isConditional(node: TSESTree.Node): boolean {
@@ -46,7 +44,6 @@ export default createRule<Options, MessageIds>({
             {
                 type: 'object',
                 properties: {
-                    allowRequire: { type: 'boolean' },
                     allowConditionalRequire: { type: 'boolean' },
                 },
                 additionalProperties: false,
@@ -55,8 +52,7 @@ export default createRule<Options, MessageIds>({
     },
 
     create(context) {
-        const { allowRequire = false, allowConditionalRequire = false } =
-            context.options[0] || {};
+        const { allowConditionalRequire = false } = context.options[0] || {};
 
         return {
             CallExpression: function (call) {
@@ -66,8 +62,6 @@ export default createRule<Options, MessageIds>({
                 if (call.arguments.length !== 1) return;
                 // keeping it simple: all 1-string-arg `require` calls are reported
                 if (!isLiteralString(call.arguments[0])) return; // Do we want 1 arg only or any arg?
-
-                if (allowRequire) return;
 
                 if (
                     allowConditionalRequire &&
