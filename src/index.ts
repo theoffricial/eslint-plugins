@@ -1,8 +1,8 @@
 import { rules } from './rules'
-import testConfig from './configs/test'
+import testConfig from './configs/js-with-ts'
 export = {
     rules,
     configs: {
-        test: testConfig,
+        'js-with-ts': testConfig,
     }
 }

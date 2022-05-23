@@ -1,5 +1,6 @@
-import blaTestRule from './bla-test-rule'
+import noDynamicImport from './no-dynamic-import'
 
 export const rules = {
-    'bla-test-rule': blaTestRule
+    // An example rule
+    'no-dynamic-import': noDynamicImport
 }
