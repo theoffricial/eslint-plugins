@@ -2,7 +2,8 @@
 // this rule tests the new lines, which prettier will want to fix and break the tests
 /* eslint "@typescript-eslint/internal/plugin-test-formatting": ["error", { formatWithPrettier: false }] */
 /* eslint-enable eslint-comments/no-use */
-import rule, * as noCommonJsModuleExports from '../../src/rules/no-commonjs-module-exports';
+import rule from '../../src/rules/no-commonjs-module-exports';
+
 import { RuleTester } from '../RuleTester';
 
 const ruleTester = new RuleTester({
