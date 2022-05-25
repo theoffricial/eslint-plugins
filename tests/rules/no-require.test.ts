@@ -20,7 +20,6 @@ ruleTester.run('no-require', rule, {
         { code: 'import x from "x"' },
         { code: 'import { x } from "x"' },
 
-        // allowed requires - which ones do we want to allow?
         { code: 'require.resolve("help")' }, // methods of require are allowed
         { code: 'require.ensure([])' }, // webpack specific require.ensure is allowed
         { code: 'require([], function(a, b, c) {})' }, // AMD require is allowed
@@ -33,7 +32,7 @@ ruleTester.run('no-require', rule, {
         },
         { code: 'var zero = require(0);' },
 
-        // allowConditionalRequire option true
+        // allowConditionalRequire option is true
         {
             code: 'if (typeof window !== "undefined") require("x")',
             options: [{ allowConditionalRequire: true }],
@@ -49,7 +48,6 @@ ruleTester.run('no-require', rule, {
     ],
     invalid: [
         // requires
-        //
         {
             code: 'function a() { var x = require("y"); }',
             errors: [{ messageId: 'importInsteadOfRequire' }],
@@ -58,7 +56,6 @@ ruleTester.run('no-require', rule, {
             code: 'var a = c && require("b")',
             errors: [{ messageId: 'importInsteadOfRequire' }],
         },
-        //
         {
             code: 'var x = require("x")',
             errors: [{ messageId: 'importInsteadOfRequire' }],
