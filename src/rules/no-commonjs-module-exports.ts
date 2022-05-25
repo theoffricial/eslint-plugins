@@ -1,7 +1,7 @@
 import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/types';
 import { TSESLint } from '@typescript-eslint/utils';
 
-import { createRule } from '../util';
+import { createRule, ruleMessageTemplate } from '../util';
 
 export type Options = [];
 export type MessageIds = 'noCommonJsModuleExports';
@@ -35,8 +35,10 @@ export default createRule<Options, MessageIds>({
             recommended: false,
         },
         messages: {
-            noCommonJsModuleExports:
-                'Expected "export" or "export default" instead of "module.exports"',
+            noCommonJsModuleExports: ruleMessageTemplate({
+                why: 'Prefer ESM import/export syntax over CommonJS module.exports and require().',
+                linterMessage: 'Expected "export" or "export default" instead of "module.exports"',
+            }),
         },
         schema: [],
     },
@@ -44,10 +46,7 @@ export default createRule<Options, MessageIds>({
     create(context) {
         return {
             MemberExpression: function (node) {
-                if (
-                    isModuleExports(node) &&
-                    isScopeAModule(context.getScope())
-                ) {
+                if (isModuleExports(node) && isScopeAModule(context.getScope())) {
                     context.report({
                         node,
                         messageId: 'noCommonJsModuleExports',
