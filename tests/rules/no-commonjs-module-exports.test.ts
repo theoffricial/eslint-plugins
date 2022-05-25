@@ -2,11 +2,14 @@
 // this rule tests the new lines, which prettier will want to fix and break the tests
 /* eslint "@typescript-eslint/internal/plugin-test-formatting": ["error", { formatWithPrettier: false }] */
 /* eslint-enable eslint-comments/no-use */
-import rule, * as noModuleExports from '../../src/rules/no-module-exports';
+import rule, * as noCommonJsModuleExports from '../../src/rules/no-commonjs-module-exports';
 import { RuleTester } from '../RuleTester';
 
 const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
+    parserOptions: {
+        sourceType: 'module',
+    },
 });
 
 ruleTester.run('no-require', rule, {
@@ -21,31 +24,41 @@ ruleTester.run('no-require', rule, {
                 "  expect(exports.someProp).toEqual({ a: 'value' });\n" +
                 '}',
         },
+
+        // script
+        {
+            code: 'module.exports = face',
+            parserOptions: { sourceType: 'script' },
+        },
+        {
+            code: 'module.exports.face = "palm"',
+            parserOptions: { sourceType: 'script' },
+        },
     ],
     invalid: [
         {
             code: 'module.exports.face = "palm"',
-            errors: [{ messageId: 'noModuleExports' }],
+            errors: [{ messageId: 'noCommonJsModuleExports' }],
         },
         {
             code: 'module.exports = face',
-            errors: [{ messageId: 'noModuleExports' }],
+            errors: [{ messageId: 'noCommonJsModuleExports' }],
         },
         {
             code: 'exports = module.exports = {}',
-            errors: [{ messageId: 'noModuleExports' }],
+            errors: [{ messageId: 'noCommonJsModuleExports' }],
         },
         {
             code: 'var x = module.exports = {}',
-            errors: [{ messageId: 'noModuleExports' }],
+            errors: [{ messageId: 'noCommonJsModuleExports' }],
         },
         {
             code: 'module.exports = {}',
-            errors: [{ messageId: 'noModuleExports' }],
+            errors: [{ messageId: 'noCommonJsModuleExports' }],
         },
         {
             code: 'var x = module.exports',
-            errors: [{ messageId: 'noModuleExports' }],
+            errors: [{ messageId: 'noCommonJsModuleExports' }],
         },
     ],
 });
