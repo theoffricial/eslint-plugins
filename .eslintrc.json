@@ -1,0 +1,48 @@
+{
+    "parser": "@typscript-eslint/parser",
+    "env": {
+        "node": true,
+        "jest": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "root": true,
+    "plugins": [
+        "@typescript-eslint/eslint-plugin",
+        "import",
+        "unicorn"
+    ],
+    "overrides": [],
+    "settings": {},
+    "ignorePatterns": [],
+    "rules": {
+        // typescript-eslint-rules
+        "@typescript-eslint/adjacent-overload-signatures": "error",
+        "@typescript-eslint/array-type": [
+            "error",
+            {
+                "default": "array"
+            }
+        ],
+        "@typescript-eslint/await-thenable": "error",
+        "@typescript-eslint/ban-ts-comment": [
+            "error",
+            {
+                "minimumDescriptionLength": 10,
+                "ts-expect-error": "allow-with-description",
+                "ts-check": "allow-with-description",
+                "ts-ignore": true,
+                "ts-nocheck": true
+            }
+        ],
+        "@typescript-eslint/ban-types": [
+            "error",
+            {
+                "types": {},
+                "extendDefaults": true
+            }
+        ]
+    }
+}
