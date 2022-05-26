@@ -6,7 +6,8 @@ import { createRule, ruleMessageTemplate } from "../util";
 export type Options = [];
 export type MessageIds = 'noCommonJSExports';
 
-const topLevelVariablesSet = new Set<string>()
+const topLevelVariablesSet = new Set<string>();
+const EXPORTS = "exports";
 
 export default createRule<Options, MessageIds>({
     defaultOptions: [],
@@ -20,8 +21,8 @@ export default createRule<Options, MessageIds>({
         fixable: 'code',
         messages: {
             noCommonJSExports: ruleMessageTemplate({
-                why: 'TypeScript is recommending to use the ESM (ECMAScript Modules)',
-                linterMessage: 'Calls to CommonJS "exports" should be replaced with ESM "export" syntax.'
+                why: 'TypeScript official module system is ESM (ECMAScript Modules), Also the future of JavaScript in general.',
+                linterMessage: `Calls to CommonJS "${EXPORTS}" should be replaced with ESM "export" syntax.`
             })
         },
         schema: [],
@@ -87,7 +88,6 @@ export default createRule<Options, MessageIds>({
     }
 })
 
-const EXPORTS = "exports"
 
 function isModuleScope(scope: Scope.Scope) {
     return scope.variableScope.type === EScopeType.Module;

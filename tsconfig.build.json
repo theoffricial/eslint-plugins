@@ -1,29 +1,13 @@
 {
-    "extends": "../../tsconfig.base.json",
+    "extends": "./tsconfig.base.json",
     "compilerOptions": {
         // specifically disable declarations for the plugin
         "declaration": false,
         "declarationMap": false,
         "outDir": "./build",
-        // "rootDir": "./src",
         "resolveJsonModule": true
     },
     "include": [
-        "src",
-        // "typings"
+        "src"
     ],
-    // "references": [
-    //     {
-    //         "path": "../utils/tsconfig.build.json"
-    //     },
-    //     {
-    //         "path": "../parser/tsconfig.build.json"
-    //     },
-    //     {
-    //         "path": "../scope-manager/tsconfig.build.json"
-    //     },
-    //     {
-    //         "path": "../type-utils/tsconfig.build.json"
-    //     }
-    // ]
 }
