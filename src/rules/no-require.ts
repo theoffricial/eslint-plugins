@@ -5,30 +5,8 @@ import { createRule, ruleMessageTemplate } from '../util';
 export type Options = [{ allowConditionalRequire?: boolean }];
 export type MessageIds = 'importInsteadOfRequire';
 
-/** This function checks for a conditional statement */
-function isConditional(node: TSESTree.Node): boolean {
-    if (
-        node.type === AST_NODE_TYPES.IfStatement ||
-        node.type === AST_NODE_TYPES.TryStatement ||
-        node.type === AST_NODE_TYPES.LogicalExpression ||
-        node.type === AST_NODE_TYPES.ConditionalExpression
-    )
-        return true;
-    if (node.parent) return isConditional(node.parent);
-    return false;
-}
-
-/** This function checks for literal  */
-function isLiteralString(node: TSESTree.Node | null): boolean {
-    if (!node) return false;
-    return (
-        (node.type === AST_NODE_TYPES.Literal && typeof node.value === 'string') ||
-        (node.type === AST_NODE_TYPES.TemplateLiteral && node.expressions.length === 0)
-    );
-}
-
 export default createRule<Options, MessageIds>({
-    defaultOptions: [{}],
+    defaultOptions: [{ allowConditionalRequire: false }],
     name: 'no-require',
     meta: {
         type: 'suggestion',
@@ -50,6 +28,7 @@ export default createRule<Options, MessageIds>({
             {
                 type: 'object',
                 properties: {
+                    // example: 'if (typeof window !== "undefined") require("x")'
                     allowConditionalRequire: { type: 'boolean' },
                 },
                 additionalProperties: false,
@@ -62,15 +41,11 @@ export default createRule<Options, MessageIds>({
 
         return {
             CallExpression: function (node) {
-                if (node.callee.type !== AST_NODE_TYPES.Identifier) return;
-                if (node.callee.name !== 'require') return;
+                if (!isRequire(node)) return;
 
-                // keeping it simple: all 1-string-arg `require` calls are reported
-                if (node.arguments.length !== 1) return;
+                if (!hasOneArgument(node)) return;
 
-                if (!isLiteralString(node.arguments[0])) return;
-
-                if (allowConditionalRequire && node.parent && isConditional(node.parent)) return;
+                if (allowConditionalRequire && isConditional(node)) return;
                 context.report({
                     node: node.callee,
                     messageId: 'importInsteadOfRequire',
@@ -79,3 +54,37 @@ export default createRule<Options, MessageIds>({
         };
     },
 });
+
+/** Checks that the 'require()' call has only 1 argument (TS shows error when more than 1 argument is provided) */
+function hasOneArgument(node: TSESTree.CallExpression): boolean {
+    return node.arguments.length === 1;
+}
+
+/** Checks if the callee (what is being called) is 'require()' */
+function isRequire(node: TSESTree.CallExpression): boolean {
+    return node.callee.type === AST_NODE_TYPES.Identifier && node.callee.name === 'require';
+}
+
+/** Checks for a conditional statement.
+ * example: 'if (true) require("x")'
+ */
+function isConditional(node: TSESTree.Node): boolean {
+    if (
+        node.type === AST_NODE_TYPES.IfStatement ||
+        node.type === AST_NODE_TYPES.TryStatement ||
+        node.type === AST_NODE_TYPES.LogicalExpression ||
+        node.type === AST_NODE_TYPES.ConditionalExpression
+    )
+        return true;
+    if (node.parent) return isConditional(node.parent);
+    return false;
+}
+
+/** Checks if a node is of type 'string'  */
+function isLiteralString(node: TSESTree.Node | null): boolean {
+    if (!node) return false;
+    return (
+        (node.type === AST_NODE_TYPES.Literal && typeof node.value === 'string') ||
+        (node.type === AST_NODE_TYPES.TemplateLiteral && node.expressions.length === 0)
+    );
+}
