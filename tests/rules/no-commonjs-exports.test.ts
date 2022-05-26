@@ -4,45 +4,45 @@ import { RuleTester } from '../RuleTester';
 
 const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
+    parserOptions: {
+        sourceType: 'module'
+    }
 });
 
 
 ruleTester.run('no-commonjs-exports', rule, {
     valid: [
+        // esm export cases
         { code: 'export const a = {}' },
         { code: 'export default {}' },
+        // esm export default cases
         { code: 'module.exports = {}' },
         { code: 'module.exports.a = {}' },
+        // script case
+        {
+            code: 'const a = "test"; exports.a = {}',
+            parserOptions: {
+                sourceType: 'script'
+            }
+        },
     ],
     invalid: [
-        // 
+        // Identifier cases
         { code: 'exports={}', errors: [{ messageId: 'noCommonJSExports' }] },
         { code: 'exports = {}', errors: [{ messageId: 'noCommonJSExports' }] },
         { code: 'exports ={}', errors: [{ messageId: 'noCommonJSExports' }] },
         { code: 'exports = "str"', errors: [{ messageId: 'noCommonJSExports' }] },
         { code: 'exports = () => {}', errors: [{ messageId: 'noCommonJSExports' }] },
-        // isExportsPropertyAssigned & sourceType='module'
+        // MemberExpression cases
         {
             code: 'exports.a = {}',
             errors: [{ messageId: 'noCommonJSExports' }],
-            parserOptions: {
-                sourceType: 'module'
-            },
             output: 'export const a = {}'
         },
-        // isExportsPropertyAssigned & sourceType='script'
         {
             code: 'const a = "test"; exports.a = {}',
             errors: [{ messageId: 'noCommonJSExports' }],
-            output: 'const a = "test"; exports.a = {}'
-        },
-        {
-            code: 'const a = "test"; exports.a = {}',
-            parserOptions: {
-                sourceType: 'script'
-            },
-            errors: [{ messageId: 'noCommonJSExports' }],
-            output: 'const a = "test"; exports.a = {}'
+            output: 'const a = "test"; exports.a = {}',
         },
     ]
 });

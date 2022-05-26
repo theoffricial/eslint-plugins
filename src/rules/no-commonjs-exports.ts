@@ -1,4 +1,6 @@
 import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/types";
+import { Scope } from "@typescript-eslint/utils/dist/ts-eslint";
+import { EScopeType } from "../constants";
 import { createRule, ruleMessageTemplate } from "../util";
 
 export type Options = [];
@@ -27,60 +29,59 @@ export default createRule<Options, MessageIds>({
     },
     create(context) {
         return {
-            AssignmentExpression(node) {
-                if (isAssignment(node)) {
-                    if (isExportsAssigned(node)) {
-                        context.report({
-                            node,
-                            messageId: 'noCommonJSExports'
-                        })
-                    } else if (isExportsPropertyAssigned(node)) {
-                        const nodeLeft = node.left as TSESTree.MemberExpression
-                        // const nodeLeft = 
-                        const nodeLeftPropIdentifier = nodeLeft.property as TSESTree.Identifier
-                        context.report({
-                            node,
-                            messageId: 'noCommonJSExports',
-                            fix(fixer) {
-                                return [
-                                    ...(
-                                        // should fix only for modules
-                                        !isExportsFromModule(node) ||
-                                            // and only if no variable existsZ
-                                            topLevelVariablesSet.has(nodeLeftPropIdentifier.name) ?
-                                            [] :
-                                            [
-                                                fixer.replaceTextRange([
-                                                    // from
-                                                    nodeLeft.range[0],
-                                                    // to
-                                                    nodeLeft.property.range[0]
-                                                ], "export const ")
-                                            ]
-                                    )
-                                ]
-                            }
-                        })
-                    }
-                } else {
+            Program(_node) {
+                topLevelVariablesSet.clear()
+            },
+            MemberExpression(node) {
+                if (!isModuleScope(context.getScope())) {
                     return;
+                }
+                if (doesMemberExpressionIsExports(node)) {
+                    const nodeLeftPropIdentifier = node.property as TSESTree.Identifier
+                    context.report({
+                        node,
+                        messageId: 'noCommonJSExports',
+                        fix(fixer) {
+                            return [
+                                ...(
+                                    // and only if no variable exists
+                                    topLevelVariablesSet.has(nodeLeftPropIdentifier.name) ?
+                                        [] :
+                                        [
+                                            fixer.replaceTextRange([
+                                                // from
+                                                node.range[0],
+                                                // to
+                                                node.property.range[0]
+                                            ], "export const ")
+                                        ]
+                                )
+                            ]
+                        }
+                    })
+                }
+            },
+            Identifier(node) {
+                if (!isModuleScope(context.getScope())) {
+                    return;
+                }
+                if (doesIdentifierIsExports(node)) {
+                    context.report({
+                        node,
+                        messageId: 'noCommonJSExports'
+                    })
                 }
             },
             // Collection all top-level variables to understand if automatic fix is possible
             VariableDeclaration(node) {
-                if (!node.parent || !node.parent || node.parent.type !== AST_NODE_TYPES.Program) {
-                    return;
-                } else if (node.parent.sourceType !== 'module') {
-                    // only for module scripts
+                if (!isModuleScope(context.getScope())) {
                     return;
                 }
-                else if (node && node.type === AST_NODE_TYPES.VariableDeclaration) {
-                    node.declarations.forEach(d => {
-                        if (d.id.type === AST_NODE_TYPES.Identifier) {
-                            topLevelVariablesSet.add(d.id.name);
-                        }
-                    })
-                }
+                node.declarations.forEach(d => {
+                    if (d.id.type === AST_NODE_TYPES.Identifier) {
+                        topLevelVariablesSet.add(d.id.name);
+                    }
+                })
             },
         }
     }
@@ -88,29 +89,25 @@ export default createRule<Options, MessageIds>({
 
 const EXPORTS = "exports"
 
-/** Verifies the AssignmentStatement */
-function isAssignment(node: TSESTree.AssignmentExpression) {
-    return node &&
-        node.operator === '=' &&
-        node.left
+function isModuleScope(scope: Scope.Scope) {
+    return scope.variableScope.type === EScopeType.Module;
 }
 
 /** Detects cases like: `exports = {}` */
-function isExportsAssigned(node: TSESTree.AssignmentExpression) {
-    return node.left.type === AST_NODE_TYPES.Identifier &&
-        node.left.name === EXPORTS
+function doesIdentifierIsExports(node: TSESTree.Identifier) {
+    return node.parent &&
+        node.parent.type === AST_NODE_TYPES.AssignmentExpression &&
+        node.parent.operator === '=' &&
+        node.parent.parent?.type === AST_NODE_TYPES.ExpressionStatement &&
+        node.parent.parent.parent?.type === AST_NODE_TYPES.Program &&
+        node.parent.parent.parent?.sourceType === EScopeType.Module
 }
 
 /** Detects cases like: `exports.a = {}` */
-function isExportsPropertyAssigned(node: TSESTree.AssignmentExpression) {
-    return node.left.type === AST_NODE_TYPES.MemberExpression &&
-        node.left.object.type === AST_NODE_TYPES.Identifier &&
-        node.left.object.name === EXPORTS &&
-        node.left.property &&
-        node.left.property.type === AST_NODE_TYPES.Identifier
-}
-
-/** Check if `exports.a = {}` or `exports = {}` is sourceType='module' */
-function isExportsFromModule(node: TSESTree.AssignmentExpression) {
-    return node.parent && node.parent.parent && node.parent.parent.type === AST_NODE_TYPES.Program && node.parent.parent.sourceType === 'module'
+function doesMemberExpressionIsExports(node: TSESTree.MemberExpression) {
+    return node.type === AST_NODE_TYPES.MemberExpression &&
+        node.object.type === AST_NODE_TYPES.Identifier &&
+        node.object.name === EXPORTS &&
+        node.property &&
+        node.property.type === AST_NODE_TYPES.Identifier
 }
