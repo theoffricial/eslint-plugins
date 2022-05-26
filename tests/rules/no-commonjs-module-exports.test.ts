@@ -13,7 +13,7 @@ const ruleTester = new RuleTester({
     },
 });
 
-ruleTester.run('no-require', rule, {
+ruleTester.run('no-commonjs-module-exports', rule, {
     valid: [
         { code: 'export default "x"' },
         { code: 'export function house() {}' },
