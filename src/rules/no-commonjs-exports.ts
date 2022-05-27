@@ -1,15 +1,16 @@
-import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/types";
-import { Scope } from "@typescript-eslint/utils/dist/ts-eslint";
+import type { TSESTree } from "@typescript-eslint/types";
+import { AST_NODE_TYPES } from "@typescript-eslint/types";
+import type { Scope } from "@typescript-eslint/utils/dist/ts-eslint";
 import { EScopeType } from "../constants";
 import { createRule, ruleMessageTemplate } from "../util";
 
-export type Options = [];
-export type MessageIds = 'noCommonJSExports';
+export type TOptions = [];
+export type TMessageIds = 'noCommonJSExports';
 
 const topLevelVariablesSet = new Set<string>();
 const EXPORTS = "exports";
 
-export default createRule<Options, MessageIds>({
+export default createRule<TOptions, TMessageIds>({
     defaultOptions: [],
     name: 'no-commonjs-exports',
     meta: {
@@ -30,7 +31,7 @@ export default createRule<Options, MessageIds>({
     },
     create(context) {
         return {
-            Program(_node) {
+            Program(node) {
                 topLevelVariablesSet.clear()
             },
             MemberExpression(node) {
