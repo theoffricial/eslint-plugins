@@ -37,7 +37,7 @@ export default createRule<Options, MessageIds>({
                 if (!isModuleScope(context.getScope())) {
                     return;
                 }
-                if (doesMemberExpressionIsExports(node)) {
+                if (isMemberExpressionAnExports(node)) {
                     const nodeLeftPropIdentifier = node.property as TSESTree.Identifier
                     context.report({
                         node,
@@ -73,7 +73,7 @@ export default createRule<Options, MessageIds>({
                     })
                 }
             },
-            // Collection all top-level variables to understand if automatic fix is possible
+            // Collect all top-level variables to check if automatic fix is possible
             VariableDeclaration(node) {
                 if (!isModuleScope(context.getScope())) {
                     return;
@@ -104,7 +104,7 @@ function doesIdentifierIsExports(node: TSESTree.Identifier) {
 }
 
 /** Detects cases like: `exports.a = {}` */
-function doesMemberExpressionIsExports(node: TSESTree.MemberExpression) {
+function isMemberExpressionAnExports(node: TSESTree.MemberExpression) {
     return node.type === AST_NODE_TYPES.MemberExpression &&
         node.object.type === AST_NODE_TYPES.Identifier &&
         node.object.name === EXPORTS &&
