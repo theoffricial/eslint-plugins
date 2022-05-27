@@ -10,7 +10,6 @@ export type MessageIds = 'noCommonJsModuleExports';
 function isModuleExports(node: TSESTree.MemberExpression): boolean {
     return Boolean(
         node &&
-            node.type === AST_NODE_TYPES.MemberExpression &&
             node.object.type === AST_NODE_TYPES.Identifier &&
             node.object.name === 'module' &&
             node.property.type === AST_NODE_TYPES.Identifier &&

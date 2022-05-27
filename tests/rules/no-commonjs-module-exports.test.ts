@@ -15,7 +15,10 @@ const ruleTester = new RuleTester({
 
 ruleTester.run('no-commonjs-module-exports', rule, {
     valid: [
+        // esm export default cases
         { code: 'export default "x"' },
+
+        // esm export cases
         { code: 'export function house() {}' },
         {
             code:
