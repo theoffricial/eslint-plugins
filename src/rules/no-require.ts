@@ -1,11 +1,12 @@
-import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/types';
+import type { TSESTree } from '@typescript-eslint/types';
+import { AST_NODE_TYPES } from '@typescript-eslint/types';
 
 import { createRule, ruleMessageTemplate } from '../util';
 
-export type Options = [{ allowConditionalRequire?: boolean }];
-export type MessageIds = 'importInsteadOfRequire';
+export type TOptions = [{ allowConditionalRequire?: boolean }];
+export type TMessageIds = 'importInsteadOfRequire';
 
-export default createRule<Options, MessageIds>({
+export default createRule<TOptions, TMessageIds>({
     defaultOptions: [{ allowConditionalRequire: false }],
     name: 'no-require',
     meta: {

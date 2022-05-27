@@ -1,5 +1,4 @@
 // this rule tests the new lines, which prettier will want to fix and break the tests
-import { TSESLint } from '@typescript-eslint/utils';
 import type { InvalidTestCase, ValidTestCase } from '@typescript-eslint/utils/dist/ts-eslint';
 import type * as noDynamicImportTypes from '../../src/rules/no-dynamic-import';
 import rule from '../../src/rules/no-dynamic-import';

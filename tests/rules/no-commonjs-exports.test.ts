@@ -1,5 +1,4 @@
-import { InvalidTestCase, ValidTestCase } from '@typescript-eslint/utils/dist/ts-eslint';
-import rule, * as noCommonjsExportsTypes from '../../src/rules/no-commonjs-exports';
+import rule from '../../src/rules/no-commonjs-exports';
 import { RuleTester } from '../RuleTester';
 
 const ruleTester = new RuleTester({

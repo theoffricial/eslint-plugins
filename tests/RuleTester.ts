@@ -5,6 +5,6 @@ function getFixturesRootDir(): string {
   return path.join(__dirname, 'fixtures');
 }
 
-const { batchedSingleLineTests, RuleTester, noFormat } = ESLintUtils;
+const { batchedSingleLineTests, RuleTester: ruleTester, noFormat } = ESLintUtils;
 
-export { batchedSingleLineTests, getFixturesRootDir, noFormat, RuleTester };
+export { batchedSingleLineTests, getFixturesRootDir, noFormat, ruleTester as RuleTester };

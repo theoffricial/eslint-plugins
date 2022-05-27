@@ -80,7 +80,7 @@ const self = {
             "error",
             {
                 "format": [
-                    "strictCamelCase",
+                    "camelCase",
                     "UPPER_CASE"
                 ],
                 "selector": [
@@ -89,7 +89,7 @@ const self = {
             },
             {
                 "format": [
-                    "strictCamelCase"
+                    "camelCase"
                 ],
                 "selector": [
                     "function",

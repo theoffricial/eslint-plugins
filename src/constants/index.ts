@@ -1,12 +1,12 @@
-import { ScopeType } from "@typescript-eslint/utils/dist/ts-eslint-scope";
-import type { CamelToSnakeCase, SnakeCaseToCamelCase } from "../shared/types";
+import type { ScopeType } from "@typescript-eslint/utils/dist/ts-eslint-scope";
+import type { TCamelToSnakeCase, TSnakeCaseToCamelCase } from "../shared/types";
 
-type FixedScopeType = { [key in Capitalize<SnakeCaseToCamelCase<ScopeType>>]: FixedKeys<key> }
+type TFixedScopeType = { [key in Capitalize<TSnakeCaseToCamelCase<ScopeType>>]: TFixedKeys<key> }
 
-type FixedKeys<KEY extends string> =
-    KEY extends "TDZ" ? "TDZ" : CamelToSnakeCase<Uncapitalize<KEY>>
+type TFixedKeys<KEY extends string> =
+    KEY extends "TDZ" ? "TDZ" : TCamelToSnakeCase<Uncapitalize<KEY>>
 
-export const EScopeType: FixedScopeType = {
+export const CEScopeType: TFixedScopeType = {
     TDZ: "TDZ",
     Function: "function",
     Block: "block",

@@ -1,10 +1,11 @@
-import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/types';
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESTree} from '@typescript-eslint/types';
+import { AST_NODE_TYPES } from '@typescript-eslint/types';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 import { createRule, ruleMessageTemplate } from '../util';
 
-export type Options = [];
-export type MessageIds = 'noCommonJsModuleExports';
+export type TOptions = [];
+export type TMessageIds = 'noCommonJsModuleExports';
 
 /** This function checks for the "module.exports" */
 function isModuleExports(node: TSESTree.MemberExpression): boolean {
@@ -24,7 +25,7 @@ function isScopeAModule(scope: TSESLint.Scope.Scope) {
     return scope.variableScope.type === 'module';
 }
 
-export default createRule<Options, MessageIds>({
+export default createRule<TOptions, TMessageIds>({
     defaultOptions: [],
     name: 'no-commonjs-module-exports',
     meta: {
