@@ -1,13 +1,10 @@
 {
-    "extends": "./tsconfig.build1.json",
+    "extends": "./tsconfig.build.json",
     "compilerOptions": {
         "composite": false,
-        // "rootDir": ".",
         "target": "ES2017",
         "module": "CommonJS",
         "moduleResolution": "node",
-        // "listEmittedFiles": true,
-        // "listFilesOnly": true
     },
     "include": [
         "src"
