@@ -38,6 +38,7 @@ export default createRule<TOptions, TMessageIds>({
     },
 
     create(context) {
+        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
         const { allowConditionalRequire = false } = context.options[0] || {};
 
         return {

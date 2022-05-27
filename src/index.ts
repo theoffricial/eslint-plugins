@@ -7,14 +7,3 @@ export = {
   }
 }
 
-const cond = true as unknown;
-cond && console.log('true');
-function doSomething() {
-
-
-  console.error('Nothing to do!'); return;
-
-
-  console.log('Doing a thing...');
-}
-

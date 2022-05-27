@@ -1,12 +1,13 @@
 import type  { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
+import { CEBABEL_PARSER_AST_NODE_TYPES } from '../types/babel-ast-nodes';
 import { createRule } from '../util';
 
-export type TOptions = [{ esmodule?: boolean }];
-export type TMessageIds = 'requireShouldBeLiteral' | 'legacyImportShouldBeLiteral' | 'importShouldBeLiteral';
+export type TOptions = [{ esmodule: boolean }];
+export type TMessageIds = 'importShouldBeLiteral' | 'legacyImportShouldBeLiteral' | 'requireShouldBeLiteral';
 
 function isRequire(node: TSESTree.CallExpression) {
-    return node &&
+    return Boolean(node) &&
         node.callee &&
         node.callee.type === AST_NODE_TYPES.Identifier &&
         node.callee.name === 'require' &&
@@ -15,10 +16,10 @@ function isRequire(node: TSESTree.CallExpression) {
 
 /** This function supports @babel/parser */
 function isDynamicImport(node: TSESTree.CallExpression) {
-    return node &&
+    return Boolean(node) &&
         node.callee &&
         // from @babel/parser
-        node.callee.type === "Import" as any
+        node.callee.type === CEBABEL_PARSER_AST_NODE_TYPES.Import as string
 }
 
 function isStaticValue(arg: TSESTree.CallExpressionArgument | TSESTree.Expression) {
@@ -28,7 +29,7 @@ function isStaticValue(arg: TSESTree.CallExpressionArgument | TSESTree.Expressio
 
 
 export default createRule<TOptions, TMessageIds>({
-    defaultOptions: [{}],
+    defaultOptions: [{esmodule: false}],
     name: 'no-dynamic-import',
 
     meta: {
@@ -40,19 +41,19 @@ export default createRule<TOptions, TMessageIds>({
         messages: {
             requireShouldBeLiteral: 'Calls to require() should use string literals',
             legacyImportShouldBeLiteral: 'Calls to import() should use string literals',
-            importShouldBeLiteral: 'Calls to import() should use string literals',
+            importShouldBeLiteral: 'Calls to import() should use string literals'
         },
         schema: [
             {
                 type: 'object',
                 properties: {
                     esmodule: {
-                        type: 'boolean',
-                    },
+                        type: 'boolean'
+                    }
                 },
-                additionalProperties: false,
-            },
-        ],
+                additionalProperties: false
+            }
+        ]
     },
 
     create(context) {
@@ -61,34 +62,34 @@ export default createRule<TOptions, TMessageIds>({
 
         return {
             CallExpression(node) {
-                if (!node.arguments[0] || isStaticValue(node.arguments[0])) {
+                if (!Boolean(node.arguments[0]) || isStaticValue(node.arguments[0])) {
                     return;
                 }
 
                 if (isRequire(node)) {
-                    return context.report({
+                    context.report({
                         node,
-                        messageId: 'requireShouldBeLiteral',
+                        messageId: 'requireShouldBeLiteral'
                         // message: 'Calls to require() should use string literals',
-                    });
+                    }); return;
                 }
                 if (esmodule && isDynamicImport(node)) {
-                    return context.report({
+                    context.report({
                         node,
-                        messageId: 'legacyImportShouldBeLiteral',
-                    });
+                        messageId: 'legacyImportShouldBeLiteral'
+                    }); return;
                 }
             },
             ImportExpression(node) {
                 if (!esmodule || isStaticValue(node.source)) {
                     return;
                 }
-                return context.report({
+                context.report({
                     node,
-                    messageId: 'importShouldBeLiteral',
+                    messageId: 'importShouldBeLiteral'
                 });
-            },
+            }
         };
-    },
+    }
 })
 

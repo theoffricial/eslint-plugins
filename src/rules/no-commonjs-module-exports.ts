@@ -1,4 +1,4 @@
-import type { TSESTree} from '@typescript-eslint/types';
+import type { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
 import type { TSESLint } from '@typescript-eslint/utils';
 
@@ -10,11 +10,11 @@ export type TMessageIds = 'noCommonJsModuleExports';
 /** This function checks for the "module.exports" */
 function isModuleExports(node: TSESTree.MemberExpression): boolean {
     return Boolean(
-        node &&
-            node.object.type === AST_NODE_TYPES.Identifier &&
-            node.object.name === 'module' &&
-            node.property.type === AST_NODE_TYPES.Identifier &&
-            node.property.name === 'exports'
+        Boolean(node) &&
+        node.object.type === AST_NODE_TYPES.Identifier &&
+        node.object.name === 'module' &&
+        node.property.type === AST_NODE_TYPES.Identifier &&
+        node.property.name === 'exports'
     );
 }
 

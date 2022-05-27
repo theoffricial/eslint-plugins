@@ -10,3 +10,10 @@ export const rules = {
     'no-commonjs-exports': noCommonjsExports,
     'no-commonjs-module-exports': noCommonJsModuleExports,
 };
+
+
+const x = {
+    y: {
+    z:1    
+    }
+}

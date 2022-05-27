@@ -8,6 +8,8 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitReturns": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
     "pretty": true,
     "skipLibCheck": true,
     "sourceMap": true,

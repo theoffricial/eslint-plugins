@@ -26,7 +26,7 @@ export default createRule<TOptions, TMessageIds>({
                 linterMessage: `Calls to CommonJS "${EXPORTS}" should be replaced with ESM "export" syntax.`
             })
         },
-        schema: [],
+        schema: []
 
     },
     create(context) {
@@ -67,7 +67,7 @@ export default createRule<TOptions, TMessageIds>({
                 if (!isModuleScope(context.getScope())) {
                     return;
                 }
-                if (doesIdentifierIsExports(node)) {
+                if (doesIdentifierIsExports(node) ?? false) {
                     context.report({
                         node,
                         messageId: 'noCommonJSExports'
@@ -84,7 +84,7 @@ export default createRule<TOptions, TMessageIds>({
                         topLevelVariablesSet.add(d.id.name);
                     }
                 })
-            },
+            }
         }
     }
 })
