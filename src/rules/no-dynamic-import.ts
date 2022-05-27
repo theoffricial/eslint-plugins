@@ -34,7 +34,7 @@ export default createRule<Options, MessageIds>({
     meta: {
         type: 'suggestion',
         docs: {
-            description: 'test bla rule',
+            description: 'Using this rule to disable the use of dynamic require for CommonJS or ESM import.',
             recommended: false
         },
         messages: {
