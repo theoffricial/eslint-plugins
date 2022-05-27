@@ -18,7 +18,7 @@
   ],
   "keywords": ["eslint", "typescript", "@typescript-eslint/eslint-plugin", "migrate", "@typescript-eslint/parser"],
   "scripts": {
-    "build": "tsc -p tsconfig.build1.json",
+    "build": "tsc -p tsconfig.json",
     "test": "jest",
     "prebuild": "rimraf build && lint",
     "test:coverage": "jest --coverage --silent",

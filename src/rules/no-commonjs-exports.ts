@@ -1,7 +1,7 @@
 import type { TSESTree } from "@typescript-eslint/types";
 import { AST_NODE_TYPES } from "@typescript-eslint/types";
 import type { Scope } from "@typescript-eslint/utils/dist/ts-eslint";
-import { EScopeType } from "../constants";
+import { CEScopeType } from "../constants";
 import { createRule, ruleMessageTemplate } from "../util";
 
 export type TOptions = [];
@@ -91,7 +91,7 @@ export default createRule<TOptions, TMessageIds>({
 
 
 function isModuleScope(scope: Scope.Scope) {
-    return scope.variableScope.type === EScopeType.Module;
+    return scope.variableScope.type === CEScopeType.Module;
 }
 
 /** Detects cases like: `exports = {}` */
@@ -101,7 +101,7 @@ function doesIdentifierIsExports(node: TSESTree.Identifier) {
         node.parent.operator === '=' &&
         node.parent.parent?.type === AST_NODE_TYPES.ExpressionStatement &&
         node.parent.parent.parent?.type === AST_NODE_TYPES.Program &&
-        node.parent.parent.parent?.sourceType === EScopeType.Module
+        node.parent.parent.parent?.sourceType === CEScopeType.Module
 }
 
 /** Detects cases like: `exports.a = {}` */
