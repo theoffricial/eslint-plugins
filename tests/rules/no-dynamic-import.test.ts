@@ -1,15 +1,13 @@
-/* eslint-disable eslint-comments/no-use */
 // this rule tests the new lines, which prettier will want to fix and break the tests
-/* eslint "@typescript-eslint/internal/plugin-test-formatting": ["error", { formatWithPrettier: false }] */
-/* eslint-enable eslint-comments/no-use */
-import { InvalidTestCase, ValidTestCase } from '@typescript-eslint/utils/dist/ts-eslint';
-import rule, * as noDynamicImportTypes from '../../src/rules/no-dynamic-import';
+import { TSESLint } from '@typescript-eslint/utils';
+import type { InvalidTestCase, ValidTestCase } from '@typescript-eslint/utils/dist/ts-eslint';
+import type * as noDynamicImportTypes from '../../src/rules/no-dynamic-import';
+import rule from '../../src/rules/no-dynamic-import';
 import { RuleTester } from '../RuleTester';
 
 const error = {
     message: 'Calls to require() should use string literals',
 };
-
 const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
 });
@@ -36,7 +34,7 @@ ruleTester.run('no-dynamic-import', rule, {
             [
                 { code: 'import("../" + name)', },
                 { code: 'import(`../${name}`)', }
-            ] as ValidTestCase<noDynamicImportTypes.Options>[])
+            ] as ValidTestCase<noDynamicImportTypes.TOptions>[])
             .map(testObj => ({
                 ...testObj,
                 name: `[esmodule: false] ${testObj.code}`
@@ -52,8 +50,8 @@ ruleTester.run('no-dynamic-import', rule, {
                 { code: 'var foo = import(`foo`)', },
                 { code: 'var foo = import("./foo")', },
                 { code: 'var foo = import("@scope/foo")', },
-            ] as ValidTestCase<noDynamicImportTypes.Options>[])
-            .map<ValidTestCase<noDynamicImportTypes.Options>>(testObj => ({
+            ] as ValidTestCase<noDynamicImportTypes.TOptions>[])
+            .map<ValidTestCase<noDynamicImportTypes.TOptions>>(testObj => ({
                 ...testObj,
                 name: `[esmodule: true] ${testObj.code}`,
                 options: [{ esmodule: true }],
@@ -95,8 +93,8 @@ ruleTester.run('no-dynamic-import', rule, {
             { code: 'import(`../${name}`)' },
             { code: 'import(name)', },
             { code: 'import(name())', },
-        ] as InvalidTestCase<noDynamicImportTypes.MessageIds, noDynamicImportTypes.Options>[])
-            .map<InvalidTestCase<noDynamicImportTypes.MessageIds, noDynamicImportTypes.Options>>(testObj => ({
+        ] as InvalidTestCase<noDynamicImportTypes.TMessageIds, noDynamicImportTypes.TOptions>[])
+            .map<InvalidTestCase<noDynamicImportTypes.TMessageIds, noDynamicImportTypes.TOptions>>(testObj => ({
                 ...testObj,
                 name: `[esmodule: true] ${testObj.code}`,
                 options: [{ esmodule: true }],

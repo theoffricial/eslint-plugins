@@ -1,9 +1,9 @@
-import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/types';
-
+import type  { TSESTree } from '@typescript-eslint/types';
+import { AST_NODE_TYPES } from '@typescript-eslint/types';
 import { createRule } from '../util';
 
-export type Options = [{ esmodule?: boolean }];
-export type MessageIds = 'requireShouldBeLiteral' | 'legacyImportShouldBeLiteral' | 'importShouldBeLiteral';
+export type TOptions = [{ esmodule?: boolean }];
+export type TMessageIds = 'requireShouldBeLiteral' | 'legacyImportShouldBeLiteral' | 'importShouldBeLiteral';
 
 function isRequire(node: TSESTree.CallExpression) {
     return node &&
@@ -27,7 +27,7 @@ function isStaticValue(arg: TSESTree.CallExpressionArgument | TSESTree.Expressio
 }
 
 
-export default createRule<Options, MessageIds>({
+export default createRule<TOptions, TMessageIds>({
     defaultOptions: [{}],
     name: 'no-dynamic-import',
 

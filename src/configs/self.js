@@ -1,20 +1,15 @@
-{
-    "parser": "@typescript-eslint/parser",
-    "env": {
-        "node": true,
-        "jest": true
-    },
-    "parserOptions": {
-        "ecmaVersion": 11,
-        "sourceType": "module",
-        "project": "./tsconfig.eslint.json"
-    },
-    "root": true,
-    "settings": {},
-    "extends": [
-        "./src/configs/self.js"
+/** @type {Pick<import('@typescript-eslint/utils/dist/ts-eslint').RuleTesterConfig, 'overrides' | 'rules' | 'parser' | 'extends' | 'plugins' | 'globals' | 'settings'>} */
+const self = {
+    parser: '@typescript-eslint/parser',
+    extends: [],
+    globals: {},
+    overrides: [],
+    plugins: [
+        "@typescript-eslint",
+        "import",
+        "unicorn"
     ],
-    "rules": {
+    rules: {
         // typescript-eslint-rules - Supported Rules
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": [
@@ -155,3 +150,5 @@
         "@typescript-eslint/no-base-to-string": "error"
     }
 }
+
+module.exports = self;
