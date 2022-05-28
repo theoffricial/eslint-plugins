@@ -155,20 +155,6 @@
             },
             {
                 "format": [
-                    "camelCase",
-                    "PascalCase"
-                ],
-                "selector": [
-                    "variable"
-                ],
-                "modifiers": [
-                    // const & exported
-                    "const",
-                    "destructured"
-                ]
-            },
-            {
-                "format": [
                     "camelCase"
                 ],
                 "filter": {
