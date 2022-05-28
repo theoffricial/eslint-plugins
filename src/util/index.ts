@@ -1,4 +1,5 @@
 import { ESLintUtils } from '@typescript-eslint/utils';
+
 export { ruleMessageTemplate } from './rule-msg-template';
 const repoUrl =
     'https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript';

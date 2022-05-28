@@ -10,7 +10,22 @@
         "project": "./tsconfig.eslint.json"
     },
     "root": true,
-    "settings": {},
+    "settings": {
+        "import/extensions": [
+            ".js",
+            ".ts"
+        ],
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".ts"
+                ]
+            }
+        },
+        "import/docstyle": ["jsdoc", "tomdoc"],
+        "import/ignore": ["node_modules", "build"]
+    },
     "extends": [
         "eslint:recommended"
     ],
@@ -21,6 +36,7 @@
         "prettier"
     ],
     "rules": {
+        // layout
         // prettier
         "prettier/prettier": [
             "error",
@@ -34,11 +50,65 @@
                 "usePrettierrc": false
             }
         ],
-        // layout
         "indent": "off",
         "@typescript-eslint/indent": "off",
         "function-call-argument-newline": "off",
         "max-len": "off",
+        // EO layout
+        // import-plugin
+        // Static analysis
+        "import/no-unresolved": ["error", { "commonjs": true, "esmodule": false, "amd": true } ],
+        "import/named": "error",
+        "import/default": "off",
+        "import/namespace": "off",
+        // VERY interesting!
+        "import/no-restricted-paths": ["error", { "zones": [ 
+            { 
+                "target": "./src/configs", 
+                "from": "./src/rules",
+                "message": "[Message] CONFIGS should not import RULES"
+            }]} 
+        ],
+        "import/no-absolute-path": "error",
+        "import/no-dynamic-require": "error",
+        "import/no-internal-modules": "off", // ["error", { "allow": ["**/src/*"]}],
+        "import/no-webpack-loader-syntax": "error",
+        "import/no-self-import": "error",
+        "import/no-cycle": "error",
+        "import/no-useless-path-segments": "error",
+        "import/no-relative-parent-imports": "off", //"error",
+        "import/no-relative-packages": "error",
+        // Helpful warnings
+        "import/export": "error",
+        "import/no-named-as-default": "error",
+        "import/no-named-as-default-member": "error",
+        "import/no-deprecated": "warn",
+        "import/no-mutable-exports": "error",
+        "import/no-unused-modules": "off", // [1, {"missingExports": false, "unusedExports": false}],
+        // Module systems
+        "import/unambiguous": "warn",
+        "import/no-commonjs": "error",
+        "import/no-amd": "error",
+        "import/no-nodejs-modules": "off",
+        "import/no-import-module-exports": "error",
+        // Style guide
+        "import/first": ["error", "absolute-first"],
+        "import/exports-last": "off", //"error",
+        "import/no-duplicates": "error",
+        "import/no-namespace": "off",
+        "import/extensions": ["error", { "ts": "never", "js": "never", "json": "always"}],
+        "import/order": "error",
+        "import/newline-after-import": "error",
+        "import/prefer-default-export": "off",
+        "import/max-dependencies": "off",
+        "import/no-unassigned-import": "off",
+        "import/no-named-default": "off",
+        "import/no-default-export": "off",
+        "import/no-named-export": "off",
+        "import/no-anonymous-default-export": "off",
+        "import/group-export": "off",
+        "import/dynamic-import-chunkname": "off",
+        // EO import-plugin
         // typescript-eslint-rules - Supported Rules
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": [
