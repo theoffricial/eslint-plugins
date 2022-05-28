@@ -4,10 +4,9 @@ import { RuleTester } from '../RuleTester';
 const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        sourceType: 'module'
-    }
+        sourceType: 'module',
+    },
 });
-
 
 ruleTester.run('no-commonjs-exports', rule, {
     valid: [
@@ -21,8 +20,8 @@ ruleTester.run('no-commonjs-exports', rule, {
         {
             code: 'const a = "test"; exports.a = {}',
             parserOptions: {
-                sourceType: 'script'
-            }
+                sourceType: 'script',
+            },
         },
     ],
     invalid: [
@@ -30,18 +29,24 @@ ruleTester.run('no-commonjs-exports', rule, {
         { code: 'exports={}', errors: [{ messageId: 'noCommonJSExports' }] },
         { code: 'exports = {}', errors: [{ messageId: 'noCommonJSExports' }] },
         { code: 'exports ={}', errors: [{ messageId: 'noCommonJSExports' }] },
-        { code: 'exports = "str"', errors: [{ messageId: 'noCommonJSExports' }] },
-        { code: 'exports = () => {}', errors: [{ messageId: 'noCommonJSExports' }] },
+        {
+            code: 'exports = "str"',
+            errors: [{ messageId: 'noCommonJSExports' }],
+        },
+        {
+            code: 'exports = () => {}',
+            errors: [{ messageId: 'noCommonJSExports' }],
+        },
         // MemberExpression cases
         {
             code: 'exports.a = {}',
             errors: [{ messageId: 'noCommonJSExports' }],
-            output: 'export const a = {}'
+            output: 'export const a = {}',
         },
         {
             code: 'const a = "test"; exports.a = {}',
             errors: [{ messageId: 'noCommonJSExports' }],
             output: 'const a = "test"; exports.a = {}',
         },
-    ]
+    ],
 });

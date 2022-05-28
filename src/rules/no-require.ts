@@ -64,7 +64,10 @@ function hasOneArgument(node: TSESTree.CallExpression): boolean {
 
 /** Checks if the callee (what is being called) is 'require()' */
 function isRequire(node: TSESTree.CallExpression): boolean {
-    return node.callee.type === AST_NODE_TYPES.Identifier && node.callee.name === 'require';
+    return (
+        node.callee.type === AST_NODE_TYPES.Identifier &&
+        node.callee.name === 'require'
+    );
 }
 
 /** Checks for a conditional statement.
@@ -80,13 +83,4 @@ function isConditional(node: TSESTree.Node): boolean {
         return true;
     if (node.parent) return isConditional(node.parent);
     return false;
-}
-
-/** Checks if a node is of type 'string'  */
-function isLiteralString(node: TSESTree.Node | null): boolean {
-    if (!node) return false;
-    return (
-        (node.type === AST_NODE_TYPES.Literal && typeof node.value === 'string') ||
-        (node.type === AST_NODE_TYPES.TemplateLiteral && node.expressions.length === 0)
-    );
 }

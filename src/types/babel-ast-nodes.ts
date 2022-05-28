@@ -1,6 +1,7 @@
 import type { Node } from '@babel/types';
 
 type TPropertyType<TObj, TProp extends keyof TObj> = TObj[TProp];
+
 type TTypeOfPropertyType = TPropertyType<Node, 'type'>;
 export type TBabelParserAstNodeTypes = { [key in TTypeOfPropertyType]: key };
 
@@ -256,5 +257,5 @@ export const CEBABEL_PARSER_AST_NODE_TYPES: TBabelParserAstNodeTypes = {
     VoidTypeAnnotation: 'VoidTypeAnnotation',
     WhileStatement: 'WhileStatement',
     WithStatement: 'WithStatement',
-    YieldExpression: 'YieldExpression'
-}
+    YieldExpression: 'YieldExpression',
+};

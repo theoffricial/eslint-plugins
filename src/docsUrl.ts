@@ -1,8 +1,5 @@
-// import pkg from '../package.json';
-
 const repoUrl = 'https://github.com/import-js/eslint-plugin-import';
 
-export default function docsUrl(ruleName: string): string { // , commitish = `v${pkg.version}`) {
-  // return `${repoUrl}/blob/${commitish}/docs/rules/${ruleName}.md`;
-  return `${repoUrl}/blob/main/docs/rules/${ruleName}.md`;
+export default function docsUrl(ruleName: string): string {
+    return `${repoUrl}/blob/main/docs/rules/${ruleName}.md`;
 }
