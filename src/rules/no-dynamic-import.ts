@@ -15,7 +15,7 @@ function isRequire(node: TSESTree.CallExpression) {
         node.callee &&
         node.callee.type === AST_NODE_TYPES.Identifier &&
         node.callee.name === 'require' &&
-        node.arguments.length >= 1
+        node.arguments.length > 0
     );
 }
 

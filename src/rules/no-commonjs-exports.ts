@@ -83,11 +83,11 @@ export default createRule<TOptions, TMessageIds>({
                 if (!isModuleScope(context.getScope())) {
                     return;
                 }
-                node.declarations.forEach((d) => {
+                for (const d of node.declarations) {
                     if (d.id.type === AST_NODE_TYPES.Identifier) {
                         topLevelVariablesSet.add(d.id.name);
                     }
-                });
+                }
             },
         };
     },

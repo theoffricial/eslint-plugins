@@ -1,7 +1,7 @@
 // this rule tests the new lines, which prettier will want to fix and break the tests
 import rule from '../../src/rules/no-commonjs-module-exports';
 
-import { RuleTester } from '../RuleTester';
+import { RuleTester } from '../rule-tester';
 
 const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
