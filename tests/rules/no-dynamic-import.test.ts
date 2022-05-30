@@ -30,9 +30,9 @@ ruleTester.run('no-dynamic-import', rule, {
                 { code: 'import("../" + name)' },
                 { code: 'import(`../${name}`)' },
             ] as ValidTestCase<noDynamicImportTypes.TOptions>[]
-        ).map((testObj) => ({
-            ...testObj,
-            name: `[esmodule: false] ${testObj.code}`,
+        ).map((testObject) => ({
+            ...testObject,
+            name: `[esmodule: false] ${testObject.code}`,
         })),
         // esm option true
         ...(
@@ -46,9 +46,9 @@ ruleTester.run('no-dynamic-import', rule, {
                 { code: 'var foo = import("./foo")' },
                 { code: 'var foo = import("@scope/foo")' },
             ] as ValidTestCase<noDynamicImportTypes.TOptions>[]
-        ).map<ValidTestCase<noDynamicImportTypes.TOptions>>((testObj) => ({
-            ...testObj,
-            name: `[esmodule: true] ${testObj.code}`,
+        ).map<ValidTestCase<noDynamicImportTypes.TOptions>>((testObject) => ({
+            ...testObject,
+            name: `[esmodule: true] ${testObject.code}`,
             options: [{ esmodule: true }],
         })),
     ],
@@ -98,9 +98,9 @@ ruleTester.run('no-dynamic-import', rule, {
                 noDynamicImportTypes.TMessageIds,
                 noDynamicImportTypes.TOptions
             >
-        >((testObj) => ({
-            ...testObj,
-            name: `[esmodule: true] ${testObj.code}`,
+        >((testObject) => ({
+            ...testObject,
+            name: `[esmodule: true] ${testObject.code}`,
             options: [{ esmodule: true }],
             errors: [{ messageId: 'importShouldBeLiteral' }],
         })),

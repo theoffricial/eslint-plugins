@@ -1,13 +1,15 @@
 import type { ScopeType } from '@typescript-eslint/utils/dist/ts-eslint-scope';
-import type { TCamelToSnakeCase, TSnakeCaseToCamelCase } from '../shared/types';
+import type { TCamelToKebabCase, TSnakeCaseToKebabCase } from '../shared/types';
+
+type TBla = ScopeType | 'bla-kebab-case';
 
 type TFixedScopeType = {
-    [key in Capitalize<TSnakeCaseToCamelCase<ScopeType>>]: TFixedKeys<key>;
+    [key in Capitalize<TSnakeCaseToKebabCase<TBla>>]: TFixedKeys<key>;
 };
 
 type TFixedKeys<KEY extends string> = KEY extends 'TDZ'
     ? 'TDZ'
-    : TCamelToSnakeCase<Uncapitalize<KEY>>;
+    : TCamelToKebabCase<Uncapitalize<KEY>>;
 
 export const CEScopeType: TFixedScopeType = {
     TDZ: 'TDZ',
@@ -23,4 +25,5 @@ export const CEScopeType: TFixedScopeType = {
     Enum: 'enum',
     FunctionExpressionName: 'function-expression-name',
     EmptyFunction: 'empty-function',
+    BlaKebabCase: 'bla-kebab-case',
 };

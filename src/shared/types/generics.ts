@@ -1,23 +1,22 @@
 type TSeparator = ' ' | '_' | '-';
 
-type TSnakeCaseSeparator = '-';
+type TKebabCaseSeparator = '-';
 // type SnakeToCamelCase<S extends string> =
 //     S extends `${infer T}${Separator}${infer U}` ?
 //     `${Lowercase<T>}${Capitalize<SnakeToCamelCase<U>>}` :
 //     S
-
-export type TCamelToSnakeCase<S extends string> =
+export type TCamelToKebabCase<S extends string> =
     S extends `${infer T}${infer U}`
         ? `${T extends Capitalize<T>
-              ? TSnakeCaseSeparator
-              : ''}${Lowercase<T>}${TCamelToSnakeCase<U>}`
+              ? TKebabCaseSeparator
+              : ''}${Lowercase<T>}${TCamelToKebabCase<U>}`
         : S;
 
-export type TSnakeCaseToCamelCase<S extends string> =
+export type TSnakeCaseToKebabCase<S extends string> =
     S extends `${TSeparator}${infer Suffix}`
-        ? TSnakeCaseToCamelCase<Suffix>
+        ? TSnakeCaseToKebabCase<Suffix>
         : S extends `${infer Prefix}${TSeparator}`
-        ? TSnakeCaseToCamelCase<Prefix>
+        ? TSnakeCaseToKebabCase<Prefix>
         : S extends `${infer Prefix}${TSeparator}${infer Suffix}`
-        ? TSnakeCaseToCamelCase<`${Prefix}${Capitalize<Suffix>}`>
+        ? TSnakeCaseToKebabCase<`${Prefix}${Capitalize<Suffix>}`>
         : S;

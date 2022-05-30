@@ -1,7 +1,7 @@
-import path from 'path';
+import path from 'node:path';
 import { ESLintUtils } from '@typescript-eslint/utils';
 
-function getFixturesRootDir(): string {
+function getFixturesRootDirectory(): string {
     return path.join(__dirname, 'fixtures');
 }
 
@@ -13,7 +13,7 @@ const {
 
 export {
     batchedSingleLineTests,
-    getFixturesRootDir,
+    getFixturesRootDirectory as getFixturesRootDir,
     noFormat,
     CRuleTester as RuleTester,
 };

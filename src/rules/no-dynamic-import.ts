@@ -30,12 +30,12 @@ function isDynamicImport(node: TSESTree.CallExpression) {
 }
 
 function isStaticValue(
-    arg: TSESTree.CallExpressionArgument | TSESTree.Expression
+    argument: TSESTree.CallExpressionArgument | TSESTree.Expression
 ) {
     return (
-        arg.type === AST_NODE_TYPES.Literal ||
-        (arg.type === AST_NODE_TYPES.TemplateLiteral &&
-            arg.expressions.length === 0)
+        argument.type === AST_NODE_TYPES.Literal ||
+        (argument.type === AST_NODE_TYPES.TemplateLiteral &&
+            argument.expressions.length === 0)
     );
 }
 
@@ -77,8 +77,8 @@ export default createRule<TOptions, TMessageIds>({
         return {
             CallExpression(node) {
                 if (
-                    Boolean(node.arguments[0]) === false ||
-                    isStaticValue(node.arguments[0])
+                    Boolean(node.arguments.at(0)) === false ||
+                    isStaticValue(node.arguments.at(0))
                 ) {
                     return;
                 }

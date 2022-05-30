@@ -39,7 +39,7 @@ export default createRule<TOptions, TMessageIds>({
                     return;
                 }
                 if (isMemberExpressionAnExports(node)) {
-                    const nodeLeftPropIdentifier =
+                    const nodeLeftPropertyIdentifier =
                         node.property as TSESTree.Identifier;
                     context.report({
                         node,
@@ -48,16 +48,16 @@ export default createRule<TOptions, TMessageIds>({
                             return [
                                 ...// and only if no variable exists
                                 (topLevelVariablesSet.has(
-                                    nodeLeftPropIdentifier.name
+                                    nodeLeftPropertyIdentifier.name
                                 )
                                     ? []
                                     : [
                                           fixer.replaceTextRange(
                                               [
                                                   // from
-                                                  node.range[0],
+                                                  node.range.at(0),
                                                   // to
-                                                  node.property.range[0],
+                                                  node.property.range.at(0),
                                               ],
                                               'export const '
                                           ),

@@ -1,6 +1,9 @@
 import type { Node } from '@babel/types';
 
-type TPropertyType<TObj, TProp extends keyof TObj> = TObj[TProp];
+type TPropertyType<
+    TObject,
+    TProperty extends keyof TObject
+> = TObject[TProperty];
 
 type TTypeOfPropertyType = TPropertyType<Node, 'type'>;
 export type TBabelParserAstNodeTypes = { [key in TTypeOfPropertyType]: key };
