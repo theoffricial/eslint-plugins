@@ -1,7 +1,7 @@
 import type { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
-import type { Scope } from '@typescript-eslint/utils/dist/ts-eslint';
 import { CEScopeType } from '../constants';
+import type { TScope } from '../shared/types';
 import { createRule, ruleMessageTemplate } from '../util';
 
 export type TOptions = [];
@@ -55,9 +55,9 @@ export default createRule<TOptions, TMessageIds>({
                                           fixer.replaceTextRange(
                                               [
                                                   // from
-                                                  node.range.at(0),
+                                                  node.range[0],
                                                   // to
-                                                  node.property.range.at(0),
+                                                  node.property.range[0],
                                               ],
                                               'export const '
                                           ),
@@ -93,7 +93,7 @@ export default createRule<TOptions, TMessageIds>({
     },
 });
 
-function isModuleScope(scope: Scope.Scope) {
+function isModuleScope(scope: TScope.Scope) {
     return scope.variableScope.type === CEScopeType.Module;
 }
 

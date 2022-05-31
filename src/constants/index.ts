@@ -1,7 +1,10 @@
-import type { ScopeType } from '@typescript-eslint/utils/dist/ts-eslint-scope';
-import type { TCamelToKebabCase, TSnakeCaseToKebabCase } from '../shared/types';
+import type {
+    TCamelToKebabCase,
+    TSnakeCaseToKebabCase,
+    TScopeType,
+} from '../shared/types';
 
-type TBla = ScopeType | 'bla-kebab-case';
+type TBla = TScopeType | 'bla-kebab-case';
 
 type TFixedScopeType = {
     [key in Capitalize<TSnakeCaseToKebabCase<TBla>>]: TFixedKeys<key>;

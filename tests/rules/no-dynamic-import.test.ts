@@ -1,11 +1,8 @@
 // this rule tests the new lines, which prettier will want to fix and break the tests
-import type {
-    ValidTestCase,
-    InvalidTestCase,
-} from '@typescript-eslint/utils/dist/ts-eslint';
 import type * as noDynamicImportTypes from '../../src/rules/no-dynamic-import';
 import rule from '../../src/rules/no-dynamic-import';
 import { RuleTester } from '../rule-tester';
+import type { IValidTestCase, IInvalidTestCase } from '../../src/shared/types';
 
 const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
@@ -29,7 +26,7 @@ ruleTester.run('no-dynamic-import', rule, {
             [
                 { code: 'import("../" + name)' },
                 { code: 'import(`../${name}`)' },
-            ] as ValidTestCase<noDynamicImportTypes.TOptions>[]
+            ] as IValidTestCase<noDynamicImportTypes.TOptions>[]
         ).map((testObject) => ({
             ...testObject,
             name: `[esmodule: false] ${testObject.code}`,
@@ -45,8 +42,8 @@ ruleTester.run('no-dynamic-import', rule, {
                 { code: 'var foo = import(`foo`)' },
                 { code: 'var foo = import("./foo")' },
                 { code: 'var foo = import("@scope/foo")' },
-            ] as ValidTestCase<noDynamicImportTypes.TOptions>[]
-        ).map<ValidTestCase<noDynamicImportTypes.TOptions>>((testObject) => ({
+            ] as IValidTestCase<noDynamicImportTypes.TOptions>[]
+        ).map<IValidTestCase<noDynamicImportTypes.TOptions>>((testObject) => ({
             ...testObject,
             name: `[esmodule: true] ${testObject.code}`,
             options: [{ esmodule: true }],
@@ -89,12 +86,12 @@ ruleTester.run('no-dynamic-import', rule, {
                 { code: 'import(`../${name}`)' },
                 { code: 'import(name)' },
                 { code: 'import(name())' },
-            ] as InvalidTestCase<
+            ] as IInvalidTestCase<
                 noDynamicImportTypes.TMessageIds,
                 noDynamicImportTypes.TOptions
             >[]
         ).map<
-            InvalidTestCase<
+            IInvalidTestCase<
                 noDynamicImportTypes.TMessageIds,
                 noDynamicImportTypes.TOptions
             >

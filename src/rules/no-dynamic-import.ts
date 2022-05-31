@@ -1,6 +1,6 @@
 import type { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
-import { CEBABEL_PARSER_AST_NODE_TYPES } from '../types/babel-ast-nodes';
+import { CEBABEL_PARSER_AST_NODE_TYPES } from '../shared/types';
 import { createRule } from '../util';
 
 export type TOptions = [{ esmodule: boolean }];
@@ -78,7 +78,7 @@ export default createRule<TOptions, TMessageIds>({
             CallExpression(node) {
                 if (
                     Boolean(node.arguments.at(0)) === false ||
-                    isStaticValue(node.arguments.at(0))
+                    isStaticValue(node.arguments[0])
                 ) {
                     return;
                 }

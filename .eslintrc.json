@@ -71,7 +71,14 @@
         ],
         "import/no-absolute-path": "error",
         "import/no-dynamic-require": "error",
-        "import/no-internal-modules": "off", // ["error", { "allow": ["**/src/*"]}],
+        "import/no-internal-modules": ["error", { 
+            "allow": [
+                "**/src/rules/*.ts", 
+                "**/src/configs/*.ts",
+                "**/shared/types",
+                "**/src/shared/types"
+            ]
+        }],
         "import/no-webpack-loader-syntax": "error",
         "import/no-self-import": "error",
         "import/no-cycle": "error",
