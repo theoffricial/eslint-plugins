@@ -34,7 +34,8 @@
         "import",
         "unicorn",
         "prettier",
-        "promise"
+        "promise",
+        "jest"
     ],
     "rules": {
         // layout
