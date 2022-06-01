@@ -33,7 +33,8 @@
         "@typescript-eslint",
         "import",
         "unicorn",
-        "prettier"
+        "prettier",
+        "promise"
     ],
     "rules": {
         // layout
@@ -55,6 +56,17 @@
         "function-call-argument-newline": "off",
         "max-len": "off",
         // EO layout
+        // promise-plugin
+        "promise/catch-or-return": "error",
+        "promise/no-return-wrap": "error",
+        "promise/param-names": "error",
+        "promise/always-return": "error",
+        "promise/no-native": "off",
+        "promise/no-nesting": "error",
+        "promise/no-new-statics": "error",
+        "promise/no-return-in-finally": "error",
+        "promise/prefer-await-to-then": "off",
+        // EO promise-plugin
         // import-plugin
         // Static analysis
         "import/no-unresolved": ["error", { "commonjs": true, "esmodule": false, "amd": true } ],
