@@ -27,7 +27,9 @@
         "import/ignore": ["node_modules", "build"]
     },
     "extends": [
-        "eslint:recommended"
+        "eslint:recommended",
+        // eslint-config-prettier lib, turns off rules that conflicts with prettier
+        "prettier"
     ],
     "plugins": [
         "@typescript-eslint",
@@ -35,7 +37,8 @@
         "unicorn",
         "prettier",
         "promise",
-        "jest"
+        "jest",
+        "security"
     ],
     "rules": {
         // layout
@@ -57,6 +60,21 @@
         "function-call-argument-newline": "off",
         "max-len": "off",
         // EO layout
+        // Security
+        "security/detect-unsafe-regex": "error",
+        "security/detect-buffer-noassert": "error",
+        "security/detect-child-process": "error",
+        "security/detect-disable-mustache-escape": "off",
+        "security/detect-eval-with-expression": "off",
+        "security/detect-no-csrf-before-method-override": "off",
+        "security/detect-non-literal-fs-filename": "error",
+        "security/detect-non-literal-regexp": "error",
+        "security/detect-non-literal-require": "error",
+        "security/detect-object-injection": "error",
+        "security/detect-possible-timing-attacks": "error",
+        "security/detect-pseudoRandomBytes": "off",
+        "security/detect-new-buffer": "off",
+        // EO Security
         // promise-plugin
         "promise/catch-or-return": "error",
         "promise/no-return-wrap": "error",
