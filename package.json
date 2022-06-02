@@ -2,7 +2,7 @@
   "name": "eslint-plugin-migrate-to-ts",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "Opinionated ESLint plugin that makes migration to TypeScript super-easy.",
+  "description": "Opinionated ESLint plugin that makes migration to TypeScript super-easy and user-friendly.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "repository": {
