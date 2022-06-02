@@ -1,5 +1,5 @@
 import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/types';
-import { BABEL_PARSER_AST_NODE_TYPES, TBABEL_PARSER_AST_NODE_TYPES } from '../types/babel-ast-nodes';
+
 import { createRule } from '../util';
 
 export type Options = [{ esmodule?: boolean }];
@@ -18,7 +18,7 @@ function isDynamicImport(node: TSESTree.CallExpression) {
     return node &&
         node.callee &&
         // from @babel/parser
-        node.callee.type === BABEL_PARSER_AST_NODE_TYPES.Import as string
+        node.callee.type === "Import" as any
 }
 
 function isStaticValue(arg: TSESTree.CallExpressionArgument | TSESTree.Expression) {

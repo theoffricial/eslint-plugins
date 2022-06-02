@@ -1,39 +1,52 @@
 {
-  "name": "eslint-plugin-mig2ts",
+  "name": "eslint-plugin-migrate-to-ts",
   "version": "1.0.0",
-  "description": "",
+  "license": "MIT",
+  "description": "Opinionated ESLint plugin that makes migration to TypeScript super-easy.",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unicop/eslint-plugin-migrate-to-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unicop/eslint-plugin-migrate-to-typescript/issues"
+  },
+  "contributors": [
+    "unicop <its.op.the.unicorn@gmail.com>",
+    "neriyarden"
+  ],
+  "keywords": ["eslint", "typescript", "@typescript-eslint/eslint-plugin", "migrate", "@typescript-eslint/parser"],
   "scripts": {
-    "prebuild": "rimraf build",
     "build": "tsc -p tsconfig.build1.json",
     "test": "jest",
-    "test:coverage": "jest --coverage --silent"
+    "prebuild": "rimraf build && lint",
+    "test:coverage": "jest --coverage --silent",
+    "lint": "eslint . --ext .ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
-  "peerDependencies": {
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
   },
   "dependencies": {
     "@typescript-eslint/types": "^5.23.0",
     "@typescript-eslint/utils": "^5.23.0"
   },
+  "peerDependencies": {
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
   "devDependencies": {
-    "@babel/types": "^7.17.12",
     "@types/jest": "^27.5.1",
     "@types/semver": "^7.3.9",
     "@typescript-eslint/parser": "^5.25.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8",
+    "eslint": "^6 || ^7.2.0 || ^8",
     "jest": "^28.1.0",
-    "semver": "^7.3.7",
     "ts-jest": "^28.0.2",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
