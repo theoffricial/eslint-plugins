@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-migrate-to-ts",
+  "name": "eslint-plugin-migrate-to-typescript",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Opinionated ESLint plugin that makes migration to TypeScript super-easy and user-friendly.",
@@ -7,10 +7,10 @@
   "types": "build/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/unicop/eslint-plugin-migrate-to-typescript.git"
+    "url": "https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript.git"
   },
   "bugs": {
-    "url": "https://github.com/unicop/eslint-plugin-migrate-to-typescript/issues"
+    "url": "https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript/issues"
   },
   "contributors": [
     "unicop <its.op.the.unicorn@gmail.com>",
