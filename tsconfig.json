@@ -2,7 +2,6 @@
     "extends": "./tsconfig.build.json",
     "compilerOptions": {
         "composite": false,
-        "target": "ES2017",
         "module": "CommonJS",
         "moduleResolution": "node",
     },

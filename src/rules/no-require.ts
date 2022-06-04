@@ -1,11 +1,12 @@
-import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/types';
+import type { TSESTree } from '@typescript-eslint/types';
+import { AST_NODE_TYPES } from '@typescript-eslint/types';
 
 import { createRule, ruleMessageTemplate } from '../util';
 
-export type Options = [{ allowConditionalRequire?: boolean }];
-export type MessageIds = 'importInsteadOfRequire';
+export type TOptions = [{ allowConditionalRequire?: boolean }];
+export type TMessageIds = 'importInsteadOfRequire';
 
-export default createRule<Options, MessageIds>({
+export default createRule<TOptions, TMessageIds>({
     defaultOptions: [{ allowConditionalRequire: false }],
     name: 'no-require',
     meta: {
@@ -37,6 +38,7 @@ export default createRule<Options, MessageIds>({
     },
 
     create(context) {
+        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
         const { allowConditionalRequire = false } = context.options[0] || {};
 
         return {
@@ -62,7 +64,10 @@ function hasOneArgument(node: TSESTree.CallExpression): boolean {
 
 /** Checks if the callee (what is being called) is 'require()' */
 function isRequire(node: TSESTree.CallExpression): boolean {
-    return node.callee.type === AST_NODE_TYPES.Identifier && node.callee.name === 'require';
+    return (
+        node.callee.type === AST_NODE_TYPES.Identifier &&
+        node.callee.name === 'require'
+    );
 }
 
 /** Checks for a conditional statement.
@@ -78,13 +83,4 @@ function isConditional(node: TSESTree.Node): boolean {
         return true;
     if (node.parent) return isConditional(node.parent);
     return false;
-}
-
-/** Checks if a node is of type 'string'  */
-function isLiteralString(node: TSESTree.Node | null): boolean {
-    if (!node) return false;
-    return (
-        (node.type === AST_NODE_TYPES.Literal && typeof node.value === 'string') ||
-        (node.type === AST_NODE_TYPES.TemplateLiteral && node.expressions.length === 0)
-    );
 }

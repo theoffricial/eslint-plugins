@@ -1,22 +1,12 @@
-/* eslint-disable eslint-comments/no-use */
 // this rule tests the new lines, which prettier will want to fix and break the tests
-/* eslint "@typescript-eslint/internal/plugin-test-formatting": ["error", { formatWithPrettier: false }] */
-/* eslint-enable eslint-comments/no-use */
-import { InvalidTestCase, ValidTestCase } from '@typescript-eslint/utils/dist/ts-eslint';
-import rule, * as noDynamicImportTypes from '../../src/rules/no-dynamic-import';
-import { RuleTester } from '../RuleTester';
-
-const error = {
-    message: 'Calls to require() should use string literals',
-};
+import type * as noDynamicImportTypes from '../../src/rules/no-dynamic-import';
+import rule from '../../src/rules/no-dynamic-import';
+import { RuleTester } from '../rule-tester';
+import type { IValidTestCase, IInvalidTestCase } from '../../src/shared/types';
 
 const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
 });
-
-const dynamicImportError = {
-    message: 'Calls to import() should use string literals',
-};
 
 ruleTester.run('no-dynamic-import', rule, {
     valid: [
@@ -34,35 +24,35 @@ ruleTester.run('no-dynamic-import', rule, {
         // esm option false
         ...(
             [
-                { code: 'import("../" + name)', },
-                { code: 'import(`../${name}`)', }
-            ] as ValidTestCase<noDynamicImportTypes.Options>[])
-            .map(testObj => ({
-                ...testObj,
-                name: `[esmodule: false] ${testObj.code}`
-            })),
+                { code: 'import("../" + name)' },
+                { code: 'import(`../${name}`)' },
+            ] as IValidTestCase<noDynamicImportTypes.TOptions>[]
+        ).map((testObject) => ({
+            ...testObject,
+            name: `[esmodule: false] ${testObject.code}`,
+        })),
         // esm option true
         ...(
             [
-                { code: 'import("foo")', },
-                { code: 'import(`foo`)', },
-                { code: 'import("./foo")', },
+                { code: 'import("foo")' },
+                { code: 'import(`foo`)' },
+                { code: 'import("./foo")' },
                 { code: 'import("@scope/foo")' },
-                { code: 'var foo = import("foo")', },
-                { code: 'var foo = import(`foo`)', },
-                { code: 'var foo = import("./foo")', },
-                { code: 'var foo = import("@scope/foo")', },
-            ] as ValidTestCase<noDynamicImportTypes.Options>[])
-            .map<ValidTestCase<noDynamicImportTypes.Options>>(testObj => ({
-                ...testObj,
-                name: `[esmodule: true] ${testObj.code}`,
-                options: [{ esmodule: true }],
-            }))
+                { code: 'var foo = import("foo")' },
+                { code: 'var foo = import(`foo`)' },
+                { code: 'var foo = import("./foo")' },
+                { code: 'var foo = import("@scope/foo")' },
+            ] as IValidTestCase<noDynamicImportTypes.TOptions>[]
+        ).map<IValidTestCase<noDynamicImportTypes.TOptions>>((testObject) => ({
+            ...testObject,
+            name: `[esmodule: true] ${testObject.code}`,
+            options: [{ esmodule: true }],
+        })),
     ],
     invalid: [
         {
             code: 'require("../" + name)',
-            errors: [{ messageId: 'requireShouldBeLiteral' }]
+            errors: [{ messageId: 'requireShouldBeLiteral' }],
         },
         {
             code: 'require(`../${name}`)',
@@ -90,18 +80,26 @@ ruleTester.run('no-dynamic-import', rule, {
             options: [{ esmodule: true }],
         },
         // esm imports
-        ...(([
-            { code: 'import("../" + name)' },
-            { code: 'import(`../${name}`)' },
-            { code: 'import(name)', },
-            { code: 'import(name())', },
-        ] as InvalidTestCase<noDynamicImportTypes.MessageIds, noDynamicImportTypes.Options>[])
-            .map<InvalidTestCase<noDynamicImportTypes.MessageIds, noDynamicImportTypes.Options>>(testObj => ({
-                ...testObj,
-                name: `[esmodule: true] ${testObj.code}`,
-                options: [{ esmodule: true }],
-                errors: [{ messageId: 'importShouldBeLiteral' }]
-            })))
-    ]
+        ...(
+            [
+                { code: 'import("../" + name)' },
+                { code: 'import(`../${name}`)' },
+                { code: 'import(name)' },
+                { code: 'import(name())' },
+            ] as IInvalidTestCase<
+                noDynamicImportTypes.TMessageIds,
+                noDynamicImportTypes.TOptions
+            >[]
+        ).map<
+            IInvalidTestCase<
+                noDynamicImportTypes.TMessageIds,
+                noDynamicImportTypes.TOptions
+            >
+        >((testObject) => ({
+            ...testObject,
+            name: `[esmodule: true] ${testObject.code}`,
+            options: [{ esmodule: true }],
+            errors: [{ messageId: 'importShouldBeLiteral' }],
+        })),
+    ],
 });
-

@@ -1,23 +1,29 @@
-import { ScopeType } from "@typescript-eslint/utils/dist/ts-eslint-scope";
-import type { CamelToSnakeCase, SnakeCaseToCamelCase } from "../shared/types";
+import type {
+    TCamelToKebabCase,
+    TSnakeCaseToKebabCase,
+    TScopeType,
+} from '../shared/types';
 
-type FixedScopeType = { [key in Capitalize<SnakeCaseToCamelCase<ScopeType>>]: FixedKeys<key> }
+type TFixedScopeType = {
+    [key in Capitalize<TSnakeCaseToKebabCase<TScopeType>>]: TFixedKeys<key>;
+};
 
-type FixedKeys<KEY extends string> =
-    KEY extends "TDZ" ? "TDZ" : CamelToSnakeCase<Uncapitalize<KEY>>
+type TFixedKeys<KEY extends string> = KEY extends 'TDZ'
+    ? 'TDZ'
+    : TCamelToKebabCase<Uncapitalize<KEY>>;
 
-export const EScopeType: FixedScopeType = {
-    TDZ: "TDZ",
-    Function: "function",
-    Block: "block",
-    Catch: "catch",
-    Class: "class",
-    For: "for",
-    Global: "global",
-    Module: "module",
-    Switch: "switch",
-    With: "with",
-    Enum: "enum",
-    FunctionExpressionName: "function-expression-name",
-    EmptyFunction: "empty-function"
-}
+export const CEScopeType: TFixedScopeType = {
+    TDZ: 'TDZ',
+    Function: 'function',
+    Block: 'block',
+    Catch: 'catch',
+    Class: 'class',
+    For: 'for',
+    Global: 'global',
+    Module: 'module',
+    Switch: 'switch',
+    With: 'with',
+    Enum: 'enum',
+    FunctionExpressionName: 'function-expression-name',
+    EmptyFunction: 'empty-function',
+};

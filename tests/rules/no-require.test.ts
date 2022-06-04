@@ -1,10 +1,5 @@
-/* eslint-disable eslint-comments/no-use */
-// this rule tests the new lines, which prettier will want to fix and break the tests
-/* eslint "@typescript-eslint/internal/plugin-test-formatting": ["error", { formatWithPrettier: false }] */
-/* eslint-enable eslint-comments/no-use */
-import { InvalidTestCase, ValidTestCase } from '@typescript-eslint/utils/dist/ts-eslint';
-import rule, * as noRequireRule from '../../src/rules/no-require';
-import { RuleTester } from '../RuleTester';
+import rule from '../../src/rules/no-require';
+import { RuleTester } from '../rule-tester';
 
 const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',

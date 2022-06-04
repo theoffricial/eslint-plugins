@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    // "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "declaration": true,
@@ -9,13 +8,16 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitReturns": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
     "pretty": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2017",
+    "resolveJsonModule": true,
+    "target": "ES2020",
     "lib": [
-      "es2017"
+      "ES2020"
     ],
     "paths": {}
   }

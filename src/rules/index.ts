@@ -3,7 +3,7 @@ import noRequire from './no-require';
 import noCommonjsExports from './no-commonjs-exports';
 import noCommonJsModuleExports from './no-commonjs-module-exports';
 
-export const rules = {
+export const CRules = {
     // An example rule
     'no-dynamic-import': noDynamicImport,
     'no-require': noRequire,
