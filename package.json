@@ -7,10 +7,10 @@
   "types": "build/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript.git"
+    "url": "https://github.com/uniqorg/eslint-plugin-migrate-to-typescript.git"
   },
   "bugs": {
-    "url": "https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript/issues"
+    "url": "https://github.com/uniqorg/eslint-plugin-migrate-to-typescript/issues"
   },
   "contributors": [
     "unicop <its.op.the.unicorn@gmail.com>",
