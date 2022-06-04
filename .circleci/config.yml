@@ -4,8 +4,8 @@ orbs:
   node: circleci/node@5.0.2
 
 jobs:
-  lint-test-build: # this can be any name you choose
-    executor: node/default # use the default executor defined within the orb
+  lint-test-build:
+    executor: node/default
     steps:
       - checkout
       - node/install-packages:
@@ -23,3 +23,8 @@ jobs:
           root: ~/project
           paths:
             - .
+
+workflows:
+  lint-test-build:
+    jobs:
+      - lint-test-build
