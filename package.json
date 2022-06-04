@@ -16,11 +16,17 @@
     "unicop <its.op.the.unicorn@gmail.com>",
     "neriyarden"
   ],
-  "keywords": ["eslint", "typescript", "@typescript-eslint/eslint-plugin", "migrate", "@typescript-eslint/parser"],
+  "keywords": [
+    "eslint",
+    "typescript",
+    "@typescript-eslint/eslint-plugin",
+    "migrate",
+    "@typescript-eslint/parser"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "jest",
-    "prebuild": "rimraf build && lint",
+    "prebuild": "rimraf build && npm run lint",
     "test:coverage": "jest --coverage --silent",
     "lint": "eslint . --ext .ts"
   },
