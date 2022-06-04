@@ -1,43 +1,56 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@5.0.2
+aliases:
+  - &restore-cache
+    restore_cache:
+      key: dependencies-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+  - &save-cache
+    save_cache:
+      key: dependencies-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      paths:
+        - ./node_modules
+  - &install-deps
+    run:
+      name: Install dependencies
+      command: npm ci
+  - &run-linter
+    run:
+      name: Lint
+      command: npm tun lint
+  - &build
+    run:
+      name: Build
+      command: npm run build
+  - &run-unit-tests
+    run:
+      name: Test
+      command: npm run test
 
 jobs:
   lint:
     executor: node/default
     steps:
       - checkout
-      # this step installs the node packages using cache. for more details - https://circleci.com/developer/orbs/orb/circleci/node#commands-install-packages
-      - node/install-packages:
-          pkg-manager: npm
-          cache-version: v1
-          include-branch-in-cache-key: true
-      - run:
-          command: npm run lint
-          name: Run linter
+      - *restore-cache
+      - *install-deps
+      - *save-cache
+      - *run-linter
   test:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
-          cache-version: v1
-          include-branch-in-cache-key: true
-      - run:
-          command: npm run test
-          name: Run tests
+      - *restore-cache
+      - *install-deps
+      - *save-cache
+      - *run-unit-tests
   build:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
-          cache-version: v1
-          include-branch-in-cache-key: true
-      - run:
-          command: npm run build
-          name: Build app
+      - *restore-cache
+      - *install-deps
+      - *save-cache
+      - *build
 
 workflows:
   lint-test-build:
