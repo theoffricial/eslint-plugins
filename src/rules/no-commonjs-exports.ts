@@ -71,7 +71,7 @@ export default createRule<TOptions, TMessageIds>({
                 if (!isModuleScope(context.getScope())) {
                     return;
                 }
-                if (doesIdentifierIsExports(node) ?? false) {
+                if (doesIdentifierIsExports(node)) {
                     context.report({
                         node,
                         messageId: 'noCommonJSExports',

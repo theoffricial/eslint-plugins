@@ -4,10 +4,8 @@ import type {
     TScopeType,
 } from '../shared/types';
 
-type TBla = TScopeType | 'bla-kebab-case';
-
 type TFixedScopeType = {
-    [key in Capitalize<TSnakeCaseToKebabCase<TBla>>]: TFixedKeys<key>;
+    [key in Capitalize<TSnakeCaseToKebabCase<TScopeType>>]: TFixedKeys<key>;
 };
 
 type TFixedKeys<KEY extends string> = KEY extends 'TDZ'
@@ -28,5 +26,4 @@ export const CEScopeType: TFixedScopeType = {
     Enum: 'enum',
     FunctionExpressionName: 'function-expression-name',
     EmptyFunction: 'empty-function',
-    BlaKebabCase: 'bla-kebab-case',
 };
