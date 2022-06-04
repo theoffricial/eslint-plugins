@@ -8,8 +8,11 @@ jobs:
     executor: node/default
     steps:
       - checkout
+      # this step installs the node packages using cache. for more details - https://circleci.com/developer/orbs/orb/circleci/node#commands-install-packages
       - node/install-packages:
           pkg-manager: npm
+          cache-version: v1
+          include-branch-in-cache-key: true
       - run:
           command: npm run lint
           name: Run linter
@@ -19,6 +22,8 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
+          cache-version: v1
+          include-branch-in-cache-key: true
       - run:
           command: npm run test
           name: Run tests
@@ -28,6 +33,8 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
+          cache-version: v1
+          include-branch-in-cache-key: true
       - run:
           command: npm run build
           name: Build app
