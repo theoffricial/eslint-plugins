@@ -99,13 +99,13 @@ function isModuleScope(scope: TScope.Scope) {
 
 /** Detects cases like: `exports = {}` */
 function doesIdentifierIsExports(node: TSESTree.Identifier) {
-    return (
+    return Boolean(
         node.parent &&
-        node.parent.type === AST_NODE_TYPES.AssignmentExpression &&
-        node.parent.operator === '=' &&
-        node.parent.parent?.type === AST_NODE_TYPES.ExpressionStatement &&
-        node.parent.parent.parent?.type === AST_NODE_TYPES.Program &&
-        node.parent.parent.parent?.sourceType === CEScopeType.Module
+            node.parent.type === AST_NODE_TYPES.AssignmentExpression &&
+            node.parent.operator === '=' &&
+            node.parent.parent?.type === AST_NODE_TYPES.ExpressionStatement &&
+            node.parent.parent.parent?.type === AST_NODE_TYPES.Program &&
+            node.parent.parent.parent?.sourceType === CEScopeType.Module
     );
 }
 
