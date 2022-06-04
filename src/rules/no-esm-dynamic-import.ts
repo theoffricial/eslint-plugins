@@ -3,21 +3,10 @@ import { AST_NODE_TYPES } from '@typescript-eslint/types';
 import { CEBABEL_PARSER_AST_NODE_TYPES } from '../shared/types';
 import { createRule } from '../util';
 
-export type TOptions = [{ esmodule: boolean }];
+export type TOptions = [];
 export type TMessageIds =
     | 'importShouldBeLiteral'
-    | 'legacyImportShouldBeLiteral'
-    | 'requireShouldBeLiteral';
-
-function isRequire(node: TSESTree.CallExpression) {
-    return (
-        Boolean(node) &&
-        node.callee &&
-        node.callee.type === AST_NODE_TYPES.Identifier &&
-        node.callee.name === 'require' &&
-        node.arguments.length > 0
-    );
-}
+    | 'legacyParsersImportShouldBeLiteral';
 
 /** This function supports @babel/parser */
 function isDynamicImport(node: TSESTree.CallExpression) {
@@ -40,7 +29,7 @@ function isStaticValue(
 }
 
 export default createRule<TOptions, TMessageIds>({
-    defaultOptions: [{ esmodule: false }],
+    defaultOptions: [],
     name: 'no-dynamic-import',
 
     meta: {
@@ -51,29 +40,15 @@ export default createRule<TOptions, TMessageIds>({
             recommended: false,
         },
         messages: {
-            requireShouldBeLiteral:
-                'Calls to require() should use string literals',
-            legacyImportShouldBeLiteral:
+            legacyParsersImportShouldBeLiteral:
                 'Calls to import() should use string literals',
             importShouldBeLiteral:
                 'Calls to import() should use string literals',
         },
-        schema: [
-            {
-                type: 'object',
-                properties: {
-                    esmodule: {
-                        type: 'boolean',
-                    },
-                },
-                additionalProperties: false,
-            },
-        ],
+        schema: [{}],
     },
 
     create(context) {
-        const [{ esmodule } = { esmodule: false }] = context.options;
-
         return {
             CallExpression(node) {
                 if (
@@ -82,25 +57,15 @@ export default createRule<TOptions, TMessageIds>({
                 ) {
                     return;
                 }
-
-                if (isRequire(node)) {
+                if (isDynamicImport(node)) {
                     context.report({
                         node,
-                        messageId: 'requireShouldBeLiteral',
-                        // message: 'Calls to require() should use string literals',
+                        messageId: 'legacyParsersImportShouldBeLiteral',
                     });
-                    return;
-                }
-                if (esmodule && isDynamicImport(node)) {
-                    context.report({
-                        node,
-                        messageId: 'legacyImportShouldBeLiteral',
-                    });
-                    return;
                 }
             },
             ImportExpression(node) {
-                if (!esmodule || isStaticValue(node.source)) {
+                if (isStaticValue(node.source)) {
                     return;
                 }
                 context.report({
