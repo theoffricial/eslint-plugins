@@ -4,27 +4,37 @@ orbs:
   node: circleci/node@5.0.2
 
 jobs:
-  lint-test-build:
+  lint:
     executor: node/default
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      # - run:
-      #     command: npm run lint
-      #     name: Run linter
+      - run:
+          command: npm run lint
+          name: Run linter
+  test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
       - run:
           command: npm run test
           name: Run tests
+  build:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
       - run:
           command: npm run build
           name: Build app
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .
 
 workflows:
   lint-test-build:
     jobs:
-      - lint-test-build
+      - lint
+      - test
+      - build
