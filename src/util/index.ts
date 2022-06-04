@@ -6,3 +6,7 @@ const repoUrl =
 export const createRule = ESLintUtils.RuleCreator(
     (name) => `${repoUrl}/blob/master/docs/rules/${name}.md`
 );
+
+export * from './predicates';
+export * from './misc';
+export * from './null-throws';
