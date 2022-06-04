@@ -19,7 +19,7 @@ aliases:
   - &run-linter
     run:
       name: Lint
-      command: npm tun lint
+      command: npm run lint
   - &build
     run:
       name: Build
@@ -57,9 +57,9 @@ workflows:
   lint-test-build:
     jobs:
       - lint
-      - build
+      - build:
           requires:
-            - build
-      - unit-test
+            - lint
+      - unit-test:
           requires:
             - lint
