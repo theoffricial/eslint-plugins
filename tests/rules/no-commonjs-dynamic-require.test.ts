@@ -5,7 +5,7 @@ const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
 });
 
-ruleTester.run('no-dynamic-import', rule, {
+ruleTester.run('no-commonjs-dynamic-import', rule, {
     valid: [
         // static esm import
         { code: 'import _ from "lodash"' },

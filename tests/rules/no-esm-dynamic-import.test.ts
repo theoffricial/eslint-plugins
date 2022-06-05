@@ -5,7 +5,7 @@ const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
 });
 
-ruleTester.run('no-dynamic-import', rule, {
+ruleTester.run('no-esm-dynamic-import', rule, {
     valid: [
         // static require
         { code: 'require("foo")' },

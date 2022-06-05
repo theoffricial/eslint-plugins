@@ -27,7 +27,7 @@ function isStaticValue(
 
 export default createRule<TOptions, TMessageIds>({
     defaultOptions: [],
-    name: 'no-dynamic-import',
+    name: 'no-commonjs-dynamic-require',
 
     meta: {
         type: 'suggestion',

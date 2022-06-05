@@ -30,7 +30,7 @@ function isStaticValue(
 
 export default createRule<TOptions, TMessageIds>({
     defaultOptions: [],
-    name: 'no-dynamic-import',
+    name: 'no-esm-dynamic-import',
 
     meta: {
         type: 'suggestion',
