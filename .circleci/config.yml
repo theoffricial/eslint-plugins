@@ -1,15 +1,12 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@5.0.2
-
 aliases:
   - &restore-cache
     restore_cache:
-      key: dependencies-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      key: dependencies-cache-{{ checksum "package-lock.json" }}
   - &save-cache
     save_cache:
-      key: dependencies-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      key: dependencies-cache-{{ checksum "package-lock.json" }}
       paths:
         - ./node_modules
   - &install-deps
@@ -23,7 +20,7 @@ aliases:
   - &build
     run:
       name: Build
-      command: npm run build
+      command: npm run build:only
   - &run-unit-tests
     run:
       name: Unit-test
@@ -31,7 +28,8 @@ aliases:
 
 jobs:
   lint:
-    executor: node/default
+    docker:
+      - image: cimg/node:lts
     steps:
       - checkout
       - *restore-cache
@@ -39,14 +37,16 @@ jobs:
       - *save-cache
       - *run-linter
   unit-test:
-    executor: node/default
+    docker:
+      - image: cimg/node:lts
     steps:
       - checkout
       - *restore-cache
       - *install-deps
       - *run-unit-tests
   build:
-    executor: node/default
+    docker:
+      - image: cimg/node:lts
     steps:
       - checkout
       - *restore-cache

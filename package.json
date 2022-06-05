@@ -24,11 +24,12 @@
     "@typescript-eslint/parser"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "prebuild": "npm run lint",
+    "build:only": "rimraf build && tsc -p tsconfig.json",
+    "build": "npm run build:only",
+    "lint": "eslint . --ext .ts",
     "test": "jest",
-    "prebuild": "rimraf build && npm run lint",
-    "test:coverage": "jest --coverage --silent",
-    "lint": "eslint . --ext .ts"
+    "test:coverage": "jest --coverage --silent"
   },
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
