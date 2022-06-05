@@ -5,8 +5,9 @@
         "checkJs": false
     },
     "include": [
-        "./src",
-        "./tests",
-        "./jest.config.js"
+        "src",
+        "tests",
+        "jest.config.js"
     ],
+    "exclude": ["website"]
 }

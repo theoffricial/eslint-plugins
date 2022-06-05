@@ -1,5 +1,7 @@
 # deps
 /node_modules
+**/node_modules/**
+/uniqorg-webiste/node_modules
 /build
 /dist
 .vscode

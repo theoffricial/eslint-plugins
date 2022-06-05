@@ -1,0 +1,18 @@
+{
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@tsconfig/docusaurus/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "diagnostics": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true
+  },
+  "exclude": [
+    "build",
+    "node_modules",
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/**/*.ts",
+    "./node_modules/**/*.tsx",
+  ]
+}
