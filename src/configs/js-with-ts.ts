@@ -1,7 +1,8 @@
 export = {
-    plugins: ['mig2ts'],
+    plugins: ['migrate-to-typescript'],
     rules: {
-        'no-dynamic-import': ['warn', { esmodule: true }],
+        'no-esm-dynamic-import': ['warn'],
+        'no-commonjs-dynamic-require': ['warn'],
         'no-commonjs-exports': 'warn',
         'no-commonjs-module-exports': 'warn',
         'no-require': 'warn',
