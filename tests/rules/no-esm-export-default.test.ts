@@ -1,15 +1,11 @@
 import rule from '../../src/rules/no-esm-export-default';
-import { RuleTester } from '../RuleTester';
-
-const error = {
-    message: 'Calls to require() should use string literals',
-};
+import { RuleTester } from '../rule-tester';
 
 const ruleTester = new RuleTester({
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        sourceType: 'module'
-    }
+        sourceType: 'module',
+    },
 });
 
 ruleTester.run('no-esm-export-default', rule, {
@@ -30,19 +26,30 @@ ruleTester.run('no-esm-export-default', rule, {
         { code: 'exports = { X: 1 }' },
         { code: 'exports.a = { X: 1 }' },
         // ignore when script
-        { 
-            code: "export default {}",
+        {
+            code: 'export default {}',
             parserOptions: {
-                sourceType: 'script'
-            } 
-        }
+                sourceType: 'script',
+            },
+        },
     ],
     invalid: [
         // esm export default
-       { code: 'export default {}', errors: [{messageId: 'noExportDefault'}] },
-       { code: 'export default someVar;', errors: [{messageId: 'noExportDefault'}] },
-       { code: 'export default "primitive"', errors: [{messageId: 'noExportDefault'}] },
-       { code: 'export default () => {}', errors: [{messageId: 'noExportDefault'}] }
-    ]
+        {
+            code: 'export default {}',
+            errors: [{ messageId: 'noExportDefault' }],
+        },
+        {
+            code: 'export default someVar;',
+            errors: [{ messageId: 'noExportDefault' }],
+        },
+        {
+            code: 'export default "primitive"',
+            errors: [{ messageId: 'noExportDefault' }],
+        },
+        {
+            code: 'export default () => {}',
+            errors: [{ messageId: 'noExportDefault' }],
+        },
+    ],
 });
-

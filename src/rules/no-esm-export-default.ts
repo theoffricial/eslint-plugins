@@ -1,47 +1,44 @@
-import { Scope } from '@typescript-eslint/utils/dist/ts-eslint';
 import { createRule, ruleMessageTemplate } from '../util';
-import { EScopeType } from "../constants";
+import type { TScope } from '../shared/types';
+import { CEScopeType } from '../shared/constants';
 
-export type Options = [];
-export type MessageIds = 'noExportDefault';
+export type TOptions = [];
+export type TMessageIds = 'noExportDefault';
 
-function isModuleScope(scope: Scope.Scope) {
-    return scope.variableScope.type === EScopeType.Module;
+function isModuleScope(scope: TScope.Scope) {
+    return scope.variableScope.type === CEScopeType.Module;
 }
 
-export default createRule<Options, MessageIds>({
+export default createRule<TOptions, TMessageIds>({
     defaultOptions: [],
-    name: 'no-dynamic-import',
+    name: 'no-esm-export-default',
 
     meta: {
         type: 'suggestion',
         docs: {
-            description: 'Using this rule to disable the use of dynamic require for CommonJS or ESM import.',
-            recommended: false
+            description:
+                'Using this rule to disable the use of dynamic require for CommonJS or ESM import.',
+            recommended: false,
         },
         messages: {
             noExportDefault: ruleMessageTemplate({
                 linterMessage: 'using default export is not allowed',
-                why: 'ESM export default causing inconsistent naming and confusion when project still using both ESM and CommonJS.'
-            })
+                why: 'ESM export default causing inconsistent naming and confusion when project still using both ESM and CommonJS.',
+            }),
         },
         schema: [{}],
     },
 
     create(context) {
-
-        const [] = context.options;
-
         return {
             ExportDefaultDeclaration(node) {
                 if (isModuleScope(context.getScope())) {
                     context.report({
                         messageId: 'noExportDefault',
                         node,
-                    })
+                    });
                 }
             },
         };
     },
-})
-
+});
