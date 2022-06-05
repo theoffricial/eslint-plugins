@@ -155,7 +155,7 @@
             "allow": [
                 "**/src/rules/*.ts", 
                 "**/src/configs/*.ts",
-                "**/shared/types",
+                "**/shared/*",
                 "**/src/shared/types"
             ]
         }],

@@ -1,6 +1,6 @@
 import type { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
-import { CEScopeType } from '../constants';
+import { CEScopeType } from '../shared/constants';
 import type { TScope } from '../shared/types';
 import { createRule, ruleMessageTemplate } from '../util';
 

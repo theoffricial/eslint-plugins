@@ -2,7 +2,7 @@ import type {
     TCamelToKebabCase,
     TSnakeCaseToKebabCase,
     TScopeType,
-} from '../shared/types';
+} from '../types';
 
 type TFixedScopeType = {
     [key in Capitalize<TSnakeCaseToKebabCase<TScopeType>>]: TFixedKeys<key>;
