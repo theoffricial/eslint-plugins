@@ -16,13 +16,20 @@
     "unicop <its.op.the.unicorn@gmail.com>",
     "neriyarden"
   ],
-  "keywords": ["eslint", "typescript", "@typescript-eslint/eslint-plugin", "migrate", "@typescript-eslint/parser"],
+  "keywords": [
+    "eslint",
+    "typescript",
+    "@typescript-eslint/eslint-plugin",
+    "migrate",
+    "@typescript-eslint/parser"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "prebuild": "npm run lint",
+    "build:only": "rimraf build && tsc -p tsconfig.json",
+    "build": "npm run build:only",
+    "lint": "eslint . --ext .ts",
     "test": "jest",
-    "prebuild": "rimraf build && lint",
-    "test:coverage": "jest --coverage --silent",
-    "lint": "eslint . --ext .ts"
+    "test:coverage": "jest --coverage --silent"
   },
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"

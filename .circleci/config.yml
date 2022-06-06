@@ -1,0 +1,65 @@
+version: 2.1
+
+aliases:
+  - &restore-cache
+    restore_cache:
+      key: dependencies-cache-{{ checksum "package-lock.json" }}
+  - &save-cache
+    save_cache:
+      key: dependencies-cache-{{ checksum "package-lock.json" }}
+      paths:
+        - ./node_modules
+  - &install-deps
+    run:
+      name: Install dependencies
+      command: npm ci
+  - &run-linter
+    run:
+      name: Lint
+      command: npm run lint
+  - &build
+    run:
+      name: Build
+      command: npm run build:only
+  - &run-unit-tests
+    run:
+      name: Unit-test
+      command: npm run test
+
+jobs:
+  lint:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - checkout
+      - *restore-cache
+      - *install-deps
+      - *save-cache
+      - *run-linter
+  unit-test:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - checkout
+      - *restore-cache
+      - *install-deps
+      - *run-unit-tests
+  build:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - checkout
+      - *restore-cache
+      - *install-deps
+      - *build
+
+workflows:
+  lint-test-build:
+    jobs:
+      - lint
+      - build:
+          requires:
+            - lint
+      - unit-test:
+          requires:
+            - lint
