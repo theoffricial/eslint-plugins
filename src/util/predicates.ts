@@ -1,5 +1,5 @@
 import { TSESTree } from '@typescript-eslint/types';
-import * as eslintUtils from 'eslint-utils';
+import { eslintUtils } from '../shared/constants'
 
 type IsSpecificTokenFunction<SpecificToken extends TSESTree.Token> = (
   token: TSESTree.Token,
