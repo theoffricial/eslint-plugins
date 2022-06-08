@@ -27,9 +27,15 @@
     "prebuild": "npm run lint",
     "build:only": "rimraf build && tsc -p tsconfig.json",
     "build": "npm run build:only",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint . --ext .ts,.js",
     "test": "jest",
-    "test:coverage": "jest --coverage --silent"
+    "test:coverage": "jest --coverage --silent",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{ts,js}": [
+      "npm run lint"
+    ]
   },
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
@@ -51,8 +57,8 @@
     "@types/jest": "^27.5.1",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.25.0",
-    "eslint": "^8.16.0",
     "babel-eslint": "^10.1.0",
+    "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.4.6",
@@ -61,6 +67,7 @@
     "eslint-plugin-security": "^1.5.0",
     "eslint-plugin-unicorn": "^42.0.0",
     "jest": "^28.1.0",
+    "lint-staged": "^12.3.4",
     "prettier": "2.6.2",
     "ts-jest": "^28.0.2",
     "ts-node": "^10.7.0",
