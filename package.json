@@ -28,13 +28,14 @@
     "build:only": "rimraf build && tsc -p tsconfig.json",
     "build": "npm run build:only",
     "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
     "test": "jest",
     "test:coverage": "jest --coverage --silent",
     "prepare": "husky install"
   },
   "lint-staged": {
     "**/*.{ts,js}": [
-      "npm run lint"
+      "npm run lint:fix"
     ]
   },
   "engines": {
