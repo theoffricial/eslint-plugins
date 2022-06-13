@@ -47,7 +47,7 @@ export default function Home(): JSX.Element {
               <div className="col col--8 col--offset-2">
                 <div className="margin-vert--lg text--center">
                   <h2 className={clsx(styles.sectionDarkTitle, "sectionDarkTitle__h2--primary-darker")}>
-                    We're currently working in developed a full infrastructure to set standards for different types of projects
+                    We are here to make conventions simple to as many folks as possible
                   </h2>
                 </div>
               </div>
@@ -75,10 +75,10 @@ export default function Home(): JSX.Element {
                     </p>
                   </div>
                   <div className="col">
-                    <h3>Powered by Community</h3>
+                    <h3>Wide Community</h3>
                     <p>
                     ESLint is consistently getting <a href='https://www.npmtrends.com/eslint-vs-prettier-vs-tslint'>popularity</a>, We have researched the whole eco-system to find the best 
-        recipe we can to help spreading standards that can be easily understood
+        approach for conventions we can create to help spreading standards that can be easily understood
                     </p>
                   </div>
                 </div>
