@@ -40,6 +40,12 @@
         "jest",
         "security"
     ],
+    "ignorePatterns": [
+        "tests/fixtures/indent/*.js", 
+        "tests/fixtures/unstrict/*.ts",
+        "build",
+        "node_modules"
+    ],
     "rules": {
         // layout
         // prettier
@@ -156,7 +162,8 @@
                 "**/src/rules/*.ts", 
                 "**/src/configs/*.ts",
                 "**/shared/*",
-                "**/src/shared/types"
+                "**/src/shared/types",
+                "**/src/**"
             ]
         }],
         "import/no-webpack-loader-syntax": "error",
