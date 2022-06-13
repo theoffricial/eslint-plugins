@@ -1,6 +1,8 @@
 ---
 id: no-require
 title: no-require
+tags:
+  - No CommonJS
 ---
 
 ## Rule Details

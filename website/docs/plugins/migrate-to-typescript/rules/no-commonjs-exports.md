@@ -1,13 +1,16 @@
 ---
 id: no-commonjs-exports
 title: no-commonjs-exports
+tags:
+  - No CommonJS
 ---
 
 ## Rule Details
 
-Disallows invocation of `exports` `commonjs` keyword.
+Disallows invocation of commonjs `exports` keyword.
 
-Prefer the `es` modules style `export`s over `require()`.
+Prefer the `es` modules export syntax `export`
+over `commonjs` modules export syntax `exports`.
 
 Examples of **correct** code for this rule ✅
 
@@ -15,6 +18,8 @@ Examples of **correct** code for this rule ✅
 // correct ✅
 export const x = 1;
 export function myFunc() {}
+// default
+export default = {}
 // TS exclusive examples
 export interface INum {
   num: number;
@@ -22,17 +27,21 @@ export interface INum {
 export enum EMyEnum {
   First = 1,
 }
+// typescript wrapper for commonjs export
+// (this is not a native ESM syntax!)
+export = {}
 ```
 
 Examples of **incorrect** code for this rule ⛔️
 
 ```typescript
 // incorrect ⛔️
-var lib = require("lib");
-let lib2 = require("lib2");
-var lib5 = require("lib5"),
-  lib6 = require("lib6");
-import lib8 = require("lib8");
+exports.x = 1;
+exports.x = someVar;
+exports.x = function myFun() => {};
+exports = () => {};
+exports = "primitive";
+exports = someVar;
 ```
 
 ### When to use it
@@ -43,6 +52,21 @@ import lib8 = require("lib8");
 ### When _not_ to use it
 
 - On projects that using `commonjs` modules only, commonly these projects are `nodejs` over `javascript` only.
+
+### How to use it manually (not as part of a config)
+
+```json
+{
+    // eslintrc.json
+    ...,
+    "rules": {
+        "migrate-to-typescript/no-commonjs-exports": "warn"
+    },
+    ...more properties
+}
+// set to "warn" to push your project into full migration to esm
+// set to "error" when your project is fully esm
+```
 
 #### Credit 🙏
 

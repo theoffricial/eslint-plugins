@@ -1,6 +1,8 @@
 ---
-id: no-commonjs-dynamic-require
-title: no-commonjs-dynamic-require
+id: no-commonjs-dynamic-import
+title: no-commonjs-dynamic-import
+tags:
+  - No Hard Maintenance
 ---
 
 ## Rule Details

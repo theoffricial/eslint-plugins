@@ -1,6 +1,10 @@
 ---
 id: no-commonjs-dynamic-require
 title: no-commonjs-dynamic-require
+tags:
+  - No CommonJS
+  - No Hard Maintenance
+sidebar_class_name: red
 ---
 
 ## Rule Details

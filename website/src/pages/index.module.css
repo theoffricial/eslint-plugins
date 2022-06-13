@@ -21,3 +21,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.sectionAlt {
+  background-color: var(--ifm-color-emphasis-alpha-05);
+}
+
+.sectionDark {
+  background-color: var(--ifm-color-primary);
+}
+
+.sectionDarkTitle {
+  color: var(--ifm-color-white);
+}
+
+.sectionDark a,
+.sectionDark a:hover {
+  color: var(--ifm-color-gray-1000);
+}

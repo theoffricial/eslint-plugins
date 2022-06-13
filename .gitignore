@@ -5,3 +5,5 @@
 /build
 /dist
 .vscode
+website/.docusaurus
+website/node_modules

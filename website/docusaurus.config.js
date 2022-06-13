@@ -5,8 +5,8 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Migrate to TypeScript',
-  tagline: 'Dinosaurs are cool',
+  title: 'ESLint Extensions',
+  tagline: 'An opinionated set of ESLint extensions that will help you spread high-standards.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -16,7 +16,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'uniqorg', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'eslint-plugin-migrate-to-typescript', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -25,13 +25,14 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: 'docs',
+          sidebarPath: require.resolve('./sidebars/main-sidebars.js'),
           breadcrumbs: true,
         },
         theme: {
@@ -44,76 +45,94 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'migrate-to-typescript-plugin',
+        title: 'uniqorg/eslint',
         logo: {
           alt: 'ESLint Logo',
           src: 'img/eslint-logo.svg',
         },
         items: [
           {
-            label: 'Docs',
+            label: 'Intro to Plugins',
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'pluginsGeneralSidebar',
+          },
+          {
+            label: 'Plugins List',
             type: 'dropdown',
             position: 'left',
             items: [
               {
-                label: 'Rules',
                 type: 'doc',
-                docId: 'rules/intro',
-              },
-              {
-                type: 'doc',
-                label: 'Configs',
-                docId: 'configs/intro'
-              },
+                label: 'migrate-to-typescript',
+                docId: 'plugins/migrate-to-typescript/intro'
+              }
             ]
           },
+          // {
+          //   label: 'Configs',
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          // },
+          // {
+          //   type: 'docsVersionDropdown',
+          //   position: 'left',
+          //   dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          //   dropdownActiveClassDisabled: true,
+          // },
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     {
-      //       title: 'Docs',
-      //       items: [
-      //         {
-      //           label: 'Docs',
-      //           to: '/docs/intro',
-      //         },
-      //       ],
-      //     },
-      //     // {
-      //     //   title: 'Community',
-      //     //   items: [
-      //     //     {
-      //     //       label: 'Stack Overflow',
-      //     //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-      //     //     },
-      //     //     {
-      //     //       label: 'Discord',
-      //     //       href: 'https://discordapp.com/invite/docusaurus',
-      //     //     },
-      //     //     {
-      //     //       label: 'Twitter',
-      //     //       href: 'https://twitter.com/docusaurus',
-      //     //     },
-      //     //   ],
-      //     // },
-      //     // {
-      //     //   title: 'More',
-      //     //   items: [
-      //     //     {
-      //     //       label: 'Blog',
-      //     //       to: '/blog',
-      //     //     },
-      //     //     {
-      //     //       label: 'GitHub',
-      //     //       href: 'https://github.com/facebook/docusaurus',
-      //     //     },
-      //     //   ],
-      //     // },
-      //   ],
-      //   copyright: `Copyright © ${new Date().getFullYear()} Migrate to Typescript, Inc. Built with Docusaurus.`,
-      // },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Docs',
+            items: [
+              {
+                label: 'Plugins',
+                to: '/docs/plugins/intro',
+              },
+              // {
+              //   label: 'Configs (coming soon..)',
+              //   to: '/docs/plugins/intro',
+              // },
+            ],
+          },
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     {
+          //       label: 'Stack Overflow',
+          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          //     },
+          //     {
+          //       label: 'Discord',
+          //       href: 'https://discordapp.com/invite/docusaurus',
+          //     },
+          //     {
+          //       label: 'Twitter',
+          //       href: 'https://twitter.com/docusaurus',
+          //     },
+          //   ],
+          // },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/uniqorg/eslint-plugin-migrate-to-typescript',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} uniqorg, Inc. Built with Docusaurus.`,
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
