@@ -1,12 +1,12 @@
 import { createRule, ruleMessageTemplate } from '../util';
 import type { TScope } from '../shared/types';
-import { EScopeType } from '../shared/constants';
+import { CEScopeType } from '../shared/constants';
 
 export type TOptions = [];
 export type TMessageIds = 'noExportDefault';
 
 function isModuleScope(scope: TScope.Scope) {
-    return scope.variableScope.type === EScopeType.Module;
+    return scope.variableScope.type === CEScopeType.Module;
 }
 
 export default createRule<TOptions, TMessageIds>({

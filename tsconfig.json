@@ -5,6 +5,10 @@
         "module": "CommonJS",
         "moduleResolution": "node",
     },
+    "exclude": [
+        "build",
+        "node_modules"
+    ],
     "include": [
         "src"
     ]

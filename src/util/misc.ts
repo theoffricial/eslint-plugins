@@ -6,14 +6,14 @@
  */
 function formatWordList(words: string[]): string {
     if (!words?.length) {
-      return '';
+        return '';
     }
-  
+
     if (words.length === 1) {
-      return words[0];
+        return words[0];
     }
-  
+
     return [words.slice(0, -1).join(', '), words.slice(-1)[0]].join(' and ');
 }
 
-export { formatWordList }
+export { formatWordList };
