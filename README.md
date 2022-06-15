@@ -33,26 +33,11 @@
 
 
 ## Introduction
-This eslint plugin is a collection of custom eslint rules, as well as some cherry-picked rules from the most popular and reputable eslint plugins out there:
+This eslint plugin is a collection of custom eslint rules, written for the purpose of helping developers in the process of migration from Javascript to Typescript.
 
- - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint)
- - [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)
- - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
- - [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
- - [eslint-plugin-promise](https://github.com/xjamundx/eslint-plugin-promise)
- - [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)
- - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
+### Docs
 
-
-## Install
-
-```sh
-npm install --save-dev eslint-plugin-migrate-to-typescript
-```
-
-
-## Description
-
+--link--
 
 
 ## Contributors
