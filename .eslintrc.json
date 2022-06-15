@@ -43,6 +43,7 @@
     "ignorePatterns": [
         "tests/fixtures/indent/*.js", 
         "tests/fixtures/unstrict/*.ts",
+        "website",
         "build",
         "node_modules"
     ],

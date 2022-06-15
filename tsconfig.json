@@ -4,6 +4,8 @@
         "composite": false,
         "module": "CommonJS",
         "moduleResolution": "node",
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
     },
     "exclude": [
         "build",
@@ -11,5 +13,16 @@
     ],
     "include": [
         "src"
+    ],
+    "exclude": [
+        "website/**", 
+        "**/node_modules/**", 
+        "node_modules",
+        "**/node_modules",
+        "**/node_modules/*",
+        "**/node_modules/**/*.ts",
+        "**/node_modules/**/*.tsx",
+        "**/build/**",
+        "website/node_modules"
     ]
 }

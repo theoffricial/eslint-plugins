@@ -1,5 +1,9 @@
 # deps
 /node_modules
+**/node_modules/**
+/webiste/node_modules
 /build
 /dist
 .vscode
+website/.docusaurus
+website/node_modules
