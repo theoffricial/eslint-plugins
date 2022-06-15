@@ -7,7 +7,9 @@
     "include": [
         "src",
         "tests",
-        "jest.config.js"
+        "jest.config.js",
     ],
-    "exclude": ["website"]
+    "exclude": [
+        "website"
+    ]
 }
