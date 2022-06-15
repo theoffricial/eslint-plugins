@@ -10,6 +10,7 @@
         "jest.config.js",
     ],
     "exclude": [
-        "website"
+        "website",
+        "coverage"
     ]
 }

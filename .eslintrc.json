@@ -45,7 +45,8 @@
         "tests/fixtures/unstrict/*.ts",
         "website",
         "build",
-        "node_modules"
+        "node_modules",
+        "*coverage"
     ],
     "rules": {
         // layout
