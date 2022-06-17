@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[4121],{8070:function(e){e.exports=JSON.parse('[{"label":"No Hard Maintenance","permalink":"/docs/tags/no-hard-maintenance","count":3},{"label":"No CommonJS","permalink":"/docs/tags/no-common-js","count":4},{"label":"No Regression","permalink":"/docs/tags/no-regression","count":1}]')}}]);
