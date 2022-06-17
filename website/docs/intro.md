@@ -6,4 +6,4 @@ sidebar_position: 1
 
 Plugins list
 
-- [eslint-plugin-migrate-to-typescript](./plugins/migrate-to-typescript/intro)
+- [eslint-plugin-migrate-to-typescript](plugins/migrate-to-typescript/intro.md)

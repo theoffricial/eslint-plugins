@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'ESLint Extensions',
   tagline: 'An opinionated set of ESLint extensions that will help you spread high-standards.',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://uniqorg.github.io',
+  baseUrl: '/eslint-plugin-migrate-to-typescript/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/eslint-favicon.512x512.png',
@@ -17,6 +17,8 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'uniqorg', // Usually your GitHub org/user name.
   projectName: 'eslint-plugin-migrate-to-typescript', // Usually your repo name.
+  deploymentBranch: 'gh-pages-website-deployment-branch',
+  trailingSlash: true,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
