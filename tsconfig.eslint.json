@@ -2,7 +2,7 @@
     "extends": "./tsconfig",
     "compilerOptions": {
         "allowJs": true,
-        "checkJs": false
+        "checkJs": false,
     },
     "include": [
         "src",

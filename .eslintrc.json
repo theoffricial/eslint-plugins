@@ -12,18 +12,18 @@
     "root": true,
     "settings": {
         "import/extensions": [
-            ".js",
-            ".ts"
+            ".js"
+            // ".ts"
         ],
         "import/resolver": {
             "node": {
                 "extensions": [
-                    ".js",
-                    ".ts"
+                    ".js"
+                    // ".ts"
                 ]
             }
         },
-        "import/docstyle": ["jsdoc", "tomdoc"],
+        "import/docstyle": ["jsdoc"],
         "import/ignore": ["node_modules", "build"]
     },
     "extends": [
@@ -191,7 +191,7 @@
         "import/exports-last": "off", //"error",
         "import/no-duplicates": "error",
         "import/no-namespace": "off",
-        "import/extensions": ["error", { "ts": "never", "js": "never", "json": "always"}],
+        // "import/extensions": ["error", { "ts": "never", "js": "never", "json": "always"}],
         "import/order": "error",
         "import/newline-after-import": "error",
         "import/prefer-default-export": "off",
@@ -660,7 +660,7 @@
         "no-dupe-class-members": "off",
         "@typescript-eslint/no-dupe-class-members": "error",
         "no-duplicate-imports": "off",
-        "@typescript-eslint/no-duplicate-imports": "error",
+        "@typescript-eslint/no-duplicate-imports": "off",
         "no-empty-function": "off",
         "@typescript-eslint/no-empty-function": "error",
         "no-extra-parens": "off",
