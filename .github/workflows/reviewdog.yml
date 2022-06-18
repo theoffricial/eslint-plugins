@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-            - name: Cache node modules
+      - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v3
         env:
