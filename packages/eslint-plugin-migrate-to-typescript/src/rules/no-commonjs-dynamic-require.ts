@@ -47,6 +47,7 @@ export default createRule<TOptions, TMessageIds>({
         return {
             CallExpression(node) {
                 if (
+                    // eslint-disable-next-line no-extra-boolean-cast
                     !Boolean(node.arguments[0]) ||
                     isStaticValue(node.arguments[0])
                 ) {

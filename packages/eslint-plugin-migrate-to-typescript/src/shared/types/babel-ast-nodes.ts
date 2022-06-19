@@ -261,4 +261,5 @@ export const CEBABEL_PARSER_AST_NODE_TYPES: TBabelParserAstNodeTypes = {
     WhileStatement: 'WhileStatement',
     WithStatement: 'WithStatement',
     YieldExpression: 'YieldExpression',
+    TSInstantiationExpression: 'TSInstantiationExpression',
 };

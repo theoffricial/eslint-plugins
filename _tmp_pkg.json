@@ -1,0 +1,80 @@
+{
+    "name": "eslint-plugin-migrate-to-typescript",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Opinionated ESLint plugin that makes migration to TypeScript super-easy and user-friendly.",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript.git"
+    },
+    "bugs": {
+      "url": "https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript/issues"
+    },
+    "contributors": [
+      "unicop <its.op.the.unicorn@gmail.com>",
+      "neriyarden"
+    ],
+    "keywords": [
+      "eslint",
+      "typescript",
+      "@typescript-eslint/eslint-plugin",
+      "migrate",
+      "@typescript-eslint/parser"
+    ],
+    "scripts": {
+      "prebuild": "npm run lint",
+      "build:only": "rimraf build && tsc -p tsconfig.json",
+      "build": "npm run build:only",
+      "lint": "eslint . --ext .ts,.js",
+      "lint:fix": "eslint . --ext .ts,.js --fix",
+      "test": "jest",
+      "test:coverage": "jest --coverage --silent",
+      "prepare": "husky install"
+    },
+    "lint-staged": {
+      "**/*.{ts,js}": [
+        "npm run lint:fix"
+      ]
+    },
+    "engines": {
+      "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+    },
+    "dependencies": {
+      "@typescript-eslint/types": "^5.23.0",
+      "@typescript-eslint/utils": "^5.23.0",
+      "husky": "^8.0.1"
+    },
+    "peerDependencies": {
+      "@typescript-eslint/parser": "^5.0.0",
+      "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    "peerDependenciesMeta": {
+      "typescript": {
+        "optional": true
+      }
+    },
+    "devDependencies": {
+      "@types/eslint-utils": "^3.0.1",
+      "@types/jest": "^27.5.1",
+      "@typescript-eslint/eslint-plugin": "^5.26.0",
+      "@typescript-eslint/parser": "^5.25.0",
+      "babel-eslint": "^10.1.0",
+      "eslint": "^8.16.0",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-plugin-import": "^2.26.0",
+      "eslint-plugin-jest": "^26.4.6",
+      "eslint-plugin-prettier": "^4.0.0",
+      "eslint-plugin-promise": "^6.0.0",
+      "eslint-plugin-security": "^1.5.0",
+      "eslint-plugin-unicorn": "^42.0.0",
+      "jest": "^28.1.0",
+      "lint-staged": "^12.3.4",
+      "prettier": "2.6.2",
+      "ts-jest": "^28.0.2",
+      "ts-node": "^10.7.0",
+      "typescript": "^4.6.4"
+    }
+  }
+  

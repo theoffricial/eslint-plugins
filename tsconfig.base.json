@@ -1,24 +1,28 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "declaration": true,
-    "declarationMap": true,
-    "esModuleInterop": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitReturns": true,
-    "strictPropertyInitialization": true,
-    "noImplicitAny": true,
-    "pretty": true,
-    "skipLibCheck": true,
+    "rootDir": ".",
     "sourceMap": true,
-    "strict": true,
-    "resolveJsonModule": true,
-    "target": "ES2020",
-    "lib": [
-      "ES2020"
-    ],
-    "paths": {}
-  }
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "eslint-plugin-migrate-to-typescript": [
+        "packages/eslint-plugin-migrate-to-typescript/src/index.ts"
+      ],
+      "website": [
+        "apps/website/src/pages/index.tsx"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
 }

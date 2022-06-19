@@ -1,0 +1,26 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/eslint-plugin-migrate-to-typescript/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/eslint-plugin-migrate-to-typescript",
+        "main": "packages/eslint-plugin-migrate-to-typescript/src/index.ts",
+        "tsConfig": "packages/eslint-plugin-migrate-to-typescript/tsconfig.lib.json",
+        "assets": ["packages/eslint-plugin-migrate-to-typescript/*.md"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/eslint-plugin-migrate-to-typescript"],
+      "options": {
+        "jestConfig": "packages/eslint-plugin-migrate-to-typescript/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
