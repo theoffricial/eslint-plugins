@@ -21,7 +21,6 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.0.0-beta.21",
     "@nrwl/cli": "14.3.6",
-    "@nrwl/cypress": "14.3.6",
     "@nrwl/eslint-plugin-nx": "^14.3.6",
     "@nrwl/jest": "14.3.6",
     "@nrwl/js": "14.3.6",
@@ -36,10 +35,8 @@
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "babel-jest": "27.5.1",
-    "cypress": "^9.1.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
-    "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jest": "^26.5.3",
     "eslint-plugin-jsx-a11y": "6.5.1",
