@@ -63,9 +63,9 @@ workflows:
   lint-test-build:
     jobs:
       # - lint
-      - build:
+      - build
           # requires:
           #   - lint
-      - unit-test:
+      - unit-test
           # requires:
           #   - lint
