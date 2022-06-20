@@ -77,6 +77,11 @@
     "migrate",
     "@typescript-eslint/parser"
   ],
+  "lint-staged": {
+    "**/*.{ts,js}": [
+      "nx run-many --target=lint --projects=eslint-plugin-migrate-to-typescript"
+    ]
+  },
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
   }

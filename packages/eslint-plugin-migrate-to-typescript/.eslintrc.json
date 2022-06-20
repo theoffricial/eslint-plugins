@@ -1,12 +1,15 @@
 {
   "extends": ["../../.eslintrc.json"],
   "ignorePatterns": [
-    "!**/*"
+    "!**/*",
+    "tests/fixtures/indent/*.js"
   ],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
         "project": [
           "packages/eslint-plugin-migrate-to-typescript/tsconfig.*?.json"
         ]
