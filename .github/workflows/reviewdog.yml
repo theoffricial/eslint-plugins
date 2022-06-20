@@ -1,5 +1,5 @@
 name: reviewdog
-on: [pull_request]
+on: pull_request
 
 jobs:
   eslint:
@@ -30,7 +30,7 @@ jobs:
       - run: npm ci
       - uses: reviewdog/action-eslint@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           eslint_flags: './packages/eslint-plugin-migrate-to-typescript'
           level: warning
