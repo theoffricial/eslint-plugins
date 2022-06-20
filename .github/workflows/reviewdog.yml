@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: nrwl/nx-set-shas@v2
-      - run: npm ci
+        # with:
+        #   fetch-depth: 0
+      # - uses: nrwl/nx-set-shas@v2
+      # - run: npm ci
       # - name: Cache node modules
       #   id: cache-npm
       #   uses: actions/cache@v3
