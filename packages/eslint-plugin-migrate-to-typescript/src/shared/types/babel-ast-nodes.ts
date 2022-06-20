@@ -1,5 +1,8 @@
 import type { Node } from '@babel/types';
 
+//
+const x = 2;
+
 type TPropertyType<
     TObject,
     TProperty extends keyof TObject
