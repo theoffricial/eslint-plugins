@@ -1,16 +1,9 @@
-{
+// used by @nrwl/nx
+const devkit = require('@nrwl/devkit')
+/** @type {import("eslint").ESLint.ConfigData} */
+module.exports = {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": [
-    "@nrwl/nx",
-    "@typescript-eslint",
-    "import",
-    "unicorn",
-    "prettier",
-    "promise",
-    "jest",
-    "security"
-  ],
   "overrides": [
     {
 
@@ -33,13 +26,7 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "parser": "@typescript-eslint/parser",
-      "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module",
-        "tsconfigRootDir": "/Users/ofriperetz/dev/open-source/eslint-plugin-migrate-to-typescript"
-      },
-    //   "extends": ["plugin:@nrwl/nx/typescript"],
+      "extends": [`${devkit.workspaceRoot}/eslintrc.base.js`],
       "rules": {}
     }
     // {
@@ -47,31 +34,6 @@
     // //   "extends": ["plugin:@nrwl/nx/javascript"],
     //   "rules": {}
     // }
-  ],
-  "env": {
-      "node": true,
-      "jest": true
-  },
-  "settings": {
-      "import/extensions": [
-          ".js"
-          // ".ts"
-      ],
-      "import/resolver": {
-          "node": {
-              "extensions": [
-                  ".js"
-                  // ".ts"
-              ]
-          }
-      },
-      "import/docstyle": ["jsdoc"],
-      "import/ignore": ["node_modules", "build"]
-  },
-  "extends": [
-      "eslint:recommended",
-      // eslint-config-prettier lib, turns off rules that conflicts with prettier
-      "prettier"
   ],
   "rules": {
       // layout

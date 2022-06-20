@@ -1,5 +1,5 @@
 {
-  "extends": ["../../.eslintrc.json"],
+  "extends": ["../../.eslintrc.js"],
   "ignorePatterns": [
     "!**/*",
     "tests/fixtures/indent/*.js"
@@ -14,8 +14,22 @@
           "packages/eslint-plugin-migrate-to-typescript/tsconfig.*?.json"
         ]
       },
+      "env": {
+        "node": true,
+        "jest": true
+      },
       "rules": {
-        "@typescript-eslint/await-thenable": "error"
+        "@typescript-eslint/await-thenable": "error",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+              "argsIgnorePattern": "^_",
+              // add extra pattern like "_ignore"
+              "destructuredArrayIgnorePattern": "^_",
+              "caughtErrors": "none"
+          }
+        ]
       }
     }
   ]
