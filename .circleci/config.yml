@@ -33,15 +33,15 @@ aliases:
       command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
 
 jobs:
-  lint:
-    docker:
-      - image: cimg/node:lts
-    steps:
-      - checkout
-      - *restore-cache
-      - *install-deps
-      - *save-cache
-      - *run-linter
+  # lint:
+  #   docker:
+  #     - image: cimg/node:lts
+  #   steps:
+  #     - checkout
+  #     - *restore-cache
+  #     - *install-deps
+  #     - *save-cache
+  #     - *run-linter
   unit-test:
     docker:
       - image: cimg/node:lts
@@ -62,10 +62,10 @@ jobs:
 workflows:
   lint-test-build:
     jobs:
-      - lint
+      # - lint
       - build:
-          requires:
-            - lint
+          # requires:
+          #   - lint
       - unit-test:
-          requires:
-            - lint
+          # requires:
+          #   - lint

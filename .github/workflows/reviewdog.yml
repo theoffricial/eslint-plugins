@@ -7,10 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
-      # - uses: nrwl/nx-set-shas@v2
-      # - run: npm ci
       - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v3
@@ -28,9 +24,9 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - uses: reviewdog/action-eslint@v1
+      - name: 'reviewdog/eslint-plugin-migrate-to-typescript'
+        uses: reviewdog/action-eslint@v1
         with:
-          github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           eslint_flags: './packages/eslint-plugin-migrate-to-typescript'
           level: warning
