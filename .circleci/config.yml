@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  nx: nrwl/nx@1.4.0
+
 aliases:
   - &restore-cache
     restore_cache:
@@ -16,26 +19,29 @@ aliases:
   - &run-linter
     run:
       name: Lint
-      command: npm run lint
+      # command: npm run lint
+      command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=lint --parallel=3
   - &build
     run:
       name: Build
-      command: npm run build:only
+      # command: npm run build:only
+      command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=build --parallel=3
   - &run-unit-tests
     run:
       name: Unit-test
-      command: npm run test
+      # command: npm run test
+      command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
 
 jobs:
-  lint:
-    docker:
-      - image: cimg/node:lts
-    steps:
-      - checkout
-      - *restore-cache
-      - *install-deps
-      - *save-cache
-      - *run-linter
+  # lint:
+  #   docker:
+  #     - image: cimg/node:lts
+  #   steps:
+  #     - checkout
+  #     - *restore-cache
+  #     - *install-deps
+  #     - *save-cache
+  #     - *run-linter
   unit-test:
     docker:
       - image: cimg/node:lts
@@ -56,10 +62,10 @@ jobs:
 workflows:
   lint-test-build:
     jobs:
-      - lint
-      - build:
-          requires:
-            - lint
-      - unit-test:
-          requires:
-            - lint
+      # - lint
+      - build
+          # requires:
+          #   - lint
+      - unit-test
+          # requires:
+          #   - lint

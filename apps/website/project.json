@@ -1,0 +1,8 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/website/src",
+  "projectType": "application",
+  "implicitDependencies": ["eslint-plugin-migrate-to-typescript"],
+  "targets": {},
+  "tags": []
+}
