@@ -1,9 +1,11 @@
 import { CRules } from './rules';
-import testConfig from './configs/js-with-ts';
+import nodeJsWithTsConfig from './configs/node-js-with-ts';
+import nodeTsOnlyConfig from './configs/node-ts-only';
 
 export = {
     rules: CRules,
     configs: {
-        'js-with-ts': testConfig,
+        'node-js-with-ts': nodeJsWithTsConfig,
+        'node-ts-only': nodeTsOnlyConfig,
     },
 };
