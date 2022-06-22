@@ -15,6 +15,20 @@ const config: InitialOptionsTsJest = {
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/packages/eslint-plugin-migrate-to-typescript',
   testMatch: ['**/packages/eslint-plugin-migrate-to-typescript/tests/**/*.test.+(ts|js)?(x)'],
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.{js,ts}',
+    '!<rootDir>/node_modules',
+    '!<rootDir>/website',
+  ],
+  coverageThreshold: {
+    global: {},
+    '**/src/rules/**/*.ts': {
+        lines: 80,
+        branches: 80,
+        functions: 40,
+        statements: -10,
+    }
+  }
 }
 export default config;
