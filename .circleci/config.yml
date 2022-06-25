@@ -51,7 +51,9 @@ jobs:
       - *restore-cache
       - *install-deps
       - *run-unit-tests
-      - codecov/upload
+      - codecov/upload:
+          file: coverage/packages/eslint-plugin-migrate-to-typescript/lcov.info
+          flags: eslint-plugin-migrate-to-typescript
   build:
     docker:
       - image: cimg/node:lts

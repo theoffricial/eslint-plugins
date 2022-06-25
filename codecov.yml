@@ -1,0 +1,4 @@
+flags:
+  eslint-plugin-migrate-to-typescript:
+    paths: 
+      - packages/eslint-plugin-migrate-to-typescript
