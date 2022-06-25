@@ -4,6 +4,7 @@
     "dbaeumer.vscode-eslint",
     "orta.vscode-jest",
     "ms-vscode.vscode-typescript-next",
-    "mgmcdermott.vscode-language-babel"
+    "mgmcdermott.vscode-language-babel",
+    "firsttris.vscode-jest-runner"
   ]
 }

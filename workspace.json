@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "eslint-plugin-migrate-to-typescript": "packages/eslint-plugin-migrate-to-typescript",
+    "m2ts": "packages/m2ts",
     "website": "apps/website"
   }
 }

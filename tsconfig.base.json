@@ -14,14 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "strictNullChecks": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
+      "@/m2ts": ["packagm2tss/m2ts/src/indm2tsx.ts"],
       "eslint-plugin-migrate-to-typescript": [
         "packages/eslint-plugin-migrate-to-typescript/src/index.ts"
       ],
-      "website": [
-        "apps/website/src/pages/index.tsx"
-      ]
+      "node-lib": ["packages/node-lib/src/index.ts"],
+      "node-lib2": ["packages/node-lib2/src/index.ts"],
+      "package-to-publish": ["packages/package-to-publish/src/index.ts"],
+      "ts-package": ["packages/ts-package/src/index.ts"],
+      "website": ["apps/website/src/pages/index.tsx"]
     }
   },
   "exclude": ["node_modules", "tmp"]

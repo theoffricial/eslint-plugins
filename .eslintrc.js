@@ -3,10 +3,13 @@ const devkit = require('@nrwl/devkit')
 /** @type {import("eslint").ESLint.ConfigData} */
 module.exports = {
   "root": true,
+  "env": {
+    "node": true,
+    "jest": true
+  },
   "ignorePatterns": ["**/*"],
   "overrides": [
     {
-
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
