@@ -1,44 +1,45 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ESLint Extensions',
-  tagline: 'An opinionated set of ESLint extensions that will help you spread high-standards.',
-  url: 'https://uniqorg.github.io',
-  baseUrl: '/eslint-plugin-migrate-to-typescript/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/eslint-favicon.512x512.png',
+  title: "ESLint Extensions",
+  tagline:
+    "An opinionated set of ESLint extensions that will help you spread high-standards",
+  url: "https://uniqorg.github.io",
+  baseUrl: "/eslint-extensions/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/eslint-favicon.512x512.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'uniqorg', // Usually your GitHub org/user name.
-  projectName: 'eslint-plugin-migrate-to-typescript', // Usually your repo name.
-  deploymentBranch: 'gh-pages-website-deployment-branch',
+  organizationName: "uniqorg", // Usually your GitHub org/user name.
+  projectName: "eslint-extensions", // Usually your repo name.
+  deploymentBranch: "gh-pages-website-deployment-branch",
   trailingSlash: true,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: 'docs',
-          sidebarPath: require.resolve('./sidebars/main-sidebars.js'),
+          path: "docs",
+          sidebarPath: require.resolve("./sidebars/main-sidebars.js"),
           breadcrumbs: true,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -47,29 +48,29 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'uniqorg/eslint',
+        title: "uniqorg/eslint",
         logo: {
-          alt: 'ESLint Logo',
-          src: 'img/eslint-logo.svg',
+          alt: "ESLint Logo",
+          src: "img/eslint-logo.svg",
         },
         items: [
           {
-            label: 'Intro to Plugins',
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'pluginsGeneralSidebar',
+            label: "Intro to Plugins",
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "pluginsGeneralSidebar",
           },
           {
-            label: 'Plugins List',
-            type: 'dropdown',
-            position: 'left',
+            label: "Plugins List",
+            type: "dropdown",
+            position: "left",
             items: [
               {
-                type: 'doc',
-                label: 'migrate-to-typescript',
-                docId: 'plugins/migrate-to-typescript/intro'
-              }
-            ]
+                type: "doc",
+                label: "migrate-to-typescript",
+                docId: "plugins/migrate-to-typescript/intro",
+              },
+            ],
           },
           // {
           //   label: 'Configs',
@@ -91,14 +92,14 @@ const config = {
         },
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Plugins',
-                to: '/docs/plugins/intro',
+                label: "Plugins",
+                to: "/docs/plugins/intro",
               },
               // {
               //   label: 'Configs (coming soon..)',
@@ -124,11 +125,11 @@ const config = {
           //   ],
           // },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/uniqorg/eslint-plugin-migrate-to-typescript',
+                label: "GitHub",
+                href: "https://github.com/uniqorg/eslint-extensions",
               },
             ],
           },

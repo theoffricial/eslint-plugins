@@ -1,0 +1,52 @@
+{
+  "extends": ["../../.eslintrc.js"],
+  "ignorePatterns": [
+    "!**/*",
+    "tests/fixtures/indent/*.js",
+    "tests/fixtures/foo.ts",
+    "tests/fixtures/unstrict/file.ts",
+    "tests/fixtures/file.ts",
+    "tests/fixtures/class.ts"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "project": [
+          "packages/m2ts/tsconfig.*?.json"
+        ]
+      },
+      "env": {
+        "node": true,
+        "jest": true
+      },
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ],
+        "@typescript-eslint/await-thenable": "error",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_",
+            "destructuredArrayIgnorePattern": "^_",
+            "caughtErrors": "none"
+          }
+        ]
+      }
+    }
+  ]
+}

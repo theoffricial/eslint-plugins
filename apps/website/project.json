@@ -1,8 +1,27 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/website/src",
   "projectType": "application",
-  "implicitDependencies": ["eslint-plugin-migrate-to-typescript"],
-  "targets": {},
+  "sourceRoot": "apps/website/src",
+  "targets": {
+    "build": {
+      "executor": "@nx-plus/docusaurus:browser",
+      "options": {
+        "outputPath": "dist/apps/website"
+      }
+    },
+    "serve": {
+      "executor": "@nx-plus/docusaurus:dev-server",
+      "options": {
+        "port": 3000
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/website/src/**/*.ts"]
+      }
+    }
+  },
   "tags": []
 }
