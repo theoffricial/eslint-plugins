@@ -52,7 +52,7 @@ jobs:
       - *install-deps
       - *run-unit-tests
       - codecov/upload:
-          file: coverage/packages/eslint-plugin-migrate-to-typescript/lcov.info
+          file: coverage/packages/m2ts/lcov.info
           flags: eslint-plugin-migrate-to-typescript
   build:
     docker:
