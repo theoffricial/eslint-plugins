@@ -28,6 +28,6 @@ jobs:
         uses: reviewdog/action-eslint@v1
         with:
           reporter: github-pr-review
-          eslint_flags: './packages/eslint-plugin-migrate-to-typescript'
+          eslint_flags: './packages/m2ts'
           level: warning
           fail_on_error: false 
