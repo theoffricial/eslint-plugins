@@ -17,9 +17,8 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@/m2ts": ["packagm2tss/m2ts/src/indm2tsx.ts"],
-      "eslint-plugin-migrate-to-typescript": [
-        "packages/eslint-plugin-migrate-to-typescript/src/index.ts"
+      "m2ts": [
+        "packages/m2ts/src/index.ts"
       ],
       "node-lib": ["packages/node-lib/src/index.ts"],
       "node-lib2": ["packages/node-lib2/src/index.ts"],

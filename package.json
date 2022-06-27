@@ -60,10 +60,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript.git"
+    "url": "https://github.com/uniqorg/eslint-extensions.git"
   },
   "bugs": {
-    "url": "https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript/issues"
+    "url": "https://github.com/uniqorg/eslint-extensions/issues"
   },
   "contributors": [
     "unicop <its.op.the.unicorn@gmail.com>",
@@ -78,7 +78,7 @@
   ],
   "lint-staged": {
     "**/*.{ts,js}": [
-      "nx run-many --target=lint --projects=eslint-plugin-migrate-to-typescript"
+      "nx run-many --target=lint --projects=m2ts"
     ]
   },
   "engines": {

@@ -1,12 +1,11 @@
-import { ESLintUtils } from "@typescript-eslint/utils";
+import { ESLintUtils } from '@typescript-eslint/utils';
 
-export { ruleMessageTemplate } from "./rule-msg-template";
-const repoUrl =
-  "https://github.com/postman-as-code/eslint-plugin-migrate-to-typescript";
+export { ruleMessageTemplate } from './rule-msg-template';
+const repoUrl = 'https://github.com/uniqorg/eslint-extensions';
 export const createRule = ESLintUtils.RuleCreator(
-  (name) => `${repoUrl}/blob/master/docs/rules/${name}.md`
+    (name) => `${repoUrl}/blob/master/docs/rules/${name}.md`
 );
 
-export * from "./predicates";
-export * from "./misc";
-export * from "./null-throws";
+export * from './predicates';
+export * from './misc';
+export * from './null-throws';

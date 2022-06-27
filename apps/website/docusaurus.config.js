@@ -129,7 +129,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/uniqorg/eslint-plugin-migrate-to-typescript",
+                href: "https://github.com/uniqorg/eslint-extensions",
               },
             ],
           },
