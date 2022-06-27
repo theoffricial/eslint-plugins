@@ -1,9 +1,9 @@
 export function ruleMessageTemplate({
-  why,
-  linterMessage,
+    why,
+    linterMessage,
 }: {
-  why: string;
-  linterMessage: string;
+    why: string;
+    linterMessage: string;
 }): string {
-  return `${linterMessage} \nThe Why: ${why}`;
+    return `${linterMessage} \nThe Why: ${why}`;
 }

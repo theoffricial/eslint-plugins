@@ -5,15 +5,15 @@
  * Example: ['foo', 'bar', 'baz' ] returns the string "foo, bar, and baz".
  */
 function formatWordList(words: string[]): string {
-  if (!words?.length) {
-    return "";
-  }
+    if (!words?.length) {
+        return '';
+    }
 
-  if (words.length === 1) {
-    return words[0];
-  }
+    if (words.length === 1) {
+        return words[0];
+    }
 
-  return [words.slice(0, -1).join(", "), words.slice(-1)[0]].join(" and ");
+    return [words.slice(0, -1).join(', '), words.slice(-1)[0]].join(' and ');
 }
 
 export { formatWordList };

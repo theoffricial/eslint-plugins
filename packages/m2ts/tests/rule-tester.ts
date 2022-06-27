@@ -1,19 +1,19 @@
-import path from "path";
-import { ESLintUtils } from "@typescript-eslint/utils";
+import path from 'node:path';
+import { ESLintUtils } from '@typescript-eslint/utils';
 
 function getFixturesRootDirectory(): string {
-  return path.join(__dirname, "fixtures");
+    return path.join(__dirname, 'fixtures');
 }
 
 const {
-  batchedSingleLineTests,
-  RuleTester: CRuleTester,
-  noFormat,
+    batchedSingleLineTests,
+    RuleTester: CRuleTester,
+    noFormat,
 } = ESLintUtils;
 
 export {
-  batchedSingleLineTests,
-  getFixturesRootDirectory as getFixturesRootDir,
-  noFormat,
-  CRuleTester as RuleTester,
+    batchedSingleLineTests,
+    getFixturesRootDirectory as getFixturesRootDir,
+    noFormat,
+    CRuleTester as RuleTester,
 };
