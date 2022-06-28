@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   nx: nrwl/nx@1.4.0
+  codecov: codecov/codecov@3.2.3
 
 aliases:
   - &restore-cache
@@ -50,6 +51,9 @@ jobs:
       - *restore-cache
       - *install-deps
       - *run-unit-tests
+      - codecov/upload:
+          file: coverage/packages/m2ts/lcov.info
+          flags: eslint-plugin-migrate-to-typescript
   build:
     docker:
       - image: cimg/node:lts
