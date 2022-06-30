@@ -32,7 +32,7 @@ aliases:
       name: Unit-test
       # command: npm run test
       command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
-
+      
 jobs:
   # lint:
   #   docker:

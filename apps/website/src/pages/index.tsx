@@ -54,8 +54,7 @@ export default function Home(): JSX.Element {
                       "sectionDarkTitle__h2--primary-darker"
                     )}
                   >
-                    We are here to make conventions simple to as many folks as
-                    possible
+                    Standards spreading and enforcement them are essential to build at scale
                   </h2>
                 </div>
               </div>
@@ -66,24 +65,40 @@ export default function Home(): JSX.Element {
           <p className="container">
             <p className="row">
               <p className="col col--10 col--offset-1">
-                <h2 className="text--center margin-bottom--xl">Why?</h2>
+                <h2 className="text--center margin-bottom--xl">Why.</h2>
                 <div className="row margin-vert--lg">
                   <div className="col">
-                    <h3>Easy to Use</h3>
+                    <h3>Noise Cancelling</h3>
                     <p>
-                      Our ESLint extensions was designed with the very good user
-                      experience in-mind, and focuses on standards while make
-                      sure everyone understand why those standards were chosen.
+                       When the rules of "how we write code" are clear and being enforced, 
+                       you can focus on other decisions for the process you push
                     </p>
                   </div>
                   <div className="col">
-                    <h3>Grow Fast</h3>
+                    <h3>Increasing Trust Unconsciously</h3>
                     <p>
-                      ESLint makes sure everyone are following standards
-                      programmatically, which reduces human errors, improves
-                      code quality, and makes code reviews focus on what's
-                      matter.
+                      In every group or organization, people frequently need to see and feel that the vision is clear. 
+                      But not less importantly, the vision is being implemented professionally in practice.
                     </p>
+                  </div>
+                  <div className="col">
+                    <h3>Supporting Fast Growth</h3>
+                    <p>
+                      Spreading strong standards,
+                      ensures that everyone are less likely to face "dirty" or weird code syntax, 
+                      that adds difficulties to problem solving.
+                    </p>
+                  </div>
+                </div>
+                <div className="row margin-vert--lg">
+                  <div className="col">
+                      <h3>Focus on whats matter for you</h3>
+                      <p>
+                        Implementing solid conventions from scratch takes time.
+                        <br/>
+                        We put efforts to make conventions are clearest possible, 
+                        by ensuring the end-developer will understand our rules and its messages.
+                      </p>
                   </div>
                   <div className="col">
                     <h3>Wide Community</h3>
