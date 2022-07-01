@@ -91,11 +91,11 @@ export default function Home(): JSX.Element {
                 </div>
                 <div className="row margin-vert--lg">
                   <div className="col">
-                      <h3>Focus on whats matter for you</h3>
+                      <h3>Focus on what matters to you</h3>
                       <p>
                         Implementing solid conventions from scratch takes time.
                         <br/>
-                        We put efforts to make conventions are clearest possible, 
+                        We put in efforts to make conventions as clear as possible, 
                         by ensuring the end-developer will understand our rules and their messages.
                       </p>
                   </div>
