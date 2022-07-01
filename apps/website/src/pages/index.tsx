@@ -54,7 +54,7 @@ export default function Home(): JSX.Element {
                       "sectionDarkTitle__h2--primary-darker"
                     )}
                   >
-                    Standards spreading and enforcement them are essential to build at scale
+                    Spreading standards and enforcing them are essential to build at scale
                   </h2>
                 </div>
               </div>
@@ -70,22 +70,21 @@ export default function Home(): JSX.Element {
                   <div className="col">
                     <h3>Noise Cancelling</h3>
                     <p>
-                       When the rules of "how we write code" are clear and being enforced, 
-                       you can focus on other decisions for the process you push
+                    When the rules of "how we write code" are clear and are being enforced, we can focus on other decisions and processes
                     </p>
                   </div>
                   <div className="col">
                     <h3>Increasing Trust Unconsciously</h3>
                     <p>
                       In every group or organization, people frequently need to see and feel that the vision is clear. 
-                      But not less importantly, the vision is being implemented professionally in practice.
+                      But not less importantly, people should see that the vision is being implemented professionally in practice.
                     </p>
                   </div>
                   <div className="col">
                     <h3>Supporting Fast Growth</h3>
                     <p>
                       Spreading strong standards,
-                      ensures that everyone are less likely to face "dirty" or weird code syntax, 
+                      ensures that everyone is less likely to face "dirty" or weird code syntax
                       that adds difficulties to problem solving.
                     </p>
                   </div>
@@ -97,19 +96,17 @@ export default function Home(): JSX.Element {
                         Implementing solid conventions from scratch takes time.
                         <br/>
                         We put efforts to make conventions are clearest possible, 
-                        by ensuring the end-developer will understand our rules and its messages.
+                        by ensuring the end-developer will understand our rules and their messages.
                       </p>
                   </div>
                   <div className="col">
                     <h3>Wide Community</h3>
                     <p>
-                      ESLint is consistently getting{" "}
+                    ESLint is consistently gaining &nbsp;
                       <a href="https://www.npmtrends.com/eslint-vs-prettier-vs-tslint">
                         popularity
                       </a>
-                      , We have researched the whole eco-system to find the best
-                      approach for conventions we can create to help spreading
-                      standards that can be easily understood
+                      , We have researched the whole eco-system to find the best approach for conventions we can create to help spreading standards that can be easily understood
                     </p>
                   </div>
                 </div>
