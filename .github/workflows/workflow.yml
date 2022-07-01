@@ -2,18 +2,16 @@ name: Upload coverage to codecov
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 14
       - run: npm ci
       - uses: actions/checkout@master
-      - name: Generate coverage report
       - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v3
