@@ -10,15 +10,13 @@ This is a 5 minutes guide how to work with the `eslint-plugin-migrate-to-typescr
 Let's discover `eslint-plugin-migrate-to-typescript` in
 **less than 5 minutes**.
 
-## Installation and Usage
-
 ### Prerequisites
 
 - Prerequisites: [Node.js](https://nodejs.org/en/) (`^12.22.0`, `^14.17.0`, or `>=16.0.0`) built with SSL support. (If you are using an official Node.js distribution, SSL is always built in.)
 
-add `eslint-plugin-migrate-to-typescript` to your project
+## Installation
 
-### Install with npm
+with `npm`
 
 ```sh
 # eslint-plugin-migrate-to-typescript has peer-dependencies the must be installed together with it
@@ -28,7 +26,7 @@ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/types
 npm install --save-dev  eslint-plugin-migrate-to-typescript
 ```
 
-### Install with yarn
+with `yarn`
 
 ```sh
 # install peer-deps
@@ -39,64 +37,71 @@ yarn add -D eslint-plugin-migrate-to-typescript
 
 ## Configuring
 
-### What you'll need
-
-- Using `@typescript-eslint/parser` as your `eslint` parser.
-- depends on [Node.js](https://nodejs.org/en/download/), supported versions for `@typescript-eslint/parser` are:
+with `json`:
 
 ```json
-// took from package.json
-  "engines": {
-    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
-  },
+{
+  // .eslintrc.json
+  "plugins": ["migrate-to-typescript"]
+}
 ```
 
-## Add plugin to your existing eslintrc
+And in `YAML`:
 
-For npm configuration
+```yaml
+---
+# .eslintrc.yaml
+plugins:
+  - migrate-to-typescript
+```
+
+###### For the full `eslint` configuration files format see eslint offical document - [Configuration Files](https://eslint.org/docs/latest/user-guide/configuring/configuration-files).
+
+## usage
+
+the "recommended" way to consume `eslint` plugins is to consume it's pre-defined configurations in the `extends` property, like this:
 
 ```json
-// package.json
+// .eslintrc.json
 {
-  ...,
-  "eslintConfig": {
+  "extends": ["plugin:migrate-to-typescript/<pre-defined-config-name>"]
+}
+```
+
+## plugin's configs
+
+### node-js-with-ts
+
+For projects that combines both `.ts` and `.js` files, designed to support migration to `typescript`.
+
+usage:
+
+```json
+  // .eslintrc.json
+  {
     ...,
-    "parser": "@typescript-eslint/parser",
-    "plugins": [..., "migrate-to-typescript"],
-    "extends": [
-      ...,
-      // for projects that starting/in the middle of migration to typescript
-      "migrate-to-typescript/js-with-ts",
-      // or
-      // for projects that are fully working with typescript
-      "migrate-to-typescript/ts-only",
-      // or
-      // for projects (mostly front-end) that written with js and using ts for type-checking or type-generating
-      "migrate-to-typescript/js-only-and-ts-for-type-checking",
-    ]
+    "extends": ["plugin:migrate-to-typescript/node-js-with-ts"]
   }
-}
 ```
 
-For eslintrc.json
+###### See what rules the config includes [here](./configs/index.md)
+
+### node-ts-only
+
+For full `typescript` projects, designed to enforce to stop using `commonjs` syntax together with `typescript`.
+
+usage:
 
 ```json
-// eslintrc.json
-{
-  ...,
-  "parser": "@typescript-eslint/parser",
-  "plugins": [..., "migrate-to-typescript"],
-  "extends": [
+  // .eslintrc.json
+  {
     ...,
-    // for projects that starting/in the middle of migration to typescript
-    "migrate-to-typescript/js-with-ts",
-    // or
-    // for projects that are fully working with typescript
-    "migrate-to-typescript/ts-only",
-    // or
-    // for projects (mostly front-end) that written with js and using ts for type-checking or type-generating
-    "migrate-to-typescript/js-only-and-ts-for-type-checking",
-  ],
-  ...
-}
+    "extends": ["plugin:migrate-to-typescript/node-ts-only"]
+  }
 ```
+
+###### See what rules the config includes [here](./configs/index.md)
+
+## use manual rules
+
+You can view the full rules list here
