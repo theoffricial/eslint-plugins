@@ -5,10 +5,7 @@ displayed_sidebar: "migrate2typescriptSidebar"
 
 # Getting Started
 
-This is a 5 minutes guide how to work with the `eslint-plugin-migrate-to-typescript` plugin
-
-Let's discover `eslint-plugin-migrate-to-typescript` in
-**less than 5 minutes**.
+In 5 minutes ⏰ you will start using the `eslint-plugin-migrate-to-typescript` plugin
 
 ### Prerequisites
 
@@ -19,7 +16,7 @@ Let's discover `eslint-plugin-migrate-to-typescript` in
 with `npm`
 
 ```sh
-# eslint-plugin-migrate-to-typescript has peer-dependencies the must be installed together with it
+# eslint-plugin-migrate-to-typescript has peer-dependencies that must be installed together with it
 # install peer-deps
 npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/types @typescript-eslint/utils
 # then install the plugin
@@ -35,14 +32,16 @@ yarn add -D eslint @typescript-eslint/parser @typescript-eslint/types @typescrip
 yarn add -D eslint-plugin-migrate-to-typescript
 ```
 
-## Configuring
+## Configuration
 
 with `json`:
 
 ```json
+// .eslintrc.json
 {
-  // .eslintrc.json
-  "plugins": ["migrate-to-typescript"]
+  ...,
+  "plugins": ["migrate-to-typescript"],
+  ...
 }
 ```
 
@@ -55,24 +54,27 @@ plugins:
   - migrate-to-typescript
 ```
 
-###### For the full `eslint` configuration files format see eslint offical document - [Configuration Files](https://eslint.org/docs/latest/user-guide/configuring/configuration-files).
+###### For the full `eslint` configuration files format see eslint eslint's official document - [Configuration Files](https://eslint.org/docs/latest/user-guide/configuring/configuration-files).
 
-## usage
+## Usage
 
-the "recommended" way to consume `eslint` plugins is to consume it's pre-defined configurations in the `extends` property, like this:
+The "recommended" way to consume `eslint` plugins is to consume it's pre-defined configurations (see **Plugin's configs** section) in the `extends` property, like this:
 
 ```json
 // .eslintrc.json
 {
-  "extends": ["plugin:migrate-to-typescript/<pre-defined-config-name>"]
+  ...,
+  "plugins": ["migrate-to-typescript"],
+  "extends": ["plugin:migrate-to-typescript/<config-name>"],
+  ...
 }
 ```
 
-## plugin's configs
+## Plugin's configs
 
 ### node-js-with-ts
 
-For projects that combines both `.ts` and `.js` files, designed to support migration to `typescript`.
+For projects that include both `.ts` and `.js` files. Designed to support migration to `typescript`.
 
 usage:
 
@@ -80,15 +82,17 @@ usage:
   // .eslintrc.json
   {
     ...,
-    "extends": ["plugin:migrate-to-typescript/node-js-with-ts"]
+    "plugins": ["migrate-to-typescript"],
+    "extends": ["plugin:migrate-to-typescript/node-js-with-ts"],
+    ...
   }
 ```
 
-###### See what rules the config includes [here](./configs/index.md)
+###### See what rules this config includes [here](./configs/node-js-with-ts.md)
 
 ### node-ts-only
 
-For full `typescript` projects, designed to enforce to stop using `commonjs` syntax together with `typescript`.
+For `typescript` projects. Designed to enforce the prevention of using `commonjs` syntax together with `typescript`.
 
 usage:
 
@@ -96,12 +100,14 @@ usage:
   // .eslintrc.json
   {
     ...,
-    "extends": ["plugin:migrate-to-typescript/node-ts-only"]
+    "plugins": ["migrate-to-typescript"],
+    "extends": ["plugin:migrate-to-typescript/node-ts-only"],
+    ...
   }
 ```
 
-###### See what rules the config includes [here](./configs/index.md)
+###### See what rules this config includes [here](./configs/node-ts-only.md)
 
-## use manual rules
+## Use rules manually
 
-You can view the full rules list here
+You can view the full rules list [here](./rules/index.md)
