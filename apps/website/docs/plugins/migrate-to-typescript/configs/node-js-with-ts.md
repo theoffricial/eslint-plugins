@@ -1,5 +1,7 @@
 ---
-sidebar_position: 1
+id: node-js-with-ts
+# pagination_prev: plugins/migrate-to-typescript/configs/index
+# pagination_next: null
 ---
 
 # node-js-with-ts
@@ -10,12 +12,12 @@ sidebar_position: 1
 - 🔧 - fixable
 - 💡 - suggestion
 
-| name                                                                   | ✅  | 🟡  | 🔴  | 🔧  | 💡  |
-| ---------------------------------------------------------------------- | --- | --- | --- | --- | --- |
-| [no-commonjs-dynamic-require](../rules/no-commonjs-dynamic-require.md) | ✅  | 🟡  |     |     |     |
-| [no-commonjs-exports](../rules/no-commonjs-exports.md)                 | ✅  | 🟡  |     | 🔧  |     |
-| [no-commonjs-module-exports](../rules/no-commonjs-module-exports.md)   | ✅  | 🟡  |     | 🔧  |     |
-| [no-esm-dynamic-import](../rules/no-esm-dynamic-import.md)             | ✅  | 🟡  |     |     |     |
-| [no-esm-export-default](../rules/no-esm-export-default.md)             | ✅  | 🟡  |     |     |     |
-| [no-require](../rules/no-require.md)                                   | ✅  | 🟡  |     |     |     |
-| [esm-consistent-type-import](../rules/esm-consistent-type-import.md)   | ✅  |     | 🔴  | 🔧  |     |
+| name                                                                       | ✅  | 🟡  | 🔴  | 🔧  | 💡  |
+| -------------------------------------------------------------------------- | --- | --- | --- | --- | --- |
+| **[no-commonjs-dynamic-require](../rules/no-commonjs-dynamic-require.md)** | ✅  | 🟡  |     |     |     |
+| **[no-commonjs-exports](../rules/no-commonjs-exports.md)**                 | ✅  | 🟡  |     | 🔧  |     |
+| **[no-commonjs-module-exports](../rules/no-commonjs-module-exports.md)**   | ✅  | 🟡  |     | 🔧  |     |
+| **[no-esm-dynamic-import](../rules/no-esm-dynamic-import.md)**             | ✅  | 🟡  |     |     |     |
+| **[no-esm-export-default](../rules/no-esm-export-default.md)**             | ✅  | 🟡  |     |     |     |
+| **[no-require](../rules/no-require.md)**                                   | ✅  | 🟡  |     |     |     |
+| **[esm-consistent-type-import](../rules/esm-consistent-type-import.md)**   | ✅  |     | 🔴  | 🔧  |     |

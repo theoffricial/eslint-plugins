@@ -28,7 +28,10 @@ const sidebars = {
     {
       type: "category",
       label: "Rules",
-      link: { type: "doc", id: "plugins/migrate-to-typescript/rules/index" },
+      link: {
+        type: 'doc',
+        id: 'plugins/migrate-to-typescript/rules/index',
+      },
       items: [
         {
           dirName: "plugins/migrate-to-typescript/rules",
@@ -39,6 +42,7 @@ const sidebars = {
     {
       type: "category",
       label: "Configs",
+      link: {type: 'doc',id: 'plugins/migrate-to-typescript/configs/index'},
       items: [
         {
           dirName: "plugins/migrate-to-typescript/configs",

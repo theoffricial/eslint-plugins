@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# What are eslint plugins?
+# What ESLint plugins are?
 
 `eslint` plugins are third-party extensions for eslint.
 
@@ -13,7 +13,7 @@ Because our docs focus on opinionated conventions, for more general understandin
 1. The official `eslint` document ["Configuring Plugins"](https://eslint.org/docs/latest/user-guide/configuring/plugins).
 2. A great explanation about the difference between an eslint `plugin` and an eslint `config` from [stackoverflow](https://stackoverflow.com/a/54522973/11554280).
 
-## Our plugins
+## Our Plugins
 
 ### eslint-plugin-migrate-to-typescript
 

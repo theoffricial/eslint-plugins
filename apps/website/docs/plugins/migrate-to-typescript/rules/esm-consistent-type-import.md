@@ -5,13 +5,15 @@ tags:
   - ESM
 ---
 
+Rule is:
+
+- 🔧 fixable
+
 ## Rule Details
 
 Enforces consistent usage of type imports, by splitting type-imports from value-imports.
 
 TypeScript 3.8 added support for type-only imports. Type-only imports allow you to specify that an import can only be used in a type location, allowing certain optimizations within compilers.
-
-- the rule is automatically **🔧 fixable**
 
 Examples of **correct** code for this rule ✅
 

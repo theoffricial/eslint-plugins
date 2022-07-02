@@ -1,9 +1,14 @@
 ---
+title: Rules Table 💬 | 🔧 | 💡
+tags:
+  - Rules
 sidebar_position: 1
+pagination_prev: null
 ---
 
-# Rules Table 🔧 | 💡
+# Rules Table &nbsp; 💬 &nbsp; | 🔧 &nbsp; | &nbsp; 💡
 
+- 💬 - description
 - 🔧 - fixable
 - 💡 - suggestion
 
