@@ -7,11 +7,7 @@ sidebar_position: 2
 
 # node-js-with-ts
 
-- ✅ - included in config
-- 🟡 - warn level
-- 🔴 - error level
-- 🔧 - fixable
-- 💡 - suggestion
+✅ included in config | 🟡 warn level | 🔴 error level | 🔧 fixable | 💡 suggestion
 
 | name                                                                       | ✅  | 🟡  | 🔴  | 🔧  | 💡  |
 | -------------------------------------------------------------------------- | --- | --- | --- | --- | --- |
@@ -22,3 +18,15 @@ sidebar_position: 2
 | **[no-esm-export-default](../rules/no-esm-export-default.md)**             | ✅  | 🟡  |     |     |     |
 | **[no-require](../rules/no-require.md)**                                   | ✅  | 🟡  |     |     |     |
 | **[esm-consistent-type-import](../rules/esm-consistent-type-import.md)**   | ✅  |     | 🔴  | 🔧  |     |
+
+usage:
+
+```json
+  // .eslintrc.json
+  {
+    ...,
+    "plugins": ["migrate-to-typescript"],
+    "extends": ["plugin:migrate-to-typescript/node-js-with-ts"],
+    ...
+  }
+```
