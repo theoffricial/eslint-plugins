@@ -2,6 +2,7 @@
 id: node-js-with-ts
 # pagination_prev: plugins/migrate-to-typescript/configs/index
 # pagination_next: null
+sidebar_position: 2
 ---
 
 # node-js-with-ts

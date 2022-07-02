@@ -1,6 +1,6 @@
 ---
-id: no-commonjs-dynamic-import
-title: no-commonjs-dynamic-import
+id: no-esm-dynamic-import
+title: no-esm-dynamic-import
 tags:
   - No Hard Maintenance
 ---

@@ -2,9 +2,9 @@
 title: Configs Table 💬
 tags:
   - Rules
-sidebar_position: 1
 pagination_prev: null
 pagination_next: plugins/migrate-to-typescript/configs/node-js-with-ts
+sidebar_position: 1
 ---
 
 # Configs Table 💬

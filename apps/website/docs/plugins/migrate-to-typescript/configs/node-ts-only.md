@@ -1,6 +1,5 @@
 ---
-# pagination_prev: plugins/migrate-to-typescript/configs/index
-# pagination_next: null
+sidebar_position: 3
 ---
 
 # node-ts-only
