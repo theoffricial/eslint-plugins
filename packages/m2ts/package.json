@@ -1,5 +1,16 @@
 {
   "name": "eslint-plugin-migrate-to-typescript",
   "version": "0.0.1",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "@typescript-eslint/utils": "^5.24.0",
+    "@typescript-eslint/types": "^5.28.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/parser": "^5.24.0",
+    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+  }
 }

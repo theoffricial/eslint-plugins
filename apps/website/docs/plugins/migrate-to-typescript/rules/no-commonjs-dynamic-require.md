@@ -4,7 +4,7 @@ title: no-commonjs-dynamic-require
 tags:
   - No CommonJS
   - No Hard Maintenance
-sidebar_class_name: red
+pagination_next: plugins/migrate-to-typescript/rules/no-commonjs-exports
 ---
 
 ## Rule Details
