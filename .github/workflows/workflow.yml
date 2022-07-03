@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: npm ci
       - uses: actions/checkout@master
+      - run: npm ci
       - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
       - uses: codecov/codecov-action@v3
