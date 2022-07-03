@@ -30,9 +30,11 @@ uniqorg/eslint-extensions
 </p>
 
 <p align="center">
+  <b>
   View our
   <a href="https://uniqorg.github.io/eslint-extensions">
     documentation
   </a>
   to get started.
+  </b>
 </p>
