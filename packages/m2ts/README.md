@@ -10,7 +10,12 @@ A compact plugin that aims to help you migrate existing javascript projects to t
 </p>
 
 <p align="center">
-This project is part of the [uniqorg/eslint-extensions](https://github.com/uniqorg/eslint-extensions) repo that includes different conventions we spread through [ESLint](https://eslint.org/).
+
+This project is part of the
+<a href="https://github.com/uniqorg/eslint-extensions">
+uniqorg/eslint-extensions
+</a> repo that includes different conventions we spread through [ESLint](https://eslint.org/).
+
 </p>
 
 <p align="center">
