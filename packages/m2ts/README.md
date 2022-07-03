@@ -1,10 +1,17 @@
 # eslint-plugin-migrate-to-typescript
 
+<p align="center" style="text-align: center;">
 A compact plugin that aims to help you migrate existing javascript projects to typescript easily, with minimum effort, and minimum mistakes. Focusing on the main differences of javascript's module systems and typescript's ESM syntax (CommonJS and ESM).
 
-<p style="text-align: center;"><img src="src/assets/eslint-logo.svg" width="450"></p>
+</p>
 
+<p align="center">
+<img src="https://github.com/uniqorg/eslint-extensions/blob/main/assets/eslint-logo.svg" alt="Logo" width="450"></p>
+</p>
+
+<p align="center">
 This project is part of the [uniqorg/eslint-extensions](https://github.com/uniqorg/eslint-extensions) repo that includes different conventions we spread through [ESLint](https://eslint.org/).
+</p>
 
 <p align="center">
   <a href="https://app.circleci.com/pipelines/github/uniqorg/eslint-plugin-migrate-to-typescript?branch=main" target="_blank">
