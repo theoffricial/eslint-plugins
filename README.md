@@ -1,9 +1,23 @@
 # ESLint Extensions
 
-This project is a mono-repo that includes all conventions we spread through [ESLint](https://eslint.org/).
+<p align="center">
+    This project is a mono-repo that includes all conventions we spread through
+    <a href="https://eslint.org/">ESLint</a>
+</p>
 
-<p style="text-align: center;"><img src="assets/eslint-logo.svg" width="450"></p>
+<p align="center">
+    <img src="assets/eslint-logo.svg" width="450">
+</p>
+<p align="center">
+    <b>🔎 Thoughtful, and Opinionated sets of plugins, configs and rules that can help an organization to focus on what matters the most</b>
+</p>
 
-🔎 **Thoughtful, and Opinionated sets of plugins, configs and rules that can help an organization to focus on what matters the most**
-
-View our [documentation](https://uniqorg.github.io/eslint-extensions/) to get started.
+<p align="center">
+    <b>
+    View our
+    <a href="https://uniqorg.github.io/eslint-extensions/">
+        documentation
+    </a>
+    to get started.
+    </b>
+</p>
