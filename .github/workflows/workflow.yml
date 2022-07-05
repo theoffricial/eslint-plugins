@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - uses: actions/checkout@master
+      # - uses: actions/checkout@master
       - uses: nrwl/nx-set-shas@v2
       - run: npm ci
       - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage --skip-nx-cache
