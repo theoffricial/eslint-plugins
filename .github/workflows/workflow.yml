@@ -1,8 +1,8 @@
 name: Upload coverage to codecov
-on: push
-  # push:
-    # branches:
-      # - main
+on:
+  push:
+    branches:
+      - main
 env:
   NX_BASE: origin/main
 jobs:
@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        # with:
-        #   fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 14
