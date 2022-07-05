@@ -25,7 +25,7 @@ uniqorg/eslint-extensions
     <img src="https://img.shields.io/npm/dm/eslint-plugin-migrate-to-typescript" alt="npm downloads" />
   </a>
   <a href="https://codecov.io/gh/uniqorg/eslint-extensions">
-    <img src="https://codecov.io/gh/uniqorg/eslint-extensions/branch/main/graph/badge.svg?token=R2J9M4Q2RA" alt="codecov" />
+    <img src="https://codecov.io/gh/uniqorg/eslint-extensions/branch/fix-codecov-upload-(again)/graph/badge.svg?token=R2J9M4Q2RA" alt="codecov" />
   </a>
 </p>
 
