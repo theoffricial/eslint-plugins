@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+env:
+  NX_BASE: origin/main
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -11,7 +13,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - uses: actions/checkout@master
+      - uses: nrwl/nx-set-shas@v2
+      - uses: actions/checkout@main
       - run: npm ci
-      - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
+      - run: ./node_modules/.bin/nx run-many --target=test --all --skip-nx-cache
       - uses: codecov/codecov-action@v3
+      # - uses: actions/checkout@main
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+      # - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage --skip-nx-cache
