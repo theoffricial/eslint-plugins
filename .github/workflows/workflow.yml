@@ -16,12 +16,13 @@ jobs:
       - uses: nrwl/nx-set-shas@v2
       - uses: actions/checkout@main
       - run: npm ci
-      - run: ./node_modules/.bin/nx run-many --target=test --all --skip-nx-cache
+      - run: ./node_modules/.bin/nx run-many --target=test --all --coverage --skip-nx-cache
+      - run: ls ./coverage/m/ts
       - name: Uploading Coverage to codecov
         uses: codecov/codecov-action@v3
-        with: 
-          files: coverage/packages/m2ts/lcov.info
-          verbose: true
+        # with: 
+        #   files: coverage/packages/m2ts/lcov.info
+        #   verbose: true
       # - uses: actions/checkout@main
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
       # - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage --skip-nx-cache
