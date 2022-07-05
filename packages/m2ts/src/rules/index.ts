@@ -5,6 +5,8 @@ import noCommonjsExports from './no-commonjs-exports';
 import noCommonJsModuleExports from './no-commonjs-module-exports';
 import noEsmExportDefault from './no-esm-export-default';
 
+const x = '1';
+
 export const CRules = {
     // commonjs
     'no-require': noRequire,
@@ -14,4 +16,5 @@ export const CRules = {
     // esm
     'no-esm-export-default': noEsmExportDefault,
     'no-esm-dynamic-import': noEsmDynamicImport,
+    x,
 };
