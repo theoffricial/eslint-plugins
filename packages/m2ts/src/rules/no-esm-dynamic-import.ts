@@ -52,7 +52,7 @@ export default createRule<TOptions, TMessageIds>({
         return {
             CallExpression(node) {
                 if (
-                    Boolean(node.arguments.at(0)) === false ||
+                    Boolean(node.arguments[0]) === false ||
                     isStaticValue(node.arguments[0])
                 ) {
                     return;
