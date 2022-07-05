@@ -17,7 +17,6 @@ jobs:
       - uses: actions/checkout@main
       - run: npm ci
       - run: ./node_modules/.bin/nx run-many --target=test --all --coverage --skip-nx-cache
-      - run: ls ./coverage/m/ts
       - name: Uploading Coverage to codecov
         uses: codecov/codecov-action@v3
         # with: 
