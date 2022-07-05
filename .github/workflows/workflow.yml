@@ -19,5 +19,5 @@ jobs:
       - uses: actions/checkout@master
       - uses: nrwl/nx-set-shas@v2
       - run: npm ci
-      - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
+      - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage --skip-nx-cache
       - uses: codecov/codecov-action@v3
