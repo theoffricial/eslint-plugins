@@ -3,6 +3,8 @@ on: push
   # push:
     # branches:
       # - main
+env:
+  NX_BASE: origin/main
 jobs:
   run:
     runs-on: ubuntu-latest
