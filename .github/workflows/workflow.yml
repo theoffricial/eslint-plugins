@@ -20,7 +20,8 @@ jobs:
       - name: Uploading Coverage to codecov
         uses: codecov/codecov-action@v3
         with: 
-          files: ./coverage/packages/m2ts/lcov.info
+          files: coverage/packages/m2ts/lcov.info
+          verbose: true
       # - uses: actions/checkout@main
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
       # - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage --skip-nx-cache
