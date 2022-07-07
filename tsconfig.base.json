@@ -17,9 +17,8 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "m2ts": [
-        "packages/m2ts/src/index.ts"
-      ],
+      "@uniqorg/react": ["packages/react/src/index.ts"],
+      "m2ts": ["packages/m2ts/src/index.ts"],
       "node-lib": ["packages/node-lib/src/index.ts"],
       "node-lib2": ["packages/node-lib2/src/index.ts"],
       "package-to-publish": ["packages/package-to-publish/src/index.ts"],

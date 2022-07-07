@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "m2ts": "packages/m2ts",
+    "react": "packages/react",
     "website": "apps/website"
   }
 }
