@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import type { ESLint, Linter } from 'eslint';
-import jestPlugin from 'eslint-plugin-jest';
-import unicornPlugin from 'eslint-plugin-unicorn';
-import importPlugin from 'eslint-plugin-import';
-import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
-import { configs } from 'eslint-plugin-migrate-to-typescript';
+// import jestPlugin from 'eslint-plugin-jest';
+// import unicornPlugin from 'eslint-plugin-unicorn';
+// import importPlugin from 'eslint-plugin-import';
+// import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
+// import { configs } from 'eslint-plugin-migrate-to-typescript';
 
 // configs
-import jestWithTsConfig from './configs/jest-with-ts-config';
+import jestWithTsConfig from './configs/jest-for-typescript';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
 
