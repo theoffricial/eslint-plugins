@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
 
-const jestFormatting: Partial<ESLint.ConfigData> = {
+const jestFormattingConfig: Partial<ESLint.ConfigData> = {
     plugins: ['jest-formatting'],
     env: {
         jest: true,
@@ -17,4 +17,4 @@ const jestFormatting: Partial<ESLint.ConfigData> = {
     },
 };
 
-export = jestFormatting;
+export = jestFormattingConfig;

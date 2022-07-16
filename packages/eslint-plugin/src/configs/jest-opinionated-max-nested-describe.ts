@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
 
-const jestOpinionatedMaxNestedDescribe: Partial<ESLint.ConfigData> = {
+const jestOpinionatedMaxNestedDescribeConfig: Partial<ESLint.ConfigData> = {
     plugins: ['jest', 'jest-formatting'],
     env: {
         jest: true,
@@ -15,4 +15,4 @@ const jestOpinionatedMaxNestedDescribe: Partial<ESLint.ConfigData> = {
     },
 };
 
-export = jestOpinionatedMaxNestedDescribe;
+export = jestOpinionatedMaxNestedDescribeConfig;

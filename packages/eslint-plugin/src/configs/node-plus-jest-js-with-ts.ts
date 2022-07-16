@@ -3,7 +3,7 @@ import type { ESLint } from 'eslint';
 // mainly use for frontend projects
 // combined with bundlers/transpiling
 
-const esModulesJsWithTsConfig: Partial<ESLint.ConfigData> = {
+const nodePlusJestJsWithTsConfig: Partial<ESLint.ConfigData> = {
     plugins: ['@uniqorg'],
     extends: [
         'plugin:@uniqorg/es-modules-js-with-ts',
@@ -16,4 +16,4 @@ const esModulesJsWithTsConfig: Partial<ESLint.ConfigData> = {
     },
 };
 
-export = esModulesJsWithTsConfig;
+export = nodePlusJestJsWithTsConfig;

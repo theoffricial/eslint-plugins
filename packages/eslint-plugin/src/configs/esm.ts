@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
 // import { rules } from 'eslint-plugin-jest'
-const jestConfig: Partial<ESLint.ConfigData> = {
+const esm: Partial<ESLint.ConfigData> = {
     plugins: ['import', 'unicorn', 'migrate-to-typescript'],
     extends: [],
     env: {
@@ -192,4 +192,4 @@ const jestConfig: Partial<ESLint.ConfigData> = {
     },
 };
 
-export = jestConfig;
+export = esm;

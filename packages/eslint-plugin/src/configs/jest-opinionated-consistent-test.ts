@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
 
-const jestOpinionatedConsistentTest: Partial<ESLint.ConfigData> = {
+const jestOpinionatedConsistentTestConfig: Partial<ESLint.ConfigData> = {
     plugins: ['jest'],
     env: {
         jest: true,
@@ -16,4 +16,4 @@ const jestOpinionatedConsistentTest: Partial<ESLint.ConfigData> = {
     },
 };
 
-export = jestOpinionatedConsistentTest;
+export = jestOpinionatedConsistentTestConfig;

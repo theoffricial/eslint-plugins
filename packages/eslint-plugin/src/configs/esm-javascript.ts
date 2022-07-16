@@ -3,7 +3,7 @@ import type { ESLint } from 'eslint';
 // mainly use for frontend projects
 // combined with bundlers/transpiling
 
-const jestConfig: Partial<ESLint.ConfigData> = {
+const esmConfig: Partial<ESLint.ConfigData> = {
     plugins: ['import', 'unicorn', 'migrate-to-typescript'],
     extends: [],
     env: {
@@ -134,4 +134,4 @@ const jestConfig: Partial<ESLint.ConfigData> = {
     },
 };
 
-export = jestConfig;
+export = esmConfig;

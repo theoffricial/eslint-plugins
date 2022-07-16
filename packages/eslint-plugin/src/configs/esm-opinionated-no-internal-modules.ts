@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
 // import { rules } from 'eslint-plugin-jest'
-const jestConfig: Partial<ESLint.ConfigData> = {
+const esmOpinionatedNoInternalModulesConfig: Partial<ESLint.ConfigData> = {
     plugins: ['@uniqorg'],
     extends: [],
     env: {
@@ -28,4 +28,4 @@ const jestConfig: Partial<ESLint.ConfigData> = {
     },
 };
 
-export = jestConfig;
+export = esmOpinionatedNoInternalModulesConfig;
