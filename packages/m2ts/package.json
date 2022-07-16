@@ -1,7 +1,8 @@
 {
   "name": "eslint-plugin-migrate-to-typescript",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "type": "commonjs",
+  "types": "src/index.d.ts",
   "dependencies": {
     "@typescript-eslint/utils": "^5.24.0",
     "@typescript-eslint/types": "^5.28.0"
