@@ -1,43 +1,29 @@
 import type { ESLint } from 'eslint';
 
-const jestConfig: Partial<ESLint.ConfigData> = {
+const reactOpinionatedJsOnly: Partial<ESLint.ConfigData> = {
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
     },
-    plugins: ['@uniqorg', 'react'],
+    plugins: ['@uniqorg', 'react', 'react-hooks'],
     extends: ['plugin:@uniqorg/react-js-only'],
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     rules: {
-        // https://github.com/macinjoke/eslint-plugin-styled-components-varname
-        // very opinionated rule
-        // 'styled-components-varname/varname': [
-        //   'off', {
-        //   "tagStyle": {
-        //     "prefix": 'Styled',
-        //   },
-        //   "extendedStyle": {
-        //     "prefix": 'Styled',
-        //   },
-        // },
-        // ],
-
         'react/boolean-prop-naming': [
             'warn',
             {
-                rule: '^(is|are|has|will)[A-Z]([A-Za-z0-9]?)+',
+                rule: '^(is|are|has|will|should|did)[A-Z]([A-Za-z0-9]?)+',
                 validateNested: true,
                 message:
-                    'It`s better if boolean prop names start with one of the following affirmative forms: "is"/"are"/"has"/"will".',
+                    'It`s better if boolean prop names start with one of the following affirmative forms: "is"/"are"/"has"/"will"/"should"/"did".',
             },
         ],
         'react/default-props-match-prop-types': ['error'],
-        // TODO - change message to: 'Component definition is missing a name. Having no name for the component makes it anonymous in react's error messages. To add a name, you can add `displayName: '<name>'` to the component definition.'
-        'react/display-name': ['warn'],
-        // change message to "Prop type `object/array` is vague. It's better to use `arrayOf` and `shape`"
-        'react/forbid-prop-types': ['warn'],
-        // requires definition of preferred function type
-        'react/function-component-definition': ['off'],
         'react/no-multi-comp': [
             'error',
             {
@@ -73,3 +59,5 @@ const jestConfig: Partial<ESLint.ConfigData> = {
         ],
     },
 };
+
+export = reactOpinionatedJsOnly;

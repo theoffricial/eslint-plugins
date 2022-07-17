@@ -1,12 +1,17 @@
 import type { ESLint } from 'eslint';
 
-const jestConfig: Partial<ESLint.ConfigData> = {
+const reactJsOnly: Partial<ESLint.ConfigData> = {
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
     },
     plugins: ['react', 'react-hooks'],
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     rules: {
         'react/default-props-match-prop-types': ['error'],
         'react/no-invalid-html-attribute': ['warn'],
@@ -15,7 +20,7 @@ const jestConfig: Partial<ESLint.ConfigData> = {
         'react/no-children-prop': ['error'],
         'react/no-danger': ['warn'],
         'react/no-danger-with-children': ['error'],
-        'react/no-deprecated': [], // need to configure react version: detect
+        'react/no-deprecated': ['warn'],
         'react/no-direct-mutation-state': ['error'],
         'react/no-find-dom-node': ['warn'],
         'react/no-is-mounted': ['error'],
@@ -27,13 +32,10 @@ const jestConfig: Partial<ESLint.ConfigData> = {
         'react/no-unknown-property': ['error'],
         'react/no-unsafe': ['warn'],
         'react/no-unstable-nested-components': ['warn'],
-        // might collide with eslint's no-unused-vars rule
         'react/no-unused-class-component-methods': ['error'],
-        // might collide with eslint's no-unused-vars rule, but only in class components
         'react/no-unused-state': ['error'],
         'react/no-will-update-set-state': ['error'],
         'react/prop-types': ['error'],
-        'react/react-in-jsx-scope': ['error'], // not sure about this one
         'react/require-render-return': ['error'],
         'react/self-closing-comp': ['error'],
         'react/void-dom-elements-no-children': ['error'],
@@ -67,3 +69,5 @@ const jestConfig: Partial<ESLint.ConfigData> = {
         'react-hooks/exhaustive-deps': 'warn',
     },
 };
+
+export = reactJsOnly;
