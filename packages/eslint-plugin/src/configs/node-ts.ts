@@ -3,10 +3,11 @@ import type { ESLint } from 'eslint';
 // mainly use for frontend projects
 // combined with bundlers/transpiling
 
-const nodeTsConfig: Partial<ESLint.ConfigData> = {
+export const C_NODE_TS_CONFIG: Partial<ESLint.ConfigData> = {
     plugins: ['@uniqorg'],
     extends: [
         'plugin:@uniqorg/es-modules-typescript',
+        'plugin:@uniqorg/typescript-eslint-with-type-checking',
         'plugin:@uniqorg/promise',
     ],
     env: {
@@ -14,5 +15,3 @@ const nodeTsConfig: Partial<ESLint.ConfigData> = {
         node: true,
     },
 };
-
-export = nodeTsConfig;

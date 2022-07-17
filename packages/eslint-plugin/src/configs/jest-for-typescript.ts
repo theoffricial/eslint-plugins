@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
 
-const jestWithTsConfig: Partial<ESLint.ConfigData> = {
+export const C_JEST_TS_CONFIG: Partial<ESLint.ConfigData> = {
     extends: ['plugin:@uniqorg/jest'],
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint', '@uniqorg', 'jest'],
@@ -35,4 +35,3 @@ const jestWithTsConfig: Partial<ESLint.ConfigData> = {
         },
     ],
 };
-export = jestWithTsConfig;

@@ -3,7 +3,7 @@ import type { ESLint } from 'eslint';
 // mainly use for frontend projects
 // combined with bundlers/transpiling
 
-const esmConfig: Partial<ESLint.ConfigData> = {
+export const C_ESM_CONFIG: Partial<ESLint.ConfigData> = {
     plugins: ['import', 'unicorn', 'migrate-to-typescript'],
     extends: [],
     env: {
@@ -133,5 +133,3 @@ const esmConfig: Partial<ESLint.ConfigData> = {
         'migrate-to-typescript/no-commonjs-require': 'warn',
     },
 };
-
-export = esmConfig;

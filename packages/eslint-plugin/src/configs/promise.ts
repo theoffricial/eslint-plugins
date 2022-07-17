@@ -3,7 +3,7 @@ import type { ESLint } from 'eslint';
 // mainly use for frontend projects
 // combined with bundlers/transpiling
 
-const promiseConfig: Partial<ESLint.ConfigData> = {
+export const C_PROMISE_CONFIG: Partial<ESLint.ConfigData> = {
     plugins: ['promise'],
     extends: ['plugin:promise/recommended'],
     env: {
@@ -15,5 +15,3 @@ const promiseConfig: Partial<ESLint.ConfigData> = {
         'promise/no-native': 'off',
     },
 };
-
-export = promiseConfig;

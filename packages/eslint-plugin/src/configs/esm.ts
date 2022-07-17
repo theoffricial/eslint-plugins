@@ -1,5 +1,11 @@
 import type { ESLint } from 'eslint';
-// import { rules } from 'eslint-plugin-jest'
+
+// ###########################################
+// ###########################################
+// ############ Internal DO NOT USE ##########
+// ###########################################
+// ###########################################
+
 const esm: Partial<ESLint.ConfigData> = {
     plugins: ['import', 'unicorn', 'migrate-to-typescript'],
     extends: [],

@@ -13,7 +13,3 @@ export const C_ESLINT_CONFIG: Partial<ESLint.ConfigData> = {
         'no-template-curly-in-string': 'warn',
     },
 };
-
-export const casd = (): string => {
-    return 'dsd';
-};

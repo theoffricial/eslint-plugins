@@ -3,7 +3,7 @@ import type { ESLint } from 'eslint';
 // mainly use for frontend projects
 // combined with bundlers/transpiling
 
-const eslintConfig: Partial<ESLint.ConfigData> = {
+export const C_TS_ESLINT_CONFIG: Partial<ESLint.ConfigData> = {
     plugins: ['@typescript-eslint'],
     extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
     env: {
@@ -13,5 +13,3 @@ const eslintConfig: Partial<ESLint.ConfigData> = {
     parser: '@typescript-eslint/parser',
     rules: {},
 };
-
-export = eslintConfig;

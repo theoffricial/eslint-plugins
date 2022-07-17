@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
 // import { rules } from 'eslint-plugin-jest'
-const jestConfig: Partial<ESLint.ConfigData> = {
+export const C_JEST_CONFIG: Partial<ESLint.ConfigData> = {
     plugins: ['@uniqorg', 'jest'],
     extends: ['plugin:@uniqorg/jest-formatting'],
     env: {
@@ -53,5 +53,3 @@ const jestConfig: Partial<ESLint.ConfigData> = {
         'jest/valid-title': 'error',
     },
 };
-
-export = jestConfig;
