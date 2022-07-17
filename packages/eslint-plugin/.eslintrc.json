@@ -20,7 +20,8 @@
       },
       "env": {
         "node": true,
-        "jest": true
+        "jest": true,
+        "es6": true
       },
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [

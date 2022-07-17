@@ -51,7 +51,6 @@ const jestConfig: Partial<ESLint.ConfigData> = {
         'jest/valid-expect': 'error',
         'jest/valid-expect-in-promise': 'error',
         'jest/valid-title': 'error',
-        // jest formatting
     },
 };
 
