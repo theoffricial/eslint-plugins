@@ -1,13 +1,13 @@
 import type { ESLint } from 'eslint';
 
-const reactOpinionatedJsOnly: Partial<ESLint.ConfigData> = {
+const reactJsOpinionated: Partial<ESLint.ConfigData> = {
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
     },
     plugins: ['@uniqorg', 'react', 'react-hooks'],
-    extends: ['plugin:@uniqorg/react-js-only'],
+    extends: ['plugin:@uniqorg/react-js'],
     settings: {
         react: {
             version: 'detect',
@@ -60,4 +60,4 @@ const reactOpinionatedJsOnly: Partial<ESLint.ConfigData> = {
     },
 };
 
-export = reactOpinionatedJsOnly;
+export = reactJsOpinionated;

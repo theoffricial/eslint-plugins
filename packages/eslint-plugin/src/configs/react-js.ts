@@ -1,12 +1,13 @@
 import type { ESLint } from 'eslint';
 
-const reactJsOnly: Partial<ESLint.ConfigData> = {
+const reactJs: Partial<ESLint.ConfigData> = {
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
     },
-    plugins: ['react', 'react-hooks'],
+    plugins: ['@uniqorg', 'react', 'react-hooks'],
+    extends: ['plugin:@uniqorg/eslint'],
     settings: {
         react: {
             version: 'detect',
@@ -70,4 +71,4 @@ const reactJsOnly: Partial<ESLint.ConfigData> = {
     },
 };
 
-export = reactJsOnly;
+export = reactJs;
