@@ -394,9 +394,9 @@ module.exports = {
               ],
               "prefix": [
                   // Const Enum
-                  "CE",
-                  "C"
-              ]
+                  "C_",
+                  "CE_"
+              ],
           },
           {
               "format": [
