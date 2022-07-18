@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
 
-const jestFormatting: Partial<ESLint.ConfigData> = {
+export const C_JEST_FORMATTING_CONFIG: Partial<ESLint.ConfigData> = {
     plugins: ['jest-formatting'],
     env: {
         jest: true,
@@ -16,5 +16,3 @@ const jestFormatting: Partial<ESLint.ConfigData> = {
         'jest-formatting/padding-around-all': 'error',
     },
 };
-
-export = jestFormatting;

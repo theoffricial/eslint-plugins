@@ -6,32 +6,66 @@ import type { ESLint, Linter } from 'eslint';
 // import importPlugin from 'eslint-plugin-import';
 // import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
 // import { configs } from 'eslint-plugin-migrate-to-typescript';
-
+// import { C_ESLINT_CONFIG } from './configs/eslint';
 // configs
-import jestWithTsConfig from './configs/jest-for-typescript';
+import { C_ESLINT_CONFIG } from './configs/eslint';
+// import {} from './configs/esm';
+import { C_ESM_CONFIG } from './configs/esm-javascript';
+import { C_ESM_JS_WITH_TS_CONFIG } from './configs/esm-js-with-ts';
+import { C_ESM_OPINIONATED_NO_INTERNAL_MODULES_CONFIG } from './configs/esm-opinionated-no-internal-modules';
+import { C_ESM_TS_CONFIG } from './configs/esm-typescript';
+import { C_JEST_CONFIG } from './configs/jest';
+import { C_JEST_TS_CONFIG } from './configs/jest-for-typescript';
+import { C_JEST_FORMATTING_CONFIG } from './configs/jest-formatting';
+import { C_JEST_OPINIONATED_CONSISTENT_IT_CONFIG } from './configs/jest-opinionated-consistent-it';
+import { C_JEST_OPINIONATED_CONSISTENT_TEST_CONFIG } from './configs/jest-opinionated-consistent-test';
+import { C_NODE_JS_COMMONJS_CONFIG } from './configs/node-js';
+import { C_NODE_JS_WITH_TS_CONFIG } from './configs/node-js-with-ts';
+import { C_NODE_PLUS_JEST_JS_CONFIG } from './configs/node-plus-jest-js';
+import { C_NODE_PLUS_JEST_JS_WITH_TS_CONFIG } from './configs/node-plus-jest-js-with-ts';
+import { C_NODE_PLUS_JEST_TS_CONFIG } from './configs/node-plus-jest-ts';
+import { C_NODE_TS_CONFIG } from './configs/node-ts';
+import { C_PROMISE_CONFIG } from './configs/promise';
+import { C_TS_ESLINT_CONFIG } from './configs/ts-eslint';
+import { C_TS_ESLINT_WITH_TYPE_CHECKING_CONFIG } from './configs/ts-eslint-with-type-checking';
+import { C_TS_ESLINT_OPINIONATED_NAMING_CONVENTION_CONFIG } from './configs/ts-eslint-opinionated-naming-convention';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
 
 // const x = configs['node-ts-only'];
 const plugin: ESLint.Plugin = {
     configs: {
-        // cross platforms
-        'naming-convention': '' as never,
-        'naming-convention-types-and-consts-only': '' as never,
-        'esm-modules-super-strict': '' as never,
-        'esm-modules-light-strict': '' as never,
-        // backend
-        'jest-with-ts-only': jestWithTsConfig,
-        'jest-node-js-with-ts': '' as never,
-        // 'node-ts-only': configs['node-ts-only'], //'' as never,
-        'node-js-with-ts': '' as never,
-        // front
-        'jest-with-tsx-react': '' as never,
-        'jest-with-jsx-react': '' as never,
-        'jest-with-jsx-and-tsx-react': '' as never,
-        'react-tsx': '' as never,
-        'react-ts-only': '' as never,
-        'react-js-with-ts': '' as never,
+        // eslint / ts-eslint configs
+        eslint: C_ESLINT_CONFIG,
+        'typescript-eslint': C_TS_ESLINT_CONFIG,
+        'typescript-eslint-with-type-checking':
+            C_TS_ESLINT_WITH_TYPE_CHECKING_CONFIG,
+        'typescript-eslint-opinionated-naming-convention':
+            C_TS_ESLINT_OPINIONATED_NAMING_CONVENTION_CONFIG,
+
+        // modules configs
+        'esm-javascript': C_ESM_CONFIG,
+        'esm-js-with-ts': C_ESM_JS_WITH_TS_CONFIG,
+        'esm-opinionated-no-internal-modules':
+            C_ESM_OPINIONATED_NO_INTERNAL_MODULES_CONFIG,
+        'esm-ts': C_ESM_TS_CONFIG,
+        // jest configs
+        jest: C_JEST_CONFIG,
+        'jest-ts': C_JEST_TS_CONFIG,
+        'jest-formatting': C_JEST_FORMATTING_CONFIG,
+        'jest-opinionated-consistent-it':
+            C_JEST_OPINIONATED_CONSISTENT_IT_CONFIG,
+        'jest-opinionated-consistent-test':
+            C_JEST_OPINIONATED_CONSISTENT_TEST_CONFIG,
+        // node env configs
+        node: C_NODE_JS_COMMONJS_CONFIG,
+        'node-js-with-ts': C_NODE_JS_WITH_TS_CONFIG,
+        'node-ts': C_NODE_TS_CONFIG,
+        'node-plus-jest': C_NODE_PLUS_JEST_JS_CONFIG,
+        'node-plus-jest-js-with-ts': C_NODE_PLUS_JEST_JS_WITH_TS_CONFIG,
+        'node-plus-jest-ts': C_NODE_PLUS_JEST_TS_CONFIG,
+        // promise configs
+        promise: C_PROMISE_CONFIG,
     },
     rules: {},
 };
