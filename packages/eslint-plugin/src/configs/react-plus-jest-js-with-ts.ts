@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
 
-export const C_REACT_TS: Partial<ESLint.ConfigData> = {
+export const C_REACT_PLUS_JEST_JS_WITH_TS: Partial<ESLint.ConfigData> = {
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
@@ -13,9 +13,10 @@ export const C_REACT_TS: Partial<ESLint.ConfigData> = {
     plugins: ['@uniqorg'],
     extends: [
         './react-js',
-        './es-modules-typescript',
-        './typescript-eslint-with-type-checking',
+        './es-modules-js-with-ts',
+        './typescript-eslint',
         './promise',
+        './jest-js-with-ts',
     ],
     settings: {
         react: {

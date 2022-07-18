@@ -1,10 +1,14 @@
 import type { ESLint } from 'eslint';
 
-const reactJs: Partial<ESLint.ConfigData> = {
+export const C_REACT_JS: Partial<ESLint.ConfigData> = {
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
+    },
+    env: {
+        browser: true,
+        es6: true,
     },
     plugins: ['@uniqorg', 'react', 'react-hooks'],
     extends: ['plugin:@uniqorg/eslint'],
@@ -70,5 +74,3 @@ const reactJs: Partial<ESLint.ConfigData> = {
         'react-hooks/exhaustive-deps': 'warn',
     },
 };
-
-export = reactJs;

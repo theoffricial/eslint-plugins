@@ -1,18 +1,25 @@
 import type { ESLint } from 'eslint';
 
-const reactJsWithTsOpinionated: Partial<ESLint.ConfigData> = {
+export const C_REACT_JS_WITH_TS_OPINIONATED: Partial<ESLint.ConfigData> = {
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
     },
+    env: {
+        browser: true,
+        es6: true,
+    },
     plugins: ['@uniqorg'],
-    extends: ['plugin:@uniqorg/react-js-opinionated', '?'],
+    extends: [
+        './react-js-opinionated',
+        './es-modules-js-with-ts',
+        './typescript-eslint',
+        './promise',
+    ],
     settings: {
         react: {
             version: 'detect',
         },
     },
 };
-
-export = reactJsWithTsOpinionated;

@@ -1,13 +1,17 @@
 import type { ESLint } from 'eslint';
 
-const reactJsOpinionated: Partial<ESLint.ConfigData> = {
+export const C_REACT_JS_OPINIONATED: Partial<ESLint.ConfigData> = {
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
     },
-    plugins: ['@uniqorg', 'react', 'react-hooks'],
-    extends: ['plugin:@uniqorg/react-js'],
+    env: {
+        browser: true,
+        es6: true,
+    },
+    plugins: ['@uniqorg', 'react'],
+    extends: ['./react-js'],
     settings: {
         react: {
             version: 'detect',
@@ -34,17 +38,11 @@ const reactJsOpinionated: Partial<ESLint.ConfigData> = {
         'react/prefer-stateless-function': ['warn'],
         'react/sort-comp': ['warn'],
         'react/jsx-boolean-value': ['error'],
-        // collides with prettier
         'react/jsx-closing-bracket-location': ['error'],
-        // collides with prettier
         'react/jsx-closing-tag-location': ['error'],
-        // collides with prettier
         'react/jsx-curly-spacing': ['error'],
-        // collides with prettier
         'react/jsx-curly-newline': ['error'],
-        // collides with prettier
         'react/jsx-equals-spacing': ['error', 'never'],
-        // collides with prettier
         'react/jsx-first-prop-new-line': ['error'],
         'react/jsx-one-expression-per-line': ['error'],
         'react/jsx-pascal-case': ['error'],
@@ -59,5 +57,3 @@ const reactJsOpinionated: Partial<ESLint.ConfigData> = {
         ],
     },
 };
-
-export = reactJsOpinionated;
