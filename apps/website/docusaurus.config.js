@@ -9,7 +9,7 @@ const config = {
   tagline:
     "An opinionated set of ESLint extensions that will help you spread high-standards",
   url: "https://uniqorg.github.io",
-  baseUrl: "/eslint-extensions/",
+  baseUrl: "/eslint-plugins/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/eslint-favicon.512x512.png",
@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "uniqorg", // Usually your GitHub org/user name.
-  projectName: "eslint-extensions", // Usually your repo name.
+  projectName: "eslint-plugins", // Usually your repo name.
   deploymentBranch: "gh-pages-website-deployment-branch",
   trailingSlash: true,
 
@@ -129,7 +129,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/uniqorg/eslint-extensions",
+                href: "https://github.com/uniqorg/eslint-plugins",
               },
             ],
           },

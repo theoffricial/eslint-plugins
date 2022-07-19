@@ -1,5 +1,5 @@
 {
-  "name": "@uniqorg/eslint-extensions",
+  "name": "@uniqorg/eslint-plugins",
   "version": "1.0.5",
   "license": "MIT",
   "scripts": {
@@ -61,10 +61,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/uniqorg/eslint-extensions.git"
+    "url": "https://github.com/uniqorg/eslint-plugins.git"
   },
   "bugs": {
-    "url": "https://github.com/uniqorg/eslint-extensions/issues"
+    "url": "https://github.com/uniqorg/eslint-plugins/issues"
   },
   "contributors": [
     "unicop <its.op.the.unicorn@gmail.com>",
