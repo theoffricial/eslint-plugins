@@ -1,5 +1,5 @@
 import type { ESLint } from 'eslint';
-import { CRules } from './rules';
+import { C_Rules } from './rules';
 import nodeJsWithTs from './configs/node-js-with-ts';
 import nodeTsOnly from './configs/node-ts-only';
 
@@ -12,7 +12,7 @@ type TM2tsConfigs = {
 type TM2tsPlugin = Omit<ESLint.Plugin, 'configs'> & { configs: TM2tsConfigs };
 
 const config: Required<Pick<TM2tsPlugin, 'configs' | 'rules'>> = {
-    rules: CRules as never,
+    rules: C_Rules as never,
     configs: {
         'node-js-with-ts': nodeJsWithTs,
         'node-ts-only': nodeTsOnly,

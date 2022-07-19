@@ -7,7 +7,7 @@ function getFixturesRootDirectory(): string {
 
 const {
     batchedSingleLineTests,
-    RuleTester: CRuleTester,
+    RuleTester: C_RuleTester,
     noFormat,
 } = ESLintUtils;
 
@@ -15,5 +15,5 @@ export {
     batchedSingleLineTests,
     getFixturesRootDirectory as getFixturesRootDir,
     noFormat,
-    CRuleTester as RuleTester,
+    C_RuleTester as RuleTester,
 };

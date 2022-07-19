@@ -2,7 +2,7 @@ import * as index from '../../src/rules';
 
 const NUMBER_OF_RULES = 6;
 
-const allRules: { [k in keyof typeof index.CRules]: k } = {
+const allRules: { [k in keyof typeof index.C_Rules]: k } = {
     'no-require': 'no-require',
     'no-commonjs-dynamic-require': 'no-commonjs-dynamic-require',
     'no-commonjs-exports': 'no-commonjs-exports',
@@ -13,7 +13,7 @@ const allRules: { [k in keyof typeof index.CRules]: k } = {
 
 describe('rules index interface', () => {
     it('should export all rules', () => {
-        const keys = Object.keys(index.CRules);
+        const keys = Object.keys(index.C_Rules);
         expect(keys).toHaveLength(NUMBER_OF_RULES);
         expect(keys).toStrictEqual(
             expect.arrayContaining(Object.keys(allRules))
