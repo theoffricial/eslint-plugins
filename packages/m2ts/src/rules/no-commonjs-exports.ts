@@ -1,6 +1,6 @@
 import type { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
-import { CEScopeType } from '../shared/constants';
+import { CE_ScopeType } from '../shared/constants';
 import type { TScope } from '../shared/types';
 import { createRule, ruleMessageTemplate } from '../util';
 
@@ -94,7 +94,7 @@ export default createRule<TOptions, TMessageIds>({
 });
 
 function isModuleScope(scope: TScope.Scope) {
-    return scope.variableScope.type === CEScopeType.Module;
+    return scope.variableScope.type === CE_ScopeType.Module;
 }
 
 /** Detects cases like: `exports = {}` */
@@ -105,7 +105,7 @@ function doesIdentifierIsExports(node: TSESTree.Identifier) {
             node.parent.operator === '=' &&
             node.parent.parent?.type === AST_NODE_TYPES.ExpressionStatement &&
             node.parent.parent.parent?.type === AST_NODE_TYPES.Program &&
-            node.parent.parent.parent?.sourceType === CEScopeType.Module
+            node.parent.parent.parent?.sourceType === CE_ScopeType.Module
     );
 }
 

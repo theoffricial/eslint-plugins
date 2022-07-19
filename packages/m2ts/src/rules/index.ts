@@ -5,7 +5,7 @@ import noCommonjsExports from './no-commonjs-exports';
 import noCommonJsModuleExports from './no-commonjs-module-exports';
 import noEsmExportDefault from './no-esm-export-default';
 
-export const CRules = {
+export const C_Rules = {
     // commonjs
     'no-require': noRequire,
     'no-commonjs-dynamic-require': noCommonJsDynamicRequire,

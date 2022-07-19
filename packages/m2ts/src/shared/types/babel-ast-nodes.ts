@@ -9,7 +9,7 @@ type TTypeOfPropertyType = TPropertyType<Node, 'type'>;
 export type TBabelParserAstNodeTypes = { [key in TTypeOfPropertyType]: key };
 
 /** This support Node types that do exist in legacy parsers, although in the context of typescript it should not matter */
-export const CEBABEL_PARSER_AST_NODE_TYPES: TBabelParserAstNodeTypes = {
+export const C_EBABEL_PARSER_AST_NODE_TYPES: TBabelParserAstNodeTypes = {
     AnyTypeAnnotation: 'AnyTypeAnnotation',
     ArgumentPlaceholder: 'ArgumentPlaceholder',
     ArrayExpression: 'ArrayExpression',

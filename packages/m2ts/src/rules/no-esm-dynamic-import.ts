@@ -1,6 +1,6 @@
 import type { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
-import { CEBABEL_PARSER_AST_NODE_TYPES } from '../shared/types';
+import { C_EBABEL_PARSER_AST_NODE_TYPES } from '../shared/types';
 import { createRule } from '../util';
 
 export type TOptions = [];
@@ -14,7 +14,7 @@ function isDynamicImport(node: TSESTree.CallExpression) {
         Boolean(node) &&
         node.callee &&
         // from @babel/parser
-        node.callee.type === (CEBABEL_PARSER_AST_NODE_TYPES.Import as string)
+        node.callee.type === (C_EBABEL_PARSER_AST_NODE_TYPES.Import as string)
     );
 }
 

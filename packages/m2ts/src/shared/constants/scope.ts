@@ -10,7 +10,7 @@ type TFixedKeys<KEY extends string> = KEY extends 'TDZ'
     ? 'TDZ'
     : TCamelToKebabCase<Uncapitalize<KEY>>;
 
-export const CEScopeType: TFixedScopeType = {
+export const CE_ScopeType: TFixedScopeType = {
     TDZ: 'TDZ',
     Function: 'function',
     Block: 'block',
