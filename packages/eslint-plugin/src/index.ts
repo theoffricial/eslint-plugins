@@ -29,6 +29,16 @@ import { C_PROMISE_CONFIG } from './configs/promise';
 import { C_TS_ESLINT_CONFIG } from './configs/ts-eslint';
 import { C_TS_ESLINT_WITH_TYPE_CHECKING_CONFIG } from './configs/ts-eslint-with-type-checking';
 import { C_TS_ESLINT_OPINIONATED_NAMING_CONVENTION_CONFIG } from './configs/ts-eslint-opinionated-naming-convention';
+// react
+import { C_REACT_JS } from './configs/react-js';
+import { C_REACT_JS_OPINIONATED } from './configs/react-js-opinionated';
+import { C_REACT_JS_WITH_TS } from './configs/react-js-with-ts';
+import { C_REACT_JS_WITH_TS_OPINIONATED } from './configs/react-js-with-ts-opinionated';
+import { C_REACT_PLUS_JEST_JS } from './configs/react-plus-jest-js';
+import { C_REACT_PLUS_JEST_JS_WITH_TS } from './configs/react-plus-jest-js-with-ts';
+import { C_REACT_PLUS_JEST_TS } from './configs/react-plus-jest-ts';
+import { C_REACT_TS } from './configs/react-ts';
+import { C_REACT_TS_OPINIONATED } from './configs/react-ts-opinionated';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
 
@@ -66,6 +76,16 @@ const plugin: ESLint.Plugin = {
         'node-plus-jest-ts': C_NODE_PLUS_JEST_TS_CONFIG,
         // promise configs
         promise: C_PROMISE_CONFIG,
+        // react
+        react: C_REACT_JS,
+        'react-opinionated': C_REACT_JS_OPINIONATED,
+        'react-js-with-ts': C_REACT_JS_WITH_TS,
+        'react-js-with-ts-opinionated': C_REACT_JS_WITH_TS_OPINIONATED,
+        'react-plus-jest': C_REACT_PLUS_JEST_JS,
+        'react-plus-jest-js-with-ts': C_REACT_PLUS_JEST_JS_WITH_TS,
+        'react-plus-jest-ts': C_REACT_PLUS_JEST_TS,
+        'react-ts': C_REACT_TS,
+        'react-ts-opinionated': C_REACT_TS_OPINIONATED,
     },
     rules: {},
 };

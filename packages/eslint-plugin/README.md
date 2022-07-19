@@ -1,11 +1,40 @@
-# eslint-plugin
+# eslint-plugin-migrate-to-typescript
 
-This library was generated with [Nx](https://nx.dev).
+<p align="center" style="text-align: center;">
+  The @uniqorg is a set of pre-defined eslint configurations based on the most popular rules and plugins exists,
+  Using it should remove the need to define rules manually each time. Rules we found to be `opinionated` we separated them into an independent configs.
+</p>
 
-## Running unit tests
+<p align="center">
+<img src="https://github.com/uniqorg/eslint-plugins/blob/main/assets/eslint-logo.svg" alt="Logo" width="450"></p>
+</p>
 
-Run `nx test eslint-plugin` to execute the unit tests via [Jest](https://jestjs.io).
+<p align="center">
+This project is part of the
+<a href="https://github.com/uniqorg/eslint-plugins">
+uniqorg/eslint-plugins
+</a> repo that includes different conventions we spread through <a href="https://eslint.org/">ESLint</a>.
 
-## Running lint
+</p>
 
-Run `nx lint eslint-plugin` to execute the lint via [ESLint](https://eslint.org/).
+<p align="center">
+  <a href="https://app.circleci.com/pipelines/github/uniqorg/eslint-plugins?branch=main" target="_blank">
+    <img src="https://img.shields.io/circleci/build/github/uniqorg/eslint-plugins/main" alt="CircleCI" />
+  </a>
+  <a href="https://www.npmjs.com/package/eslint-plugin-migrate-to-typescript" target="_blank">
+    <img src="https://img.shields.io/npm/dm/eslint-plugin-migrate-to-typescript" alt="npm downloads" />
+  </a>
+  <a href="https://codecov.io/gh/uniqorg/eslint-plugins">
+    <img src="https://codecov.io/gh/uniqorg/eslint-plugins/branch/main/graph/badge.svg?token=R2J9M4Q2RA" alt="codecov" />
+  </a>
+</p>
+
+<p align="center">
+  <b>
+  View our
+  <a href="https://uniqorg.github.io/eslint-plugins">
+    documentation
+  </a>
+  to get started.
+  </b>
+</p>

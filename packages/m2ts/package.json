@@ -16,10 +16,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/uniqorg/eslint-extensions.git"
+    "url": "https://github.com/uniqorg/eslint-plugins.git"
   },
   "bugs": {
-    "url": "https://github.com/uniqorg/eslint-extensions/issues"
+    "url": "https://github.com/uniqorg/eslint-plugins/issues"
   },
   "contributors": [
     "unicop <its.op.the.unicorn@gmail.com>",
