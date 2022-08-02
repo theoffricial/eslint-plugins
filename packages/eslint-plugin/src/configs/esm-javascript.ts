@@ -119,7 +119,7 @@ export const C_ESM_CONFIG: Partial<ESLint.ConfigData> = {
         'import/max-dependencies': 'off',
         'import/forbid-unassigned-import': 'off',
         // all definitions here declared as 'style guide'
-        'import/fisrt': 'error',
+        'import/first': 'error',
         'import/exports-last': 'off',
         'import/no-duplicates': 'error',
         'import/no-named-export': 'off',
