@@ -24,10 +24,3 @@ TBD
 
 ##  Configs
 
-
-
-###### See what rules this config includes [here](./configs/node-ts-only.md)
-
-## Use rules manually
-
-You can view the full rules list [here](./rules/index.md)
