@@ -67,8 +67,6 @@ This config includes eslint rules from:
 | **migrate-to-typescript/no-require**                 |   🎱   | 🟡 |   |   |   |    |
 
 
-still in progress...
-
 usage:
 
 ```json
