@@ -7,11 +7,11 @@ pagination_next: plugins/eslint-plugin/configs/esm-typescript
 
 # esm-js-with-ts
 
-This config includes eslint rules from: 
- ⚽️ **[eslint](https://eslint.org/docs/latest/rules/)**
- 🏈 **[eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)**
- 🎾 **[eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)**
- 🎱 **[eslint-plugin-migrate-to-typescript](https://www.npmjs.com/package/eslint-plugin-migrate-to-typescript)**
+This config includes rules from these plugins: 
+ - ⚽️ **[eslint](https://eslint.org/docs/latest/rules/)**
+ - 🏈 **[eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)**
+ - 🎾 **[eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)**
+ - 🎱 **[eslint-plugin-migrate-to-typescript](https://www.npmjs.com/package/eslint-plugin-migrate-to-typescript)**
 
 ## Rules table
 

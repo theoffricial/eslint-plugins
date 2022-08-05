@@ -7,7 +7,7 @@ pagination_next: plugins/eslint-plugin/configs/jest
 
 # esm-opinionated-no-internal-modules
 
-This config includes eslint rules from: 
+This config includes rules from these plugins: 
   - 🏈 **[eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)**
 
 ## Rules table
