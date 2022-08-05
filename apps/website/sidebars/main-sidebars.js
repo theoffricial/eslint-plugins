@@ -80,7 +80,6 @@ const sidebars = {
           label: "ESM",
           link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
           items: [
-            'plugins/eslint-plugin/configs/esm',
             'plugins/eslint-plugin/configs/esm-javascript',
             'plugins/eslint-plugin/configs/esm-js-with-ts',
             'plugins/eslint-plugin/configs/esm-typescript',
