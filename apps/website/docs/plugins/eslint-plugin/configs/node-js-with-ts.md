@@ -1,16 +1,16 @@
 ---
 id: node-js-with-ts
-pagination_prev: plugins/eslint-plugin/configs/jest-opinionated-max-nested-describe
-pagination_next: plugins/eslint-plugin/configs/node-js-with-ts
+pagination_prev: plugins/eslint-plugin/configs/node-js
+pagination_next: plugins/eslint-plugin/configs/node-ts
 # sidebar_position: 
 ---
 
 # node-js-with-ts
 
 This config extends our:
- -  **[es-modules-js-with-ts config](plugins/eslint-plugin/configs/es-modules-js-with-ts)**
--  **[typescript-eslint config](plugins/eslint-plugin/configs/typescript-eslint)**
--  **[promise config](plugins/eslint-plugin/configs/promise)**
+ -  **[es-modules-js-with-ts config](plugins/eslint-plugin/configs/esm-js-with-ts.md)**
+-  **[typescript-eslint config](plugins/eslint-plugin/configs/typescript-eslint.md)**
+-  **[promise config](plugins/eslint-plugin/configs/promise.md)**
 
 
 Usage:

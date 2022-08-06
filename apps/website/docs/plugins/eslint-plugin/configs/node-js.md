@@ -8,8 +8,8 @@ pagination_next: plugins/eslint-plugin/configs/node-js-with-ts
 # node-js
 
 This config extends our:
- -  **[es-modules-javascript config](plugins/eslint-plugin/configs/es-modules-javascript)**
--  **[promise config](plugins/eslint-plugin/configs/promise)**
+ -  **[es-modules-javascript config](plugins/eslint-plugin/configs/esm-javascript.md)**
+-  **[promise config](plugins/eslint-plugin/configs/promise.md)**
 
 
 Usage:
