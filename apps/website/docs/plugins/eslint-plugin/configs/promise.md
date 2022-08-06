@@ -7,9 +7,9 @@ pagination_next: plugins/eslint-plugin/configs/react-js
 
 # promise
 
-This config extends eslint-plugin-promise's `eslint-plugin-promise:recommended` config,<br/>
+This config extends **[eslint-plugin-promise](https://www.npmjs.com/package/eslint-plugin-promise)**'s `eslint-plugin-promise/recommended` config,<br/>
 and includes extra rules from these plugins: 
-  - 🏉 **[eslint-plugin-promise](https://eslint.org/docs/latest/rules/)**
+  - 🏉 **[eslint-plugin-promise](https://www.npmjs.com/package/eslint-plugin-promise)**
 
 ## Additional rules table 
 
