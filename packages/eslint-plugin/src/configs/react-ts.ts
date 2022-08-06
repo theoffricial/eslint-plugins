@@ -13,8 +13,8 @@ export const C_REACT_TS: Partial<ESLint.ConfigData> = {
     plugins: ['@uniqorg'],
     extends: [
         './react-js',
-        './es-modules-typescript',
-        './typescript-eslint-with-type-checking',
+        './esm-typescript',
+        './ts-eslint-with-type-checking',
         './promise',
     ],
     settings: {

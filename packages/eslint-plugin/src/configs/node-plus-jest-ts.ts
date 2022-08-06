@@ -8,7 +8,7 @@ export const C_NODE_PLUS_JEST_TS_CONFIG: Partial<ESLint.ConfigData> = {
     extends: [
         'plugin:@uniqorg/typescript-eslint-with-type-checking',
         'plugin:@uniqorg/jest-typescript',
-        'plugin:@uniqorg/es-modules-typescript',
+        'plugin:@uniqorg/esm-typescript',
     ],
     env: {
         es6: true,
