@@ -10,8 +10,8 @@ export const C_REACT_JS: Partial<ESLint.ConfigData> = {
         browser: true,
         es6: true,
     },
-    plugins: ['@uniqorg', 'react', 'react-hooks'],
-    extends: ['plugin:@uniqorg/eslint'],
+    plugins: ['react', 'react-hooks'],
+    extends: [],
     settings: {
         react: {
             version: 'detect',
@@ -44,12 +44,9 @@ export const C_REACT_JS: Partial<ESLint.ConfigData> = {
         'react/require-render-return': ['error'],
         'react/self-closing-comp': ['error'],
         'react/void-dom-elements-no-children': ['error'],
-        // collides with prettier
         'react/jsx-indent': ['error'],
-        // collides with prettier
         'react/jsx-indent-props': ['error'],
         'react/jsx-key': ['error'],
-        // collides with prettier
         'react/jsx-max-props-per-line': [
             'error',
             { maximum: 1, when: 'multiline' },
