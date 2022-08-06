@@ -6,7 +6,7 @@ import type { ESLint } from 'eslint';
 export const C_TS_ESLINT_OPINIONATED_NAMING_CONVENTION_CONFIG: Partial<ESLint.ConfigData> =
     {
         plugins: ['@typescript-eslint'],
-        extends: ['plugin:@uniqorg/typescript-eslint'],
+        extends: ['plugin:@uniqorg/ts-eslint'],
         parser: '@typescript-eslint/parser',
         env: {
             es6: true,
