@@ -10,7 +10,7 @@ pagination_next: plugins/eslint-plugin/configs/node-plus-jest-js-with-ts
 This config extends our:
  -  **[es-modules-javascript config](plugins/eslint-plugin/configs/esm-javascript.md)**
 -  **[promise config](plugins/eslint-plugin/configs/promise.md)**
- -  **[jest-for-javascript config](plugins/eslint-plugin/configs/jest-for-javascript.md)**
+ -  **[jest config](plugins/eslint-plugin/configs/jest.md)**
 
 
 Usage:
