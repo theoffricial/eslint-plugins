@@ -16,7 +16,7 @@ export const C_REACT_PLUS_JEST_JS_WITH_TS: Partial<ESLint.ConfigData> = {
         './es-modules-js-with-ts',
         './typescript-eslint',
         './promise',
-        './jest-js-with-ts',
+        './jest',
     ],
     settings: {
         react: {
