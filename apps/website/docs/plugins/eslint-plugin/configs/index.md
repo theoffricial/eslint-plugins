@@ -47,7 +47,7 @@ sidebar_position: 1
 | React             | **[react-js](./react-js.md)**                                                         | Lorem ipsum |
 |                   | **[react-js-with-ts](./react-js-with-ts.md)**                                         | Lorem ipsum |
 |                   | **[react-ts](./react-ts.md)**                                                         | Lorem ipsum |
-|                   | **[react-js-opinionated](./react-js-opinionated.md)**                                 | Lorem ipsum |
+|                   | **[react-js-opinionated-jsx](./react-js-opinionated-jsx.md)**                                 | Lorem ipsum |
 |                   | **[react-js-with-ts-opinionated](./react-js-with-ts-opinionated.md)**                 | Lorem ipsum |
 |                   | **[react-ts-opinionated](./react-ts-opinionated.md)**                                 | Lorem ipsum |
 |                   | **[react-plus-jest-js](./react-plus-jest-js.md)**                                     | Lorem ipsum |

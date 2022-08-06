@@ -12,7 +12,7 @@ export const C_REACT_TS_OPINIONATED: Partial<ESLint.ConfigData> = {
     },
     plugins: ['@uniqorg'],
     extends: [
-        './react-js-opinionated',
+        './react-js-opinionated-jsx',
         './es-modules-typescript',
         './typescript-eslint-with-type-checking',
         './promise',

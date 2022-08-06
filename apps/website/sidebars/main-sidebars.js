@@ -126,7 +126,7 @@ const sidebars = {
           link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
           items: [
             'plugins/eslint-plugin/configs/react-js',
-            'plugins/eslint-plugin/configs/react-js-opinionated',
+            'plugins/eslint-plugin/configs/react-js-opinionated-jsx',
             'plugins/eslint-plugin/configs/react-js-with-ts',
             'plugins/eslint-plugin/configs/react-js-with-ts-opinionated',
             'plugins/eslint-plugin/configs/react-ts',

@@ -1,7 +1,7 @@
 ---
 id: react-js
 pagination_prev: plugins/eslint-plugin/configs/promise
-pagination_next: plugins/eslint-plugin/configs/react-js-opinionated
+pagination_next: plugins/eslint-plugin/configs/react-js-opinionated-jsx
 # sidebar_position: 
 ---
 
