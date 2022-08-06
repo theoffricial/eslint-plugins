@@ -128,7 +128,6 @@ const sidebars = {
             'plugins/eslint-plugin/configs/react-js',
             'plugins/eslint-plugin/configs/react-js-opinionated-jsx',
             'plugins/eslint-plugin/configs/react-js-with-ts',
-            'plugins/eslint-plugin/configs/react-js-with-ts-opinionated',
             'plugins/eslint-plugin/configs/react-ts',
             'plugins/eslint-plugin/configs/react-ts-opinionated',
             'plugins/eslint-plugin/configs/react-plus-jest-js',
