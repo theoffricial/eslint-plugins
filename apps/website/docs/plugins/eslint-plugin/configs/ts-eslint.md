@@ -8,7 +8,7 @@ pagination_next: plugins/eslint-plugin/configs/node-plus-jest-js
 # ts-eslint
 
 This config extends **[eslint](https://eslint.org/docs/latest/rules/)**'s `eslint:recommended` config<br/>
-and **[@typescript-eslint](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)**'s `@typescript-eslint/recommended`. <br/>
+and **[@typescript-eslint](https://typescript-eslint.io/)**'s `@typescript-eslint/recommended`. <br/>
 
 
 Usage:

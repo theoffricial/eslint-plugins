@@ -11,7 +11,7 @@ This config extends our:
  - **[ts-eslint config](plugins/eslint-plugin/configs/ts-eslint.md)**
 
  And contains additional rules from:
- - 🪀 **[@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)**
+ - 🪀 **[@typescript-eslint](https://typescript-eslint.io/)**
 
 
 ## Rules table

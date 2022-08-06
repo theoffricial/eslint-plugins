@@ -6,7 +6,7 @@ pagination_next: plugins/eslint-plugin/configs/esm-javascript
 
 # eslint
 
-This config extends eslint's `eslint:recommended` config,<br/>
+This config extends **[eslint](https://eslint.org/docs/latest/rules/)**'s `eslint:recommended` config,<br/>
 and includes extra rules from these plugins: 
   - ⚽️ **[eslint](https://eslint.org/docs/latest/rules/)**
 
