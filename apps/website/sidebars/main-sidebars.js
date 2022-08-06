@@ -139,9 +139,9 @@ const sidebars = {
           label: "Typescript-eslint",
           link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
           items: [
+            'plugins/eslint-plugin/configs/ts-eslint',
             'plugins/eslint-plugin/configs/ts-eslint-opinionated-naming-convention',
             'plugins/eslint-plugin/configs/ts-eslint-with-type-checking',
-            'plugins/eslint-plugin/configs/ts-eslint',
           ],
         },
       ],
