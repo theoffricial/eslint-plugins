@@ -26,7 +26,6 @@ sidebar_position: 1
 | Config group | Config name                                  | 💬 Description |
 | ------------- | ------------------------------------------- |--------------- |
 | Eslint            | **[eslint](./eslint.md)**                                                             | A set of hand-picked rules from `eslint`'s rules.  |
-| ESM               | **[esm](./esm.md)**                                                                   | A set of rules from `eslint-plugin-import`, `eslint-plugin-unicorn` and `eslint-plugin-migrate-to-typescript` plugins. |
 |                   | **[esm-javascript](./esm-javascript.md)**                                             | Lorem ipsum |
 |                   | **[esm-js-with-ts](./esm-js-with-ts.md)**                                             | Lorem ipsum |
 |                   | **[esm-opinionated-no-internal-modules](./esm-opinionated-no-internal-modules.md)**   | Lorem ipsum |

@@ -10,7 +10,7 @@ pagination_next: plugins/eslint-plugin/configs/react-ts
 This config extends our:
 -  **[react-js config](plugins/eslint-plugin/configs/react-js.md)**
 -  **[es-modules-js-with-ts config](plugins/eslint-plugin/configs/esm-js-with-ts.md)**
--  **[typescript-eslint config](plugins/eslint-plugin/configs/typescript-eslint.md)**
+-  **[typescript-eslint config](plugins/eslint-plugin/configs/ts-eslint.md)**
 -  **[promise config](plugins/eslint-plugin/configs/promise.md)**
 
 

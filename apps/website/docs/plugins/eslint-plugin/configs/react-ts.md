@@ -10,7 +10,7 @@ pagination_next: plugins/eslint-plugin/configs/react-plus-jest-js
 This config extends our:
 -  **[react-js config](plugins/eslint-plugin/configs/react-js.md)**
 -  **[es-modules-typescript config](plugins/eslint-plugin/configs/esm-typescript.md)**
--  **[typescript-eslint-type-checking config](plugins/eslint-plugin/configs/ts-eslint-with-type-checkingts-eslint-with-type-checking.md)**
+-  **[typescript-eslint-type-checking config](plugins/eslint-plugin/configs/ts-eslint-with-type-checking.md)**
 -  **[promise config](plugins/eslint-plugin/configs/promise.md)**
 
 

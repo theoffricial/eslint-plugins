@@ -8,9 +8,9 @@ pagination_next: plugins/eslint-plugin/configs/react-plus-jest-ts
 # react-plus-jest-js-with-ts
 
 This config extends our:
--  **[react-js config](plugins/eslint-plugin/configs/ereact-js.md)**
--  **[es-modules-js-with-ts config](plugins/eslint-plugin/configs/es-modules-js-with-ts.md)**
--  **[typescript-eslint config](plugins/eslint-plugin/configs/typescript-eslint.md)**
+-  **[react-js config](plugins/eslint-plugin/configs/react-js.md)**
+-  **[es-modules-js-with-ts config](plugins/eslint-plugin/configs/esm-js-with-ts.md)**
+-  **[typescript-eslint config](plugins/eslint-plugin/configs/ts-eslint.md)**
 -  **[promise config](plugins/eslint-plugin/configs/promise.md)**
 -  **[jest config](plugins/eslint-plugin/configs/jest.md)**
 

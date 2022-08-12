@@ -9,7 +9,7 @@ pagination_next: plugins/eslint-plugin/configs/node-plus-jest-js
 
 This config extends our:
  -  **[es-modules-typescript config](plugins/eslint-plugin/configs/esm-typescript.md)**
--  **[typescript-eslint-with-type-checking config](plugins/eslint-plugin/configs/typescript-eslint-with-type-checking.md)**
+-  **[typescript-eslint-with-type-checking config](plugins/eslint-plugin/configs/ts-eslint-with-type-checking.md)**
 -  **[promise config](plugins/eslint-plugin/configs/promise.md)**
 
 
