@@ -70,7 +70,7 @@ export default function Home(): JSX.Element {
                   <div className="col">
                     <h3>Noise Cancelling</h3>
                     <p>
-                    When the rules of "how we write code" are clear and are being enforced, we can focus on other decisions and processes
+                    When the rules of "how we write code" are clear and are being enforced, we can focus on other decisions and processes.
                     </p>
                   </div>
                   <div className="col">
@@ -106,7 +106,7 @@ export default function Home(): JSX.Element {
                       <a href="https://www.npmtrends.com/eslint-vs-prettier-vs-tslint">
                         popularity
                       </a>
-                      , We have researched the whole eco-system to find the best approach for conventions we can create to help spreading standards that can be easily understood
+                      , We have researched the whole eco-system to find the best approach for conventions we can create to help spreading standards that can be easily understood.
                     </p>
                   </div>
                 </div>
