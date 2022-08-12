@@ -13,7 +13,7 @@ In 5 minutes ⏰ you will start using the `eslint-plugin-migrate-to-typescript` 
 
 ## Installation
 
-with `npm`
+with `npm`:
 
 ```sh
 # eslint-plugin-migrate-to-typescript has peer-dependencies that must be installed together with it
@@ -23,7 +23,7 @@ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/types
 npm install --save-dev  eslint-plugin-migrate-to-typescript
 ```
 
-with `yarn`
+with `yarn`:
 
 ```sh
 # install peer-deps
