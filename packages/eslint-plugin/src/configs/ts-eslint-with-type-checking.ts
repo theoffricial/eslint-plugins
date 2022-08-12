@@ -7,7 +7,7 @@ export const C_TS_ESLINT_WITH_TYPE_CHECKING_CONFIG: Partial<ESLint.ConfigData> =
     {
         plugins: ['@typescript-eslint'],
         extends: [
-            'eslint:recommendedr',
+            'eslint:recommended',
             'plugin:@typescript-eslint/recommended',
             'plugin:@typescript-eslint/recommended-requiring-type-checking',
         ],

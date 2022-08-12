@@ -70,6 +70,11 @@ const config = {
                 label: "migrate-to-typescript",
                 docId: "plugins/migrate-to-typescript/intro",
               },
+              {
+                type: "doc",
+                label: "eslint-plugin",
+                docId: "plugins/eslint-plugin/intro",
+              },
             ],
           },
           // {

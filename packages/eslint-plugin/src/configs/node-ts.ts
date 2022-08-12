@@ -6,7 +6,7 @@ import type { ESLint } from 'eslint';
 export const C_NODE_TS_CONFIG: Partial<ESLint.ConfigData> = {
     plugins: ['@uniqorg'],
     extends: [
-        'plugin:@uniqorg/es-modules-typescript',
+        'plugin:@uniqorg/esm-typescript',
         'plugin:@uniqorg/typescript-eslint-with-type-checking',
         'plugin:@uniqorg/promise',
     ],

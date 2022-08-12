@@ -57,6 +57,96 @@ const sidebars = {
       ],
     },
   ],
+  eslintPluginSideBar: [
+    {
+      type: 'doc',
+      id: 'plugins/eslint-plugin/getting-started'
+    },
+    {
+      type: "category",
+      label: "Configs",
+      link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
+      items: [
+        {
+          type: "category",
+          label: "Eslint",
+          link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
+          items: [
+            'plugins/eslint-plugin/configs/eslint',
+          ]
+        },
+        {
+          type: "category",
+          label: "ESM",
+          link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
+          items: [
+            'plugins/eslint-plugin/configs/esm-javascript',
+            'plugins/eslint-plugin/configs/esm-js-with-ts',
+            'plugins/eslint-plugin/configs/esm-typescript',
+            'plugins/eslint-plugin/configs/esm-opinionated-no-internal-modules',
+          ]
+        },
+        {
+          type: "category",
+          label: "Jest",
+          link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
+          items: [
+            'plugins/eslint-plugin/configs/jest',
+            'plugins/eslint-plugin/configs/jest-for-typescript',
+            'plugins/eslint-plugin/configs/jest-formatting',
+            'plugins/eslint-plugin/configs/jest-opinionated-consistent-it',
+            'plugins/eslint-plugin/configs/jest-opinionated-consistent-test',
+            'plugins/eslint-plugin/configs/jest-opinionated-max-nested-describe',
+          ]
+        },
+        {
+          type: "category",
+          label: "Node",
+          link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
+          items: [
+            'plugins/eslint-plugin/configs/node-js',
+            'plugins/eslint-plugin/configs/node-js-with-ts',
+            'plugins/eslint-plugin/configs/node-ts',
+            'plugins/eslint-plugin/configs/node-plus-jest-js',
+            'plugins/eslint-plugin/configs/node-plus-jest-js-with-ts',
+            'plugins/eslint-plugin/configs/node-plus-jest-ts',
+          ]
+        },
+        {
+          type: "category",
+          label: "Promise",
+          link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
+          items: [
+            'plugins/eslint-plugin/configs/promise',
+          ]
+        },
+        {
+          type: "category",
+          label: "React",
+          link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
+          items: [
+            'plugins/eslint-plugin/configs/react-js',
+            'plugins/eslint-plugin/configs/react-js-opinionated-jsx',
+            'plugins/eslint-plugin/configs/react-js-with-ts',
+            'plugins/eslint-plugin/configs/react-ts',
+            'plugins/eslint-plugin/configs/react-plus-jest-js',
+            'plugins/eslint-plugin/configs/react-plus-jest-js-with-ts',
+            'plugins/eslint-plugin/configs/react-plus-jest-ts',
+          ]
+        },
+        {
+          type: "category",
+          label: "Typescript-eslint",
+          link: {type: 'doc', id: 'plugins/eslint-plugin/configs/index'},
+          items: [
+            'plugins/eslint-plugin/configs/ts-eslint',
+            'plugins/eslint-plugin/configs/ts-eslint-opinionated-naming-convention',
+            'plugins/eslint-plugin/configs/ts-eslint-with-type-checking',
+          ],
+        },
+      ],
+    },
+  ]
   // But you can create a sidebar manually
   /*
   tutorialSidebar: [

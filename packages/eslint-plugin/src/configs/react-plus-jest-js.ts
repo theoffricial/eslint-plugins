@@ -11,7 +11,7 @@ export const C_REACT_PLUS_JEST_JS: Partial<ESLint.ConfigData> = {
         es6: true,
     },
     plugins: ['@uniqorg', 'react'],
-    extends: ['./react-js', './jest-javascript'],
+    extends: ['./react-js', './jest'],
     settings: {
         react: {
             version: 'detect',

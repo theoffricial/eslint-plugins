@@ -10,33 +10,33 @@ export const C_REACT_JS_OPINIONATED: Partial<ESLint.ConfigData> = {
         browser: true,
         es6: true,
     },
-    plugins: ['@uniqorg', 'react'],
-    extends: ['./react-js'],
+    plugins: ['react'],
+    extends: [],
     settings: {
         react: {
             version: 'detect',
         },
     },
     rules: {
-        'react/boolean-prop-naming': [
-            'warn',
-            {
-                rule: '^(is|are|has|will|should|did)[A-Z]([A-Za-z0-9]?)+',
-                validateNested: true,
-                message:
-                    'It`s better if boolean prop names start with one of the following affirmative forms: "is"/"are"/"has"/"will"/"should"/"did".',
-            },
-        ],
-        'react/default-props-match-prop-types': ['error'],
-        'react/no-multi-comp': [
-            'error',
-            {
-                ignoreStateless: true,
-            },
-        ],
-        'react/prefer-es6-class': ['warn'],
-        'react/prefer-stateless-function': ['warn'],
-        'react/sort-comp': ['warn'],
+        // TODO - create a configs for these rules
+        // 'react/boolean-prop-naming': [
+        //     'warn',
+        //     {
+        //         rule: '^(is|are|has|will|should|did)[A-Z]([A-Za-z0-9]?)+',
+        //         validateNested: true,
+        //         message:
+        //             'It`s better if boolean prop names start with one of the following affirmative forms: "is"/"are"/"has"/"will"/"should"/"did".',
+        //     },
+        // ],
+        // 'react/default-props-match-prop-types': ['error'],
+        // 'react/no-multi-comp': [
+        //     'error',
+        //     {
+        //         ignoreStateless: true,
+        //     },
+        // ],
+        // 'react/prefer-es6-class': ['warn'],
+        // 'react/sort-comp': ['warn'],
         'react/jsx-boolean-value': ['error'],
         'react/jsx-closing-bracket-location': ['error'],
         'react/jsx-closing-tag-location': ['error'],

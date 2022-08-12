@@ -13,7 +13,7 @@ export const C_REACT_PLUS_JEST_TS: Partial<ESLint.ConfigData> = {
     plugins: ['@uniqorg'],
     extends: [
         './react-js',
-        './es-modules-typescript',
+        './esm-typescript',
         './typescript-eslint-with-type-checking',
         './promise',
         './jest-typescript',
