@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://uniqorg.github.io/eslint-plugins/blog</id>
-    <title>ESLint Extensions Blog</title>
+    <title>ESLint Plugins Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://uniqorg.github.io/eslint-plugins/blog"/>
-    <subtitle>ESLint Extensions Blog</subtitle>
+    <subtitle>ESLint Plugins Blog</subtitle>
     <icon>https://uniqorg.github.io/eslint-plugins/img/eslint-favicon.512x512.png</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
