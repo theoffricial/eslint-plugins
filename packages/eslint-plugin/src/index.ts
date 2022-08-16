@@ -1,12 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import type { ESLint, Linter } from 'eslint';
-// import jestPlugin from 'eslint-plugin-jest';
-// import unicornPlugin from 'eslint-plugin-unicorn';
-// import importPlugin from 'eslint-plugin-import';
-// import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
-// import { configs } from 'eslint-plugin-migrate-to-typescript';
-// import { C_ESLINT_CONFIG } from './configs/eslint';
+import type { ESLint } from 'eslint';
 // configs
 import { C_ESLINT_CONFIG } from './configs/eslint';
 // import {} from './configs/esm';

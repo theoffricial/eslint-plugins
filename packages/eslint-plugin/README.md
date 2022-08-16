@@ -1,4 +1,4 @@
-# eslint-plugin-migrate-to-typescript
+# eslint-plugin
 
 <p align="center" style="text-align: center;">
   The @uniqorg is a set of pre-defined eslint configurations based on the most popular rules and plugins exists,
@@ -21,8 +21,8 @@ uniqorg/eslint-plugins
   <a href="https://app.circleci.com/pipelines/github/uniqorg/eslint-plugins?branch=main" target="_blank">
     <img src="https://img.shields.io/circleci/build/github/uniqorg/eslint-plugins/main" alt="CircleCI" />
   </a>
-  <a href="https://www.npmjs.com/package/eslint-plugin-migrate-to-typescript" target="_blank">
-    <img src="https://img.shields.io/npm/dm/eslint-plugin-migrate-to-typescript" alt="npm downloads" />
+  <a href="https://www.npmjs.com/package/@uniqorg/eslint-plugin" target="_blank">
+    <img src="https://img.shields.io/npm/dm/@uniqorg/eslint-plugin" alt="npm downloads" />
   </a>
   <a href="https://codecov.io/gh/uniqorg/eslint-plugins">
     <img src="https://codecov.io/gh/uniqorg/eslint-plugins/branch/main/graph/badge.svg?token=R2J9M4Q2RA" alt="codecov" />
