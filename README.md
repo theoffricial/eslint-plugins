@@ -1,4 +1,4 @@
-# ESLint Extensions
+# ESLint Plugins
 
 <p align="center" style="font-size: 12pt;">
     This project is a mono-repo that includes all conventions we spread through

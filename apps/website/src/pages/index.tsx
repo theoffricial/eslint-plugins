@@ -39,7 +39,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={siteConfig.title}
-      description="An opinionated set of ESLint extensions that will help you spread high-standards"
+      description="An opinionated set of ESLint plugins that will help you spread high-standards"
     >
       <HomepageHeader />
       <main>

@@ -5,9 +5,9 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "ESLint Extensions",
+  title: "ESLint Plugins",
   tagline:
-    "An opinionated set of ESLint extensions that will help you spread high-standards",
+    "An opinionated set of ESLint plugins that will help you spread high-standards",
   url: "https://uniqorg.github.io",
   baseUrl: "/eslint-plugins/",
   onBrokenLinks: "throw",

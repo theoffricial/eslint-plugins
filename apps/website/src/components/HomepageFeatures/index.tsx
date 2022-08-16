@@ -16,7 +16,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/eslint-logo.svg").default,
     description: (
       <>
-        Our ESLint extensions was designed with the very good user experience
+        Our ESLint plugins was designed with the very good user experience
         in-mind, and focuses on standards while make sure everyone understand
         why those standards were chosen.
       </>
