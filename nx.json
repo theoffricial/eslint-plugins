@@ -27,5 +27,6 @@
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "packages"
-  }
+  },
+  "defaultProject": "demo-mongodb"
 }

@@ -1,0 +1,32 @@
+{
+  "extends": ["../../.eslintrc.js"],
+  "ignorePatterns": ["!**/*"],
+  // "parserOptions": {
+  //   "project": "./tsconfig.app.json"
+  // },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "parserOptions": {
+        "project": "apps/demo-mongodb/tsconfig.*.json"
+      },
+      "rules": {
+        "@typescript-eslint/no-floating-promises": "off",
+        "promise/catch-or-return": "off",
+        "update-tracker": ["error", { 
+          "import": ["dbPool", "mongodb"], 
+          "collectionVariable": ["collection"], 
+          "required": ["updatedAt", "_updated_at", "kjkjkkj"]  
+        }]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ]
+}

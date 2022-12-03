@@ -2,8 +2,10 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "demo-mongodb": "apps/demo-mongodb",
     "eslint-plugin": "packages/eslint-plugin",
     "m2ts": "packages/m2ts",
+    "mongodb": "packages/mongodb",
     "website": "apps/website"
   }
 }
