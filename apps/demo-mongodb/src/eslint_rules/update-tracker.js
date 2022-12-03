@@ -1,6 +1,6 @@
 /**
- * @fileoverview Rule to disallow unnecessary semicolons
- * @author Nicholas C. Zakas
+ * @fileoverview Rule to enforce fields on every record update/insert
+ * @author Ofri Peretz
  */
 
 //  "use strict";
