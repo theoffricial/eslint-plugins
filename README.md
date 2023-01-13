@@ -15,7 +15,7 @@
 <p align="center" style="font-size: 16pt;">
     <b>
     View our
-    <a href="https://uniqorg.github.io/eslint-plugins/">
+    <a href="https://unicop.github.io/eslint-plugins/">
         documentation
     </a>
     to get started.
